@@ -301,3 +301,27 @@ footer p{
     flex-basis: 24%;
     cursor: pointer;
 }
+
+.product-details-right select{
+    display: block;
+    padding: 5px 10px;
+}
+
+.product-details-right input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.product-details-right input:focus{
+    outline: none;
+}
+
+.product-details-right .buy-btn{
+    background: #fb774b;
+    color: #fff;
+    opacity: 1;
+    transition: 0.3s all;
+}
