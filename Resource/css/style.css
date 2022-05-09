@@ -325,3 +325,45 @@ footer p{
     opacity: 1;
     transition: 0.3s all;
 }
+
+/*CART AREA*/
+.cart-container-area table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.cart-container-area table th{
+    font-weight: 700;
+    background-color: #fb774b;
+    border: none;
+    color: #fff;
+    padding: 6px 0;
+}
+
+.cart-container-area table td{
+    border: 1px solid #b6b3b3;
+    text-align: center;
+}
+
+.cart-container-area table td:nth-child(1){
+    width: 100px;
+}
+
+.cart-container-area table td:nth-child(2),
+.cart-container-area table td:nth-child(3){
+    width: 300px;
+}
+
+.cart-container-area table td:nth-child(4),
+.cart-container-area table td:nth-child(5),
+.cart-container-area table td:nth-child(6),
+.cart-container-area table td:nth-child(7){
+    width: 170px;
+}
+
+.cart-container-area table td img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
