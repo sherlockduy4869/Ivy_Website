@@ -290,3 +290,14 @@ footer p{
     box-sizing: border-box;
     object-fit: cover;
 }
+
+/*PRODUCT DETAILS AREA*/
+.product-details .product-details-left .small-image-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-image-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
