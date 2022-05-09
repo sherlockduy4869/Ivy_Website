@@ -282,3 +282,11 @@ footer p{
 .copyright{
     font-size: 1.2rem;
 }
+
+/*PRODUCT SHOP AREA*/
+.featured-product-shop-area .product img{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    object-fit: cover;
+}
