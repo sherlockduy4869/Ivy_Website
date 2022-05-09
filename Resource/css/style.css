@@ -284,7 +284,7 @@ footer p{
 }
 
 /*PRODUCT SHOP AREA*/
-.featured-product-shop-area .product img{
+.shop-product .product img{
     width: 100%;
     height: auto;
     box-sizing: border-box;

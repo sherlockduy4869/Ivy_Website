@@ -1,16 +1,16 @@
 $(document).ready(function(){
 
     // sticky nav
-    $('.new-area').waypoint(
+    $('.featured-product-area').waypoint(
         function(direction){
             if(direction== "down"){
-                $('nav').addClass('sticky');
+                $('.navbar').addClass('sticky');
             }
             else{
-                $('nav').removeClass('sticky');
+                $('.navbar').removeClass('sticky');
             }
         },{
-            offset: '900px'
+            offset: '1800px'
         }
     )
 
