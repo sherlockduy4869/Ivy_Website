@@ -331,6 +331,11 @@ footer p{
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
+    white-space: nowrap;
+}
+
+.cart-container-area{
+    overflow-x: auto;
 }
 
 .cart-container-area table th{
@@ -372,14 +377,45 @@ footer p{
     color: #8d8c89;
 }
 
-.cart-bottom-area .discount>div{
+.cart-bottom-area .discount>div,
+.cart-bottom-area .total-price>div{
     border: 1px solid #b6b3b3;
 }
 
-.cart-bottom-area .discount h5{
+.cart-bottom-area .discount h5,
+.cart-bottom-area .total-price h5{
     background-color: #fb774b;
     border: none;
     color: #fff;
     padding: 6px 12px;
     font-weight: 700;
+}
+
+.cart-bottom-area .discount p,
+.cart-bottom-area .discount input{
+    padding: 0 12px;
+}
+
+.cart-bottom-area .discount input{
+    height: 44px;
+    margin: 0 0 20px 12px;
+}
+.cart-bottom-area .total-price div>div{
+    padding: 0 12px;
+}
+
+.cart-bottom-area .total-price h6{
+    color: #2a2a2a;
+}
+
+.second-hr{
+    background: #b8b7b3;
+    width: 100%;
+    height: 1px;
+}
+
+.cart-bottom-area .total-price div>button{
+    margin: 0 12px 20px 0;
+    display: flex;
+    justify-content: flex-end;
 }
