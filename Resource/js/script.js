@@ -1,18 +1,18 @@
 $(document).ready(function(){
 
-    //sticky nav
-    // $('.').waypoint(
-    //     function(direction){
-    //         if(direction== "down"){
-    //             $('nav').addClass('sticky');
-    //         }
-    //         else{
-    //             $('nav').removeClass('sticky');
-    //         }
-    //     },{
-    //         offset: '730px'
-    //     }
-    // )
+    // sticky nav
+    $('.new-area').waypoint(
+        function(direction){
+            if(direction== "down"){
+                $('nav').addClass('sticky');
+            }
+            else{
+                $('nav').removeClass('sticky');
+            }
+        },{
+            offset: '730px'
+        }
+    )
 
     //Slider
     const imgPosition = document.querySelectorAll(".aspect-ratio-169 img")

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700;800;900&display=swap');
+/*DEFAULT SETUP AREA*/
 *{
     margin: 0;
     padding: 0;
@@ -37,6 +38,18 @@ h5{
 
 h6{
     color: #D8D8D8;
+}
+/*REUSE AREA*/
+hr{
+    width: 30px;
+    height: 2px;
+    background-color: #fb774b;
+    margin: 0 auto;
+}
+
+/*STICKY AREA*/
+.sticky{
+    background-color: rgba(255, 255, 255, 1);;
 }
 
 /*NAV AREA*/
@@ -126,4 +139,75 @@ h6{
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
+    color: #2a2a2a;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #2a2a2a;
+    padding: 2.5px;
+    transform: translateY(70px);
+}
+
+.new-area .one .details button:hover{
+    color: #fff ;
+    border-bottom: 1px solid #fff;
+}
+
+.new-area .one:nth-child(1) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+}
+
+.new-area .one:nth-child(2) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.new-area .one:nth-child(3) .details{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+}
+
+/*PRODUCTS AREA*/
+
+.product{
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+.product img{
+    transition: 0.3s all;
+}
+
+.product:hover img{
+    opacity: 0.7;
+}
+
+.product .buy-btn{
+    color: #fff;
+    background: #fb774b;
+    transform: translateY(20px);
+    opacity: 0;
+    transform: 0.3s all;
+}
+
+.product:hover .buy-btn{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.star{
+    padding: 10px 0;
+}
+
+.star i{
+    font-size: 0.8rem;
+    color: goldenrod;
 }
