@@ -367,3 +367,19 @@ footer p{
     height: 100px;
     object-fit: cover;
 }
+
+.cart-container-area table td i{
+    color: #8d8c89;
+}
+
+.cart-bottom-area .discount>div{
+    border: 1px solid #b6b3b3;
+}
+
+.cart-bottom-area .discount h5{
+    background-color: #fb774b;
+    border: none;
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: 700;
+}
