@@ -638,3 +638,14 @@ footer p{
 .delivery-content-right table tr td:first-child{
     text-align: left;
 }
+
+
+/*ORDER SUCESSFULL AREA*/
+.order-sucessfull-area img{
+    width: 60%;
+    height: 60vh;
+}
+
+.order-sucessfull-area{
+    margin-top: 200px;
+}
