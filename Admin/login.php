@@ -1,3 +1,18 @@
+<?php
+    include "./Class/adminLogin.php";
+?>
+
+<?php
+    $adminLogin = new adminLogin();
+
+    if($_SERVER('REQUEST_METHOD') === 'POST'){
+        $adminUser = $_POST['adminUser'];
+        $adminPassword = $_POST['adminPassword'];
+
+        $loginCheck = $adminLogin -> login_check($adminUser,$adminPassword);
+    }
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,14 +26,14 @@
     <section class="login-area">
         <div class="login-box">
             <h1>Login</h1> 
-            <form action="">
+            <form action="login.php" method="post">
                 <div class="text-field">
-                    <input required type="text"> 
+                    <input required type="text" name="adminUser"> 
                     <span></span>
                     <label for="">User Name</label>
                 </div>
                 <div class="text-field">
-                    <input required type="password"> 
+                    <input required type="password" name="adminPassword"> 
                     <span></span>
                     <label for="">Password</label>
                 </div>
