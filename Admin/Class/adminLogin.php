@@ -43,6 +43,11 @@
                     Session::set('adminName',$value['adminName']);
                     header('Location:index.php');
                 } 
+                else
+                {
+                    $alert = "Wrong User_Name or Password";
+                    return $alert;
+                }
             }
         }
     }
