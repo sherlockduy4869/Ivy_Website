@@ -241,8 +241,12 @@ input[type="submit"]:hover{
 }
 
 /*LOGOUT AREA*/
-.logOut{
+.info{
     position: absolute;
     top: 20;
     right: 20;
+}
+
+.info h3{
+    margin-bottom: 12px;
 }

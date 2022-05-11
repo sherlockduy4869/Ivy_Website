@@ -1,3 +1,7 @@
+<?php
+    include './Lib/session.php';
+    Session::checkSession();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,5 +14,14 @@
 <body>
     <header>
         <h1>ADMIN PAGE</h1>
-        <a class="logOut" href=""><i class="fas fa-sign-out"></i>Log out</a>
+        <?php
+            if(isset($_GET['action']) && $_GET['action'] == 'logout')
+            {
+                Session::destroy();
+            }
+         ?>
+        <div class="info">
+        <h3>Hello <?php echo Session::get('adminName'); ?></h3>
+        <a href="?action=logout"><i class="fas fa-sign-out"></i>Log out</a>
+        </div>
     </header>
