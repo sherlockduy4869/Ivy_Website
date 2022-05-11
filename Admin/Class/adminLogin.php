@@ -37,8 +37,12 @@
                 if($result != false)
                 {
                     $value = $result->fetch_assoc();
-                    Sesstion::set(adminLogin,true);
-                }
+                    Session::set('adminLogin',true);
+                    Session::set('adminID',$value['adminID']);
+                    Session::set('adminUser',$value['adminUser']);
+                    Session::set('adminName',$value['adminName']);
+                    header('Location:index.php');
+                } 
             }
         }
     }
