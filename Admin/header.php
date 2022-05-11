@@ -20,8 +20,13 @@
                 Session::destroy();
             }
          ?>
-        <div class="info">
-        <h3>Hello <?php echo Session::get('adminName'); ?></h3>
-        <a href="?action=logout"><i class="fas fa-sign-out"></i>Log out</a>
+        <div class="header-admin">
+            <div class="header-admin-left">
+                <a href="../index.html" class="vw-btn">Visit Website</a>
+            </div>
+            <div class="header-admin-right">
+                <h3>Hello <?php echo Session::get('adminName'); ?></h3>
+                <a href="?action=logout"><i class="fas fa-sign-out"></i>Log out</a>
+            </div>
         </div>
     </header>
