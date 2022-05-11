@@ -33,6 +33,12 @@
                 return $alert;
             }
         }
+
+        public function show_category_list(){
+            $query = "SELECT * FROM tbl_category ORDER BY cateID DESC";
+            $result = $this->db->insert($query);
+            return $result;
+        }
     }
 
 ?>
