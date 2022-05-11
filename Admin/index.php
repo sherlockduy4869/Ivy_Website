@@ -1,7 +1,7 @@
 <?php
-    include './header.php';
-    include './slider.php';
+    include 'header.php';
+    include 'slider.php';
 ?>
-
+</section>
 </body>
 </html>
