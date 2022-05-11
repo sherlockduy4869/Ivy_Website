@@ -1,13 +1,13 @@
 <?php
-    include "./Class/adminLogin.php";
+    include "Class/adminLogin.php";
 ?>
 
 <?php
     $adminLogin = new adminLogin();
 
-    if($_SERVER('REQUEST_METHOD') === 'POST'){
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $adminUser = $_POST['adminUser'];
-        $adminPassword = $_POST['adminPassword'];
+        $adminPassword = md5($_POST['adminPassword']);
 
         $loginCheck = $adminLogin -> login_check($adminUser,$adminPassword);
     }
@@ -26,7 +26,8 @@
     <section class="login-area">
         <div class="login-box">
             <h1>Login</h1> 
-            <form action="login.php" method="post">
+            <span><?php if(isset($loginCheck)){echo $loginCheck;} ?></span>
+            <form action="login.php" method="POST">
                 <div class="text-field">
                     <input required type="text" name="adminUser"> 
                     <span></span>

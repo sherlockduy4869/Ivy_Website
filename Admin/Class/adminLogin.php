@@ -1,8 +1,8 @@
 <?php
-    include "../Lib/session.php";
+    include "Lib/session.php";
     Session::checkLogin();
-    include "../Lib/database.php";
-    include "../Helpers/format.php";
+    include "Lib/database.php";
+    include "Helpers/format.php";
 ?>
 
 <?php
@@ -31,7 +31,7 @@
             }
             else 
             {
-                $query = "SELECT * FROM tbl_admin WHERE adminUser = '$adminUser' AND adminPassword = '$adminPassword' LIMIT 1";
+                $query = "SELECT * FROM tbl_admin WHERE adminUser = '$adminUser' AND adminPass = '$adminPassword' LIMIT 1";
                 $result = $this->db->select($query);
 
                 if($result != false)
