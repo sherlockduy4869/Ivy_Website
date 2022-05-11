@@ -239,3 +239,10 @@ input[type="submit"]:hover{
     border-color: #2691d9;
     transition: 0.5s ease;
 }
+
+/*LOGOUT AREA*/
+.logOut{
+    position: absolute;
+    top: 20;
+    right: 20;
+}
