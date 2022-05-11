@@ -1,6 +1,6 @@
 <?php
-    include 'header.php';
-    include 'slider.php';
+    include 'Include/header.php';
+    include 'Include/slider.php';
 ?>
     <div class="admin-content-right">
             <div class="admin-content-right-category_list">
