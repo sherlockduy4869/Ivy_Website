@@ -7,26 +7,50 @@
 <?php
     $cate = new category();
 
+    if(!isset($_GET['cateID']) || $_GET['cateID'] == NULL)
+    {
+        echo "<script>window.location = 'categorylist.php'</script>";
+    }
+    else{
+        $cateID = $_GET['cateID'];
+    }
+    
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $cateName = $_POST['cateName'];
 
-        $cateAdd = $cate->insert_category($cateName);
+        $cateEdit = $cate->edit_category($cateID,$cateName);
     }
+?>
+
+<?php
+    $get_cate_name = $cate->get_cate_name_by_id($cateID);
 ?>
     <div class="admin-content-right">
             <div class="admin-content-right-category_add">
-                <h1>Add category</h1>
+                <h1>Edit category</h1>
                 <?php 
-                    if(isset($cateAdd))
+                    if(isset($cateEdit))
                     {
-                        echo $cateAdd;
+                        echo $cateEdit;
                     }
                 ?>
-                <form action="categoryadd.php" method="POST">
-                    <input required type="text" placeholder="Enter category name" name="cateName">
-                    <button type="submit" name="submit">Add</button>
+                <?php
+                    if($get_cate_name)
+                    {
+                        while($result = $get_cate_name->fetch_assoc())
+                        {
+                        
+                ?>
+                <form action="" method="POST">
+                    <input required value="<?php echo $result['cateName']; ?>" type="text" placeholder="Enter category name" name="cateName">
+                    <button type="submit" name="submit">Edit</button>
                 </form>
+
+                <?php
+                        }
+                    }
+                ?>
             </div>
     </div>
 </section>
