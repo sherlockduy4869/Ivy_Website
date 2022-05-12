@@ -17,6 +17,10 @@
                     <input type="text">
                     <label for="">Product description<span style="color: red;">*</span></label>
                     <textarea name="editor" id="" cols="30" rows="10"></textarea>
+                    <label for="">Choose type<span style="color: red;">*</span></label>
+                    <select name="" id="">
+                        <option value="">--Type--</option>
+                    </select>
                     <label for="">Product picture<span style="color: red;">*</span></label>
                     <input type="file">
                     <label for="">Product picture description<span style="color: red;">*</span></label>
