@@ -31,7 +31,7 @@
                             <td><?php echo $STT ?></td>
                             <td><?php echo $result['cateID'];  ?></td>
                             <td><?php echo $result['cateName']; ?></td>
-                            <td><a href="">Edit</a>|<a href="">Delete</a></td>
+                            <td><a href="?cateID=<?php echo $result['cateID']; ?>">Edit</a>|<a href="?cateID=<?php echo $result['cateID']; ?>">Delete</a></td>
                         </tr>
                     <?php
                             }
