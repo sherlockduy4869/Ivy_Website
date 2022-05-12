@@ -16,7 +16,7 @@
                     <label for="">Product price<span style="color: red;">*</span></label>
                     <input type="text">
                     <label for="">Product description<span style="color: red;">*</span></label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="editor" id="" cols="30" rows="10"></textarea>
                     <label for="">Product picture<span style="color: red;">*</span></label>
                     <input type="file">
                     <label for="">Product picture description<span style="color: red;">*</span></label>
@@ -26,5 +26,11 @@
             </div>
     </div>
 </section>
+            <script>
+                CKEDITOR.replace( 'editor', {
+	            filebrowserBrowseUrl: 'ckfinder/ckfinder.html',
+	            filebrowserUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+            </script>
 </body>
 </html>
