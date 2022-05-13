@@ -52,7 +52,7 @@
                                 echo 'Non-Featured';
                             }
                         ?></td>
-                        <td><a href="">Edit</a>|
+                        <td><a href="productlist.php?product_id=<?php echo $result['product_id'];?>">Edit</a>|
                         <a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['product_id']; ?>">Delete</a></td>
                         <?php
                                 }
