@@ -67,16 +67,30 @@
 
         public function show_product_list(){
             $query = "SELECT * FROM tbl_product ORDER BY product_id DESC";
-            $result = $this->db->insert($query);
+            $result = $this->db->select($query);
             return $result;
         }
 
         public function delete_product($delID,$product_image){
+
+            $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$delID'";
+            $select_image_desc = $this->db->select($query_select_image_desc);
+
+            while($image_desc = $select_image_desc->fetch_assoc())
+                {
+                    unlink("Uploads_desc/".$image_desc['product_img_desc']);
+                }
+                
+            unlink("Uploads/".$product_image);
+
             $query = "DELETE FROM tbl_product WHERE product_id = '$delID'";
             $query_img_desc = "DELETE FROM tbl_product_img_desc WHERE product_id = '$delID'";
             $result = $this->db->delete($query);
             $result_img_desc = $this->db->delete($query_img_desc);
-            unlink("Uploads/".$product_image);
+
+            
+
+            
             header('Location:productlist.php');
         }
         public function get_product_by_id($product_id){
