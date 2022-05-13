@@ -68,12 +68,19 @@
             }
         }
 
-    //     public function show_category_list(){
-    //         $query = "SELECT * FROM tbl_category ORDER BY cateID DESC";
-    //         $result = $this->db->insert($query);
-    //         return $result;
-    //     }
-        
+        public function show_product_list(){
+            $query = "SELECT * FROM tbl_product ORDER BY product_id DESC";
+            $result = $this->db->insert($query);
+            return $result;
+        }
+
+        public function delete_product($delID){
+            $query = "DELETE FROM tbl_product WHERE product_id = '$delID'";
+            $query_img_desc = "DELETE FROM tbl_product_img_desc WHERE product_id = '$delID'";
+            $result = $this->db->delete($query);
+            $result_img_desc = $this->db->delete($query_img_desc);
+            header('Location:productlist.php');
+        }
     //     public function get_cate_name_by_id($cateID){
     //         $query = "SELECT * FROM tbl_category WHERE cateID = '$cateID'";
     //         $result = $this->db->select($query);
@@ -98,12 +105,7 @@
     //         }
     //     }
 
-    //     public function delete_category($delID){
-    //         $query = "DELETE FROM tbl_category WHERE cateID = '$delID'";
-    //         $result = $this->db->delete($query);
-
-    //         header('Location:categorylist.php');
-    //     }
+        
     }
 
 ?>
