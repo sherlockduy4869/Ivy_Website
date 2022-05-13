@@ -10,7 +10,9 @@
     if(isset($_GET['delID']))
     {
         $delID = $_GET['delID'];
-        $delCategoryID = $product->delete_product($delID);
+        $product_by_id = $product->get_product_by_id($delID);
+        $product_image = $product_by_id['image'];
+        $delCategoryID = $product->delete_product($delID,$product_image);
         
     }  
 ?>

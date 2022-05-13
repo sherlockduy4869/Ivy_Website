@@ -16,9 +16,6 @@
             $this->fm = new Format();
         }
 
-
-
-
         public function insert_product($data, $files){
 
             $product_name = mysqli_real_escape_string($this->db->link, $data['product_name']);
@@ -74,11 +71,12 @@
             return $result;
         }
 
-        public function delete_product($delID){
+        public function delete_product($delID,$product_image){
             $query = "DELETE FROM tbl_product WHERE product_id = '$delID'";
             $query_img_desc = "DELETE FROM tbl_product_img_desc WHERE product_id = '$delID'";
             $result = $this->db->delete($query);
             $result_img_desc = $this->db->delete($query_img_desc);
+            unlink("Uploads/".$product_image);
             header('Location:productlist.php');
         }
         public function get_product_by_id($product_id){
