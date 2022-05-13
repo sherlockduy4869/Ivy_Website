@@ -27,18 +27,18 @@
                         <th>Type</th>
                         <th>Customization</th>
                     </tr>
-                    
-                    <tr>
-                        <?php
-                            $productList = $product->show_product_list();
+                    <?php
+                        $productList = $product->show_product_list();
 
-                            if($productList)
-                            {   
-                                $ID = 0;
-                                while($result = $productList->fetch_assoc())
-                                {
-                                    $ID++;
-                        ?>
+                        if($productList)
+                        {   
+                            $ID = 0;
+                            while($result = $productList->fetch_assoc())
+                            {
+                                $ID++;
+                    ?>
+                    <tr>
+                        
                         <td><?php echo $ID; ?></td>
                         <td><img src="Uploads/<?php echo $result['image']; ?>" width="55px" alt=""></td>
                         <td><?php echo $result['product_name']; ?></td>
@@ -52,14 +52,13 @@
                                 echo 'Non-Featured';
                             }
                         ?></td>
-                        <td><a href="productlist.php?product_id=<?php echo $result['product_id'];?>">Edit</a>|
-                        <a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['product_id']; ?>">Delete</a></td>
-                        <?php
+                        <td><a href="productedit.php?product_id=<?php echo $result['product_id'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['product_id']; ?>">Delete</a></td>
+                        
+                    </tr>
+                    <?php
                                 }
                             }
                         ?>
-                    </tr>
-                    
                 </table>
             </div>
     </div>

@@ -21,11 +21,10 @@
 
         $cateEdit = $cate->edit_category($cateID,$cateName);
     }
-?>
 
-<?php
     $get_cate_name = $cate->get_cate_name_by_id($cateID);
 ?>
+
     <div class="admin-content-right">
             <div class="admin-content-right-category_add">
                 <h1>Edit category</h1>

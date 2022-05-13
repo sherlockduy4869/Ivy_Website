@@ -10,19 +10,34 @@
     $cateList = $cate->show_category_list();
 ?>
 <?php
+
     $product = new product();
+    if(!isset($_GET['product_id']) || $_GET['product_id'] == NULL)
+    {
+        echo "<script>window.location = 'productlist.php'</script>";
+    }
+    else{
+        $product_id = $_GET['product_id'];
+    }
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    $get_product = $product->get_product_by_id($product_id);
+?>
+<?php
 
-        $productAdd = $product->insert_product($_POST, $_FILES);
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+
+        $product_edit = $product->edit_product($_POST, $_FILES,$product_id);
+
     }
 ?>
     <div class="admin-content-right">
             <div class="admin-content-right-product_add">
-                <h1>Add product</h1>
+                <h1>Edit product</h1>
                 <form action="productadd.php" method="POST" enctype="multipart/form-data">
+
                     <label for="">Enter product name<span style="color: red;">*</span></label>
-                    <input type="text" name="product_name" required>
+                    <input type="text" name="product_name" value="<?php echo $get_product['product_name'] ?>" required>
+
                     <label for="">Choose category<span style="color: red;">*</span></label>
                     <select name="category_id" id="">
                         <option value="">--Category--</option>
@@ -33,34 +48,34 @@
                                 {            
                                 
                         ?>
-                        <option value="<?php echo $result['cateID'] ?>"><?php echo $result['cateName']; ?></option>
-                        
+                        <option <?php if($get_product['category_id'] == $result['cateID']) {echo "SELECTED";} ?> 
+                        value="<?php echo $result['cateID'] ?>"><?php echo $result['cateName']; ?></option>
+
                         <?php
                                 }
                             }
                         ?>
                     </select>
                     <label for="">Product price<span style="color: red;">*</span></label>
-                    <input type="text" required name="price">
+                    <input type="text" required name="price" value="<?php echo $get_product['price'] ?>">
+
                     <label for="">Product description<span style="color: red;">*</span></label>
-                    <textarea name="product_desc" id="" cols="30" rows="10" required></textarea>
+                    <textarea name="product_desc" id="" cols="30" rows="10" required><?php echo $get_product['product_desc'] ?></textarea>
+
                     <label for="">Choose type<span style="color: red;">*</span></label>
                     <select name="type" id="">
                         <option value="">--Type--</option>
-                        <option value="1">Featured</option>
-                        <option value="0">Non-Featured</option>
+                        <option <?php if($get_product['type'] == 1) {echo "SELECTED";} ?> value="1">Featured</option>
+                        <option <?php if($get_product['type'] == 0) {echo "SELECTED";} ?> value="0">Non-Featured</option>
                     </select>
+
                     <label for="">Product picture<span style="color: red;">*</span></label>
                     <input type="file" required name="image">
+
                     <label for="">Product picture description<span style="color: red;">*</span></label>
                     <input type="file" name="product_img_desc[]" multiple required>
-                    <?php 
-                    if(isset($productAdd))
-                    {
-                        echo $productAdd;
-                    }
-                    ?>
-                    <button type="submit" name="submit">Add</button> 
+
+                    <button type="submit" name="submit">Edit</button> 
                 </form>
             </div>
     </div>
