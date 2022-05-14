@@ -12,28 +12,30 @@
 <?php
 
     $product = new product();
-    if(!isset($_GET['product_id']) || $_GET['product_id'] == NULL)
-    {
-        echo "<script>window.location = 'productlist.php'</script>";
-    }
-    else{
-        $product_id = $_GET['product_id'];
-    }
 
-    $get_product = $product->get_product_by_id($product_id);
+    if(isset($_GET['product_id']))
+    {
+        $product_id = $_GET['product_id'];
+        $product_by_id = $product->get_product_by_id($product_id);
+        $product_image = $product_by_id['image'];
+        
+    }
+        $get_product = $product->get_product_by_id($product_id);
 ?>
 <?php
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-
-        $product_edit = $product->edit_product($_POST, $_FILES,$product_id);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+                
+        $product_edit = $product->edit_product($_POST, $_FILES);
+        $product_delete = $product->delete_product($product_id,$product_image);
 
     }
+
 ?>
     <div class="admin-content-right">
             <div class="admin-content-right-product_add">
                 <h1>Edit product</h1>
-                <form action="productadd.php" method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
 
                     <label for="">Enter product name<span style="color: red;">*</span></label>
                     <input type="text" name="product_name" value="<?php echo $get_product['product_name'] ?>" required>

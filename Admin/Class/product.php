@@ -88,10 +88,7 @@
             $result = $this->db->delete($query);
             $result_img_desc = $this->db->delete($query_img_desc);
 
-            
-
-            
-            header('Location:productlist.php');
+            //header('Location:productlist.php');
         }
         public function get_product_by_id($product_id){
             $query = "SELECT * FROM tbl_product WHERE product_id = '$product_id'";
@@ -99,11 +96,12 @@
             return $result;
         }
 
-        public function edit_product($data, $files,$product_id){
+        public function edit_product($data, $files){
 
+            //Edit product
             $product_name = mysqli_real_escape_string($this->db->link, $data['product_name']);
             $category_id = mysqli_real_escape_string($this->db->link, $data['category_id']);
-            $product_id = mysqli_real_escape_string($this->db->link, $data['product_id']);
+            //$product_id = mysqli_real_escape_string($this->db->link, $data['product_id']);
             $price = mysqli_real_escape_string($this->db->link, $data['price']);
             $product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
             $type = mysqli_real_escape_string($this->db->link, $data['type']);
@@ -120,14 +118,8 @@
             $upload_image = "Uploads/".$unique_image;
 
             move_uploaded_file($file_temp,$upload_image);
-            $query = "UPDATE tbl_product
-                    SET product_name = '$product_name',
-                         category_id = '$category_id',
-                         price = '$price',
-                         product_desc = '$product_desc',
-                         type = '$type',
-                         image = '$unique_image' 
-                    WHERE product_id = '$product_id'";
+            $query = "INSERT INTO tbl_product(product_name,category_id,price,product_desc,type,image) 
+            VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
 
             $result = $this->db->update($query);
 
@@ -147,11 +139,11 @@
                     $result_product_img_desc = $this->db->insert($query);
                 }
 
-                $alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
+                $alert = "<span class = 'addSuccess'>Edit product successfully</span> <br>";
                 return $alert;
             }
             else{
-                $alert = "<span class = 'addError'>Can not add product</span> <br>";
+                $alert = "<span class = 'addError'>Can not edit product</span> <br>";
                 return $alert;
             }
         }
