@@ -17,6 +17,8 @@
             $this->db = new Database();
             $this->fm = new Format();
         }
+
+        //Check login
         public function login_check($adminUser, $adminPassword){
             $adminUser = $this->fm->validation($adminUser);
             $adminPassword = $this->fm->validation($adminPassword);

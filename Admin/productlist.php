@@ -44,7 +44,7 @@
                         <td><?php echo $ID; ?></td>
                         <td><img src="Uploads/<?php echo $result['image']; ?>" width="55px" alt=""></td>
                         <td><?php echo $result['product_name']; ?></td>
-                        <td><?php echo $result['category_id']; ?></td>
+                        <td><?php echo $result['cateName']; ?></td>
                         <td><?php echo $result['price']; ?></td>
                         <td><?php 
                             if($result['type'] == 1){

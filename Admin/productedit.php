@@ -24,11 +24,8 @@
 ?>
 <?php
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-                
-        $product_edit = $product->edit_product($_POST, $_FILES);
-        $product_delete = $product->delete_product($product_id,$product_image);
-
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {             
+        $product_edit = $product->edit_product($_POST, $_FILES,$product_id,$product_image);
     }
 
 ?>
@@ -71,11 +68,12 @@
                         <option <?php if($get_product['type'] == 0) {echo "SELECTED";} ?> value="0">Non-Featured</option>
                     </select>
 
-                    <label for="">Product picture<span style="color: red;">*</span></label>
-                    <input type="file" required name="image">
+                    <label for="">Product picture<span style="color: red;">*</span></label> <br>
+                    <img src="Uploads/<?php echo $get_product['image']; ?>" width="55px" alt="">
+                    <input type="file" name="image">
 
                     <label for="">Product picture description<span style="color: red;">*</span></label>
-                    <input type="file" name="product_img_desc[]" multiple required>
+                    <input type="file" name="product_img_desc[]" multiple>
 
                     <button type="submit" name="submit">Edit</button> 
                 </form>
