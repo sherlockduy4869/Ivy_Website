@@ -1,6 +1,6 @@
 <?php
     include "Include_main/header.php";
-    include "Admin/Class/category.php";
+    include "Class/category.php";
 ?>
     
     <!--SLIDER AREA-->

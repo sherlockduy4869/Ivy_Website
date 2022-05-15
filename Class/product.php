@@ -1,6 +1,6 @@
 <?php
-    include_once "../Helpers/format.php";
-    include_once "../Helpers/format.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/database.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Helpers/format.php';
 ?>
 
 <?php

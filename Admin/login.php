@@ -1,5 +1,5 @@
 <?php
-    include ".././Class/adminLogin.php";
+    include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Class/adminLogin.php';
 ?>
 
 <?php

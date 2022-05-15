@@ -1,8 +1,8 @@
 <?php
-     include "../Lib/session.php";
+     include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/session.php';
      Session::checkLogin();
-     include "../Lib/database.php";
-     include "../Helpers/format.php";
+     include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/database.php';
+     include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Helpers/format.php';
 ?>
 
 <?php
