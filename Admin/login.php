@@ -1,5 +1,5 @@
 <?php
-    include "Class/adminLogin.php";
+    include ".././Class/adminLogin.php";
 ?>
 
 <?php
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./css/styleAdmin.css">
 </head>
 <body>
+
     <!--NAVIGATION AREA-->
     <section class="login-area">
         <div class="login-box">
@@ -42,5 +43,6 @@
             </form>
         </div>
     </section>
+
 </body>
 </html>

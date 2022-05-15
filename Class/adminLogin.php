@@ -1,8 +1,8 @@
 <?php
-    include "Lib/session.php";
-    Session::checkLogin();
-    include "Lib/database.php";
-    include "Helpers/format.php";
+     include "../Lib/session.php";
+     Session::checkLogin();
+     include "../Lib/database.php";
+     include "../Helpers/format.php";
 ?>
 
 <?php
