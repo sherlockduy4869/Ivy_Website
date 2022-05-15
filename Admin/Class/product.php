@@ -103,7 +103,7 @@
         }
 
         //Edit product information
-        public function edit_product($data, $files,$delID,$product_image){
+        public function edit_product($data, $files,$product_id_edit,$product_image){
             $product_name = mysqli_real_escape_string($this->db->link, $data['product_name']);
             $category_id = mysqli_real_escape_string($this->db->link, $data['category_id']);
             $price = mysqli_real_escape_string($this->db->link, $data['price']);
@@ -142,22 +142,22 @@
                         ,product_desc = '$product_desc'
                         ,type = '$type'
                         ,image = '$unique_image'
-                        WHERE product_id ='$delID'";
+                        WHERE product_id ='$product_id_edit'";
 
                 $result = $this->db->update($query);
 
                 if($result)
                 {
-                    $query = "SELECT * FROM tbl_product where product_id = '$delID'";
+                    $query = "SELECT * FROM tbl_product where product_id = '$product_id_edit'";
                     $result_product = $this->db->select($query)->fetch_assoc();
 
                     $product_id = $result_product['product_id'];
                     $file_name_desc = $_FILES['product_img_desc']['name'];
                     $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
 
-                if(!empty($file_name_desc))
+                if($file_name_desc[0] != null)
                 {   
-                    $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$delID'";
+                    $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$product_id_edit'";
                     $select_image_desc = $this->db->select($query_select_image_desc);
     
                     while($image_desc = $select_image_desc->fetch_assoc())
@@ -193,22 +193,22 @@
                           ,price = '$price'
                           ,product_desc = '$product_desc'
                           ,type = '$type'
-                          WHERE product_id ='$delID'";
+                          WHERE product_id ='$product_id_edit'";
 
                 $result = $this->db->update($query);
 
                 if($result)
                 {
-                    $query = "SELECT * FROM tbl_product where product_id = '$delID'";
+                    $query = "SELECT * FROM tbl_product where product_id = '$product_id_edit'";
                     $result_product = $this->db->select($query)->fetch_assoc();
 
                     $product_id = $result_product['product_id'];
                     $file_name_desc = $_FILES['product_img_desc']['name'];
                     $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
 
-                if(!empty($file_name_desc))
+                if($file_name_desc[0] != null)
                 {   
-                    $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$delID'";
+                    $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$product_id_edit'";
                     $select_image_desc = $this->db->select($query_select_image_desc);
     
                     while($image_desc = $select_image_desc->fetch_assoc())
