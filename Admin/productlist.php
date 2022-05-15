@@ -1,8 +1,8 @@
 <?php
     include 'Include/header.php';
     include 'Include/slider.php';
-    include 'Class/category.php';
-    include 'Class/product.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Class/category.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Class/product.php';
 ?>
 
 <?php

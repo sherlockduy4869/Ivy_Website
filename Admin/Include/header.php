@@ -1,5 +1,5 @@
 <?php
-    include 'Lib/session.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/session.php';
     Session::checkSession();
 ?>
 <html lang="en">

@@ -1,8 +1,9 @@
 <?php
     include 'Include/header.php';
     include 'Include/slider.php';
-    include 'Class/category.php';
-    include 'Class/product.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Class/category.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Class/product.php';
+
 ?>
 
 <?php
@@ -65,11 +66,11 @@
             </div>
     </div>
 </section>
-            <script>
-                CKEDITOR.replace( 'product_desc', {
-	            filebrowserBrowseUrl: 'ckfinder/ckfinder.html',
-	            filebrowserUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+    <script>
+        CKEDITOR.replace( 'product_desc', {
+	    filebrowserBrowseUrl: 'ckfinder/ckfinder.html',
+	    filebrowserUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
 } );
-            </script>
+    </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
-    include_once "Lib/database.php";
-    include_once "Helpers/format.php";
+    include_once "../Lib/database.php";
+    include_once "../Helpers/format.php";
 ?>
 
 <?php
