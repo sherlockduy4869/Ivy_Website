@@ -1,8 +1,11 @@
 <?php
     include "Include_main/header.php";
-    include "Class/category.php";
+    include "Class/product.php";
 ?>
-    
+<?php
+    $product = new product();
+    $featured_product = $product->show_featured_product_list();
+?>
     <!--SLIDER AREA-->
     <section class="slider">
         <div class="aspect-ratio-169">
@@ -64,8 +67,15 @@
         <p>Here you can see our noticable products with competitive price</p>
       </div>
       <div class="row mx-auto container-fluid">
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/featured-product1.jfif" alt="">
+        <?php
+          if(isset($featured_product))
+          {
+            while($result = $featured_product->fetch_assoc())
+            {
+        ?>
+
+        <div class="product text-center col-lg-3 col-md-4 col-12 clickable">
+          <img class="img-fluid mb-3" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
           <div class="star">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -73,52 +83,15 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <h5 class="product-name">Poem Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
+          <h5 class="product-name"><?php echo $result['product_name']; ?></h5>
+          <h4 class="product-price"><?php echo "$".$result['price']; ?></h4>
+          <a href="product-details.php?<?php echo $result['product_id']; ?>" class="buy-btn btn">Buy Now</a>
         </div>
 
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/featured-product2.jfif" alt="">
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h5 class="product-name">Ontop Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
-        </div>
-
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/featured-product3.jfif" alt="">
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h5 class="product-name">Trending Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
-        </div>
-
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/featured-product4.jfif" alt="">
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h5 class="product-name">City Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
-        </div>
+        <?php
+            }
+          }
+        ?>
       </div>
     </section>
 

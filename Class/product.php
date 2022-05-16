@@ -26,7 +26,7 @@
             $type = mysqli_real_escape_string($this->db->link, $data['type']);
 
 
-            $permited = array('jpg','jpeg','png');
+            $permited = array('jpg','jpeg','png','jfif');
             $file_name = $_FILES['image']['name'];
             $file_size = $_FILES['image']['size'];
             $file_temp = $_FILES['image']['tmp_name'];
@@ -111,7 +111,7 @@
             $type = mysqli_real_escape_string($this->db->link, $data['type']);
 
 
-            $permited = array('jpg','jpeg','png');
+            $permited = array('jpg','jpeg','png','jfif');
             $file_name = $_FILES['image']['name'];
             $file_size = $_FILES['image']['size'];
             $file_temp = $_FILES['image']['tmp_name'];
@@ -243,6 +243,18 @@
             FROM tbl_product
             INNER JOIN tbl_category
             ON tbl_product.category_id = tbl_category.cateID
+            ORDER BY tbl_product.product_id DESC";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
+        // Show featured product information
+        public function show_featured_product_list(){
+            $query = "SELECT tbl_product.*, tbl_category.cateName 
+            FROM tbl_product
+            INNER JOIN tbl_category
+            ON tbl_product.category_id = tbl_category.cateID
+            WHERE type = 1
             ORDER BY tbl_product.product_id DESC";
             $result = $this->db->select($query);
             return $result;

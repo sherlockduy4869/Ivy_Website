@@ -20,8 +20,6 @@ $(document).ready(function(){
     let index = 0;
     let imgNumber = imgPosition.length;
     const dotItem = document.querySelectorAll(".dot");
-    //console.log(imgPosition)
-    //abc
     imgPosition.forEach(function(image, index){
         image.style.left = index*100 + "%"
         dotItem[index].addEventListener("click",function(){
@@ -63,7 +61,14 @@ $(document).ready(function(){
         })
     })
 
-    //For validication contact
+    //Div clickable
+
+    $('.clickable').click(function(){
+        window.location = $(this).find("a").attr("href");
+        //console.log(123);
+    });
+
+    // Validication contact
 
     const btnSubmit = document.querySelector(".send-btn");
     const userName = document.querySelector(".name");
@@ -95,7 +100,6 @@ $(document).ready(function(){
             alertError.innerHTML = "Please fill out all in the form!"
             alertError.style.visibility = "visible";
             alertSuccess.style.visibility = "hidden";  
-            //console.log("acb");
         }
         else if(validicationEmail() == false)
         {   
@@ -120,4 +124,5 @@ $(document).ready(function(){
         }
     }
 
+    
 })

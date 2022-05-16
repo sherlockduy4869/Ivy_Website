@@ -1,3 +1,10 @@
+<?php
+    include "Class/category.php";
+
+    $cate = new category();
+    $cate_dropdown = $cate->show_category_list();
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,25 +31,34 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#"><span>Home</span></a>
+              <a class="nav-link" href="home.php"><span>Home</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><span>About</span></a>
+              <a class="nav-link" href="about.php"><span>About</span></a>
             </li>   
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
               </a>
+
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Men</a></li>
+                <?php
+                  if(isset($cate_dropdown))
+                  {
+                    while($result = $cate_dropdown->fetch_assoc())
+                    { 
+                ?>
+                <li><a class="dropdown-item" href="#"><?php echo $result['cateName'] ?></a></li>
                 <li><hr class="dropdown-divider w-100"></li>
-                <li><a class="dropdown-item" href="#">Women</a></li>
-                <li><hr class="dropdown-divider w-100"></li>
-                <li><a class="dropdown-item" href="#">Children</a></li>
+                <?php
+                    }
+                  }
+                ?>
               </ul>
+              
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><span>Contact</span></a>
+              <a class="nav-link" href="contact.php"><span>Contact</span></a>
             </li>
         </div>
       </div>

@@ -26,8 +26,8 @@
                     <input type="text" name="name" class="text-box name" placeholder="Your Name" required/>
                     <input type="email" name="email" class="text-box email" placeholder="Your Email" required/>
                     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button class="send-btn">Send</button>
                 </form>
-                <button class="send-btn">Send</button>
             </div>
         </div>
 

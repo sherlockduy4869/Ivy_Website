@@ -26,14 +26,16 @@
                 <h6>Home/ Women-Clothes</h6>
                 <h3 class="py-4">Women trending T-shirt</h3>
                 <h2>$20.00</h2>
-                <select class="my-3" name="" id="">
-                    <option value="">--Select Size--</option>
-                    <option value="">S</option>
-                    <option value="">XL</option>
-                    <option value="">XXL</option>
-                </select>
-                <input type="number" value="1">
-                <button class="btn buy-btn">Add to cart</button>
+                <form action="">
+                  <select class="my-3" name="" id="">
+                      <option value="">--Select Size--</option>
+                      <option value="">S</option>
+                      <option value="">XL</option>
+                      <option value="">XXL</option>
+                  </select>
+                  <input type="number" value="1">
+                  <a href="" class="btn buy-btn">Add to cart</a>
+                </form>
                 <h4 class="my-5">Products Description</h4>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit.
