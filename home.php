@@ -85,7 +85,7 @@
           </div>
           <h5 class="product-name"><?php echo $result['product_name']; ?></h5>
           <h4 class="product-price"><?php echo "$".$result['price']; ?></h4>
-          <a href="product-details.php?<?php echo $result['product_id']; ?>" class="buy-btn btn">Buy Now</a>
+          <a href="product-details.php?product_id=<?php echo $result['product_id']; ?>" class="buy-btn btn">Buy Now</a>
         </div>
 
         <?php

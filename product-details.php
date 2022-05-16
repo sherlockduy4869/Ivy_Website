@@ -1,31 +1,63 @@
 <?php
     include "Include_main/header.php";
+    include "Class/product.php";
 ?>
+<?php
+    $product = new product();
 
+    if(!isset($_GET['product_id']) || $_GET['product_id'] == NULL)
+    {
+        echo "<script>window.location = 'home.php'</script>";
+    }
+    else{
+        $product_id = $_GET['product_id'];
+    }
+    
+    $featured_product = $product->show_featured_product_list_by_id($product_id);
+    $featured_product_desc = $product->show_featured_product_desc_by_id($product_id);
+    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    //     $cateName = $_POST['cateName'];
+
+    //     $cateEdit = $cate->edit_category($cateID,$cateName);
+    // }
+?>
 <!--PRODUCT-DETAILS AREA-->
 <section class="container product-details my-5 pt-5">
         <div class="row mt-5">
             <div class="product-details-left col-lg-5 col-md-12 col-12">
-                <img class="image-fluid w-100 big-image mb-1" src="./Resource/img/produc-details-big-img.jfif" alt="">
+                <?php
+                if(isset($featured_product))
+                {
+                  $result = $featured_product->fetch_assoc();
+                ?>
+                <img class="image-fluid w-100 big-image mb-1" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
                 <div class="small-image-group">
                     <div class="small-image-col">
-                        <img class="small-image w-100" src="./Resource/img/product-details-small-1.jfif" alt="">
+                        <img class="small-image w-100" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
                     </div>
+                    <?php
+                      if(isset($featured_product_desc))
+                      {
+                        while($result_desc = $featured_product_desc->fetch_assoc())
+                      {
+                    ?>
                     <div class="small-image-col">
-                        <img class="small-image w-100" src="./Resource/img/product-details-small-2.jfif" alt="">
+                        <img class="small-image w-100" src="<?php echo "./Admin//Uploads_desc/".$result_desc['product_img_desc']; ?>" alt="">
                     </div>
-                    <div class="small-image-col">
-                        <img class="small-image w-100" src="./Resource/img/product-details-small-3.jfif" alt="">
-                    </div>
-                    <div class="small-image-col">
-                        <img class="small-image w-100" src="./Resource/img/product-details-small-4.jfif" alt="">
-                    </div>
+                    <?php
+                      }
+                      }
+                    ?>
                 </div>
+                <?php
+                }
+                ?>
             </div>
             <div class="product-details-right col-lg-6 col-md-12 col-12">
-                <h6>Home/ Women-Clothes</h6>
-                <h3 class="py-4">Women trending T-shirt</h3>
-                <h2>$20.00</h2>
+                <h6><?php echo "Home / ".$result['cateName']; ?></h6>
+                <h3 class="py-4"><?php echo $result['product_name']; ?></h3>
+                <h2><?php echo "$".$result['price']; ?></h2>
                 <form action="">
                   <select class="my-3" name="" id="">
                       <option value="">--Select Size--</option>
@@ -37,10 +69,7 @@
                   <a href="" class="btn buy-btn">Add to cart</a>
                 </form>
                 <h4 class="my-5">Products Description</h4>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                </span>
+                <span><?php echo $result['product_desc']; ?></span>
             </div>
         </div>
 </section>

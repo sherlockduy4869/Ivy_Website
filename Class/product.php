@@ -259,6 +259,26 @@
             $result = $this->db->select($query);
             return $result;
         }
-    }
+        
+        // Show featured product information by id
+        public function show_featured_product_list_by_id($product_id){
+            $query = "SELECT tbl_product.*, tbl_category.cateName 
+            FROM tbl_product
+            INNER JOIN tbl_category
+            ON tbl_product.category_id = tbl_category.cateID
+            WHERE type = 1 AND product_id = '$product_id'
+            ORDER BY tbl_product.product_id DESC LIMIT 1";
+            $result = $this->db->select($query);
+            return $result;
+        }
 
+        // Show featured product information by id
+        public function show_featured_product_desc_by_id($product_id){
+            $query = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$product_id' LIMIT 3";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
+        
+    }
 ?>
