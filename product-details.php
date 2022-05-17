@@ -22,6 +22,7 @@
     //     $cateEdit = $cate->edit_category($cateID,$cateName);
     // }
 ?>
+
 <!--PRODUCT-DETAILS AREA-->
 <section class="container product-details my-5 pt-5">
         <div class="row mt-5">

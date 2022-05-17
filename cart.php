@@ -37,36 +37,6 @@
                 <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
                 <td><h5>$30</h5></td>
             </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-trash"></i></a></td>
-                <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
-                <td><h5>River T-Shirt</h5></td>
-                <td>
-                    <select name="" id="">
-                        <option value="">S</option>
-                        <option value="">XL</option>
-                        <option value="">XXL</option>
-                    </select>
-                </td>
-                <td><h5>$30</h5></td>
-                <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
-                <td><h5>$30</h5></td>
-            </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-trash"></i></a></td>
-                <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
-                <td><h5>River T-Shirt</h5></td>
-                <td>
-                    <select name="" id="">
-                        <option value="">S</option>
-                        <option value="">XL</option>
-                        <option value="">XXL</option>
-                    </select>
-                </td>
-                <td><h5>$30</h5></td>
-                <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
-                <td><h5>$30</h5></td>
-            </tr>
         </table>
 </section>
 
