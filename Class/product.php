@@ -47,7 +47,7 @@
             move_uploaded_file($file_temp,$upload_image);
             $query = "INSERT INTO tbl_product(product_name,category_id,price,product_desc,type,image) 
                   VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
-             $result = $this->db->insert($query);
+            $result = $this->db->insert($query);
 
         
             if($result)

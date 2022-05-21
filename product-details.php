@@ -1,9 +1,11 @@
 <?php
     include "Include_main/header.php";
     include "Class/product.php";
+    include "Class/cart.php";
 ?>
 <?php
     $product = new product();
+    $cart = new cart();
 
     if(!isset($_GET['product_id']) || $_GET['product_id'] == NULL)
     {
@@ -15,12 +17,12 @@
     
     $featured_product = $product->show_featured_product_list_by_id($product_id);
     $featured_product_desc = $product->show_featured_product_desc_by_id($product_id);
-    // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    //     $cateName = $_POST['cateName'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
 
-    //     $cateEdit = $cate->edit_category($cateID,$cateName);
-    // }
+        $quantity = $_POST('quantity');
+        $addToCart = $cart->add_to_cart($product_id,$quantity);
+    }
 ?>
 
 <!--PRODUCT-DETAILS AREA-->
@@ -59,15 +61,15 @@
                 <h6><?php echo "Home / ".$result['cateName']; ?></h6>
                 <h3 class="py-4"><?php echo $result['product_name']; ?></h3>
                 <h2><?php echo "$".$result['price']; ?></h2>
-                <form action="">
+                <form action="" method="POST">
                   <select class="my-3" name="" id="">
                       <option value="">--Select Size--</option>
                       <option value="">S</option>
                       <option value="">XL</option>
                       <option value="">XXL</option>
                   </select>
-                  <input type="number" value="1">
-                  <a href="" class="btn buy-btn">Add to cart</a>
+                  <input type="number" value="1" name="quantity" min = "1">
+                  <button class="btn buy-btn" name="submit">Add to cart</button>
                 </form>
                 <h4 class="my-5">Products Description</h4>
                 <span><?php echo $result['product_desc']; ?></span>

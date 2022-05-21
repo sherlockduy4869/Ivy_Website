@@ -1,5 +1,7 @@
 <?php
     include "Class/category.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/session.php';
+    Session::init();
 
     $cate = new category();
     $cate_dropdown = $cate->show_category_list();
