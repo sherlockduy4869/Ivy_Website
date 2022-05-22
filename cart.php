@@ -1,5 +1,6 @@
 <?php
     include "Include_main/header.php";
+    include "Class/cartclass.php";
 ?>
 
 <!--SHOPPING CART AREA-->
@@ -22,21 +23,36 @@
                 <th>Quantity</th>
                 <th>Total</th>
             </tr>
+            <?php
+                $cart = new cart();
+                $get_product_cart = $cart->get_product_cart();
+                $subTotal = 0;
+                if($get_product_cart)
+                {
+                    while($result = $get_product_cart->fetch_assoc())
+                    {
+                        
+            ?>
             <tr>
                 <td><a href=""><i class="fas fa-trash"></i></a></td>
-                <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
-                <td><h5>River T-Shirt</h5></td>
+                <td><img src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt=""></td>
+                <td><h5><?php echo $result['product_name'] ?></h5></td>
                 <td>
                     <select name="" id="">
-                        <option value="">S</option>
-                        <option value="">XL</option>
-                        <option value="">XXL</option>
+                        <option <?php if($result['size'] == 'S'){echo 'selected';} ?> value="S">S</option>
+                        <option <?php if($result['size'] == 'XL'){echo 'selected';} ?> value="XL">XL</option>
+                        <option <?php if($result['size'] == 'XXL'){echo 'selected';} ?> value="XXL">XXL</option>
                     </select>
                 </td>
-                <td><h5>$30</h5></td>
-                <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
-                <td><h5>$30</h5></td>
+                <td><h5><?php echo $result['price'] ?></h5></td>
+                <td><input class="w-25 pl-1" type="number" value="<?php echo $result['quantity'] ?>"></td>
+                <td><h5><?php echo '$'.$result['price']*$result['quantity'] ?></h5></td>
             </tr>
+            <?php
+                    $subTotal = $subTotal + $result['price']*$result['quantity'];
+                    }
+                }
+            ?>
         </table>
 </section>
 
@@ -56,16 +72,16 @@
                     <h5>TOTAL PRICE</h5>
                     <div class="d-flex justify-content-between">
                         <h6>Subtotal</h6>
-                        <p>$60</p>
+                        <p><?php echo '$'.$subTotal ?></p>
                     </div>
                     <div class="d-flex justify-content-between">
                         <h6>Shipping</h6>
-                        <p>$60</p>
+                        <p>$0</p>
                     </div>
                     <hr class="second-hr">
                     <div class="d-flex justify-content-between">
                         <h6>Total</h6>
-                        <p>$60</p>
+                        <p><?php echo '$'.$subTotal ?></p>
                     </div>
                     <button class="btn ml-auto">CHECK OUT</button>
                 </div>
