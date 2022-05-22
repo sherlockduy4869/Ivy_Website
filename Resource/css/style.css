@@ -421,6 +421,11 @@ footer p{
     justify-content: flex-end;
 }
 
+
+.addToCartForm button{
+    display: block;
+    margin-top: 15px;
+}
 /*CONTACT AREA*/
 .contact-section{
     width: 100%;
@@ -649,4 +654,16 @@ footer p{
 
 .order-sucessfull-area{
     margin-top: 200px;
+}
+
+/*SHOW MESSAGE AREA*/
+.addSuccess{
+    color: rgb(2, 230, 2);
+    margin-bottom: 10px;
+    position: absolute;
+}
+.addError{
+    margin-bottom: 10px;
+    color: red;
+    position: absolute;
 }

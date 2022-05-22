@@ -31,22 +31,33 @@
             $price = $result['price'];
             $image = $result['image'];
 
-            $query_insert_cart = "INSERT INTO tbl_cart(producT_id,session_id,product_name,price,size,quantity,image) 
-            VALUES('$product_id','$session_id','$product_name','$price','$size','$quantity','$image')";
-            $insert_cart = $this->db->insert($query_insert_cart);
-
-            if($insert_cart)
+            $check_cart = "SELECT * FROM tbl_cart WHERE session_id = '$session_id' AND product_id = '$product_id'";
+            $result_check_cart = $this->db->select($check_cart);
+            if($result_check_cart)
             {
-                header('Location:cart.php');
+                $message = "<span class = 'addError mt-2'>This product has already added !</span> <br>";
+                return $message;
             }
-            else{
-                header('Location:404.php');
+            else
+            {
+                $query_insert_cart = "INSERT INTO tbl_cart(producT_id,session_id,product_name,price,size,quantity,image) 
+                VALUES('$product_id','$session_id','$product_name','$price','$size','$quantity','$image')";
+                $insert_cart = $this->db->insert($query_insert_cart);
+
+                if($insert_cart)
+                {
+                    header('Location:cart.php');
+                }
+                else{
+                    header('Location:404.php');
+                }
             }
         }
 
         //Get product cart
         public function get_product_cart(){
-            $query = "SELECT * FROM tbl_cart";
+            $session_id = session_id();
+            $query = "SELECT * FROM tbl_cart WHERE session_id = '$session_id'";
             $result = $this->db->select($query);
             return $result;
         }

@@ -66,16 +66,22 @@
                 <h6><?php echo "Home / ".$result['cateName']; ?></h6>
                 <h3 class="py-4"><?php echo $result['product_name']; ?></h3>
                 <h2><?php echo "$".$result['price']; ?></h2>
-                <form action="" method="POST">
+                <form action="" method="POST" class="addToCartForm">
                   <select class="my-3" name="size">
                       <option value="">--Select Size--</option>
                       <option value="S">S</option>
                       <option value="XL">XL</option>
                       <option value="XXL">XXL</option>
                   </select>
-                  <input type="number" value="1" name="quantity" min = "1">
+                  <input type="number" value="1" name="quantity" min = "1"> 
                   <button class="btn buy-btn" name="submit">Add to cart</button>
                 </form>
+                <?php 
+                    if(isset($addToCart))
+                    {
+                      echo $addToCart;
+                    }
+                  ?>
                 <h4 class="my-5">Products Description</h4>
                 <span><?php echo $result['product_desc']; ?></span>
             </div>

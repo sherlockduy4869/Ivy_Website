@@ -275,6 +275,7 @@ input[type="submit"]:hover{
     left: 10px;
 }
 
+/*SHOW MESSAGE AREA*/
 .addSuccess{
     color: rgb(2, 230, 2);
     margin-bottom: 10px;
