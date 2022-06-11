@@ -79,12 +79,27 @@
                     </div>
                     <div class="d-flex justify-content-between">
                         <h6>Shipping</h6>
-                        <p>$0</p>
+                        <p><?php 
+                        $shippingCost = 0;
+                        if ($subTotal <= 20000){
+                            $shippingCost = 50;
+                            echo '$'.$shippingCost;
+                        }
+                        else if ($subTotal <= 50000){
+                            $shippingCost = 30;
+                            echo '$'.$shippingCost;
+                        }
+                        else{
+                            $shippingCost = 0;
+                            echo '$'.$shippingCost;
+                        } ?></p>
                     </div>
                     <hr class="second-hr">
                     <div class="d-flex justify-content-between">
                         <h6>Total</h6>
-                        <p><?php echo '$'.$subTotal ?></p>
+                        <p><?php
+                            $total = $subTotal + $shippingCost;
+                             echo '$'.$total ?></p>
                     </div>
                     <button class="btn ml-auto">CHECK OUT</button>
                 </div>
