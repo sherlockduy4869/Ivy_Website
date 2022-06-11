@@ -31,7 +31,7 @@
             $price = $result['price'];
             $image = $result['image'];
 
-            $check_cart = "SELECT * FROM tbl_cart WHERE session_id = '$session_id' AND product_id = '$product_id'";
+            $check_cart = "SELECT * FROM tbl_cart WHERE session_id = '$session_id' AND product_id = '$product_id' AND size = '$size'";
             $result_check_cart = $this->db->select($check_cart);
             if($result_check_cart)
             {

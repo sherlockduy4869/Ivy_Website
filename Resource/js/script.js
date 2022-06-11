@@ -14,6 +14,16 @@ $(document).ready(function(){
         }
     )
 
+    //AJAX FOR CART
+
+    $("#quantity_cart").change(function(){
+        var x = $(this).val();
+        alert(x);
+        $.get("cartupdate_ajax.php",{quantity:x},function(data){
+            $("#totalPrice").html(data);
+        })
+    })
+
     //Slider
     const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
     const imgContainer = document.querySelector(".aspect-ratio-169");

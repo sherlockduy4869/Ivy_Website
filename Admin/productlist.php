@@ -19,7 +19,7 @@
     <div class="admin-content-right">
             <div class="admin-content-right-category_list">
                 <h1>Product List</h1>
-                <table>
+                <table id="product_list">
                     <tr>
                         <th>ID</th>
                         <th>Image</th>

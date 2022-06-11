@@ -45,8 +45,8 @@
                     </select>
                 </td>
                 <td><h5><?php echo $result['price'] ?></h5></td>
-                <td><input class="w-25 pl-1" type="number" value="<?php echo $result['quantity'] ?>"></td>
-                <td><h5><?php echo '$'.$result['price']*$result['quantity'] ?></h5></td>
+                <td><input name="quantity" class="w-25 pl-1" type="number" id="quantity_cart" value="<?php echo $result['quantity'] ?>"></td>
+                <td><h5 id="totalPrice"><?php echo '$'.$result['price']*$result['quantity'] ?></h5></td>
             </tr>
             <?php
                     $subTotal = $subTotal + $result['price']*$result['quantity'];
