@@ -57,9 +57,16 @@
         //Get product cart
         public function get_product_cart(){
             $session_id = session_id();
-            $query = "SELECT * FROM tbl_cart WHERE session_id = '$session_id'";
+            $query = "SELECT * FROM tbl_cart WHERE session_id = '$session_id' ORDER BY cart_id DESC";
             $result = $this->db->select($query);
             return $result;
+        }
+
+        //Delete product cart
+        public function delete_product_cart($cart_id){
+            $cart_id = mysqli_real_escape_string($this->db->link, $cart_id);
+            $query = "DELETE FROM tbl_cart WHERE cart_id = '$cart_id'";
+            $result = $this->db->delete($query);
         }
     }
 ?>

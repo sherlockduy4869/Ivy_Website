@@ -2,7 +2,16 @@
     include "Include_main/header.php";
     include "Class/cartclass.php";
 ?>
+<?php
 
+    $cart = new cart();
+
+    if(isset($_GET['cart_id']))
+    {
+        $cart_id = $_GET['cart_id'];
+        $delCartProduct = $cart->delete_product_cart($cart_id);
+    }  
+?>
 <!--SHOPPING CART AREA-->
 <section class="featured-product-area shopping-cart-area shop-product mt-5 py-5">
         <div class="container">
@@ -34,18 +43,12 @@
                         
             ?>
             <tr>
-                <td><a href=""><i class="fas fa-trash"></i></a></td>
+                <td><a onclick="return confirm('Do you want to delete ?')" href="?cart_id=<?php echo $result['cart_id']; ?>"><i class="fas fa-trash"></i></a></td>
                 <td><img src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt=""></td>
                 <td><h5><?php echo $result['product_name'] ?></h5></td>
-                <td>
-                    <select name="" id="">
-                        <option <?php if($result['size'] == 'S'){echo 'selected';} ?> value="S">S</option>
-                        <option <?php if($result['size'] == 'XL'){echo 'selected';} ?> value="XL">XL</option>
-                        <option <?php if($result['size'] == 'XXL'){echo 'selected';} ?> value="XXL">XXL</option>
-                    </select>
-                </td>
-                <td><h5><?php echo $result['price'] ?></h5></td>
-                <td><input name="quantity" class="w-25 pl-1" type="number" id="quantity_cart" value="<?php echo $result['quantity'] ?>"></td>
+                <td><?php echo $result['size'] ?></td>
+                <td><h5><?php echo '$'.$result['price'] ?></h5></td>
+                <td><?php echo $result['quantity'] ?></td>
                 <td><h5 id="totalPrice"><?php echo '$'.$result['price']*$result['quantity'] ?></h5></td>
             </tr>
             <?php

@@ -26,6 +26,9 @@
             $size = $_POST['size'];
             $addToCart = $cart->add_to_cart($product_id,$quantity,$size);
         }
+        else{
+          
+        }
 
     }
 ?>

@@ -12,7 +12,6 @@
     {
         $delID = $_GET['delID'];
         $delCategoryID = $cate->delete_category($delID);
-        
     }  
 ?>
     <div class="admin-content-right">
