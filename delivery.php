@@ -7,32 +7,34 @@
         <div class="container">
             <div class="delivery-content row">
                 <div class="delivery-content-left">
-                    <div class="delivery-content-left-input-top row">
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="">Your Name<span style="color:red">*</span></label>
+                    <form action="">
+                        <div class="delivery-content-left-input-top row">
+                            <div class="delivery-content-left-input-top-item">
+                                <label for="">Your Name<span style="color:red">*</span></label>
+                                <input type="text">
+                            </div>
+                            <div class="delivery-content-left-input-top-item">
+                                <label for="">Phone Number<span style="color:red">*</span></label>
+                                <input type="text">
+                            </div>
+                            <div class="delivery-content-left-input-top-item">
+                                <label for="">City/Province<span style="color:red">*</span></label>
+                                <input type="text">
+                            </div>
+                            <div class="delivery-content-left-input-top-item">
+                                <label for="">District<span style="color:red">*</span></label>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="delivery-content-left-input-bottom row">
+                            <label for="">Address<span style="color:red">*</span></label>
                             <input type="text">
                         </div>
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="">Phone Number<span style="color:red">*</span></label>
-                            <input type="text">
+                        <div class="delivery-content-left-button row">
+                            <a href=""><span>&#10094;</span><p>Back to cart page</p> </a>
+                            <button><p style="font-weight: bold;">Submit order</p></button>
                         </div>
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="">City/Province<span style="color:red">*</span></label>
-                            <input type="text">
-                        </div>
-                        <div class="delivery-content-left-input-top-item">
-                            <label for="">District<span style="color:red">*</span></label>
-                            <input type="text">
-                        </div>
-                    </div>
-                    <div class="delivery-content-left-input-bottom row">
-                        <label for="">Address<span style="color:red">*</span></label>
-                        <input type="text">
-                    </div>
-                    <div class="delivery-content-left-button row">
-                        <a href=""><span>&#10094;</span><p>Back to cart page</p> </a>
-                        <button><p style="font-weight: bold;">Submit order</p></button>
-                    </div>
+                    </form>
                 </div>
                 <div class="delivery-content-right">
                     <table>

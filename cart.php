@@ -10,7 +10,8 @@
     {
         $cart_id = $_GET['cart_id'];
         $delCartProduct = $cart->delete_product_cart($cart_id);
-    }  
+    }
+    
 ?>
 <!--SHOPPING CART AREA-->
 <section class="featured-product-area shopping-cart-area shop-product mt-5 py-5">
@@ -81,7 +82,11 @@
                         <h6>Shipping</h6>
                         <p><?php 
                         $shippingCost = 0;
-                        if ($subTotal <= 20000){
+                        if ($subTotal == 0){
+                            $shippingCost = 0;
+                            echo '$'.$shippingCost;
+                        }
+                        else if ($subTotal <= 20000){
                             $shippingCost = 50;
                             echo '$'.$shippingCost;
                         }
@@ -101,7 +106,7 @@
                             $total = $subTotal + $shippingCost;
                              echo '$'.$total ?></p>
                     </div>
-                    <button class="btn ml-auto">CHECK OUT</button>
+                    <button class="btn ml-auto"><a href="delivery.php">CHECK OUT</a></button>
                 </div>
             </div>
         </div>
