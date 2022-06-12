@@ -5,6 +5,7 @@
 <?php
     $product = new product();
     $featured_product = $product->show_featured_product_list();
+    $best_seller_product = $product->show_best_seller_product_list();
 ?>
     <!--SLIDER AREA-->
     <section class="slider">
@@ -68,8 +69,9 @@
       </div>
       <div class="row mx-auto container-fluid">
         <?php
-          if(isset($featured_product))
+          if($featured_product)
           {
+            
             while($result = $featured_product->fetch_assoc())
             {
         ?>
@@ -112,8 +114,14 @@
         <p>Here you can see our best seller product in this summer vacation</p>
       </div>
       <div class="row mx-auto container-fluid">
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/best-seller1.jpg" alt="">
+        <?php
+          if($best_seller_product)
+          {
+            while($result = $best_seller_product->fetch_assoc())
+            {
+        ?>
+        <div class="product text-center col-lg-3 col-md-4 col-12 clickable">
+          <img class="img-fluid mb-3" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
           <div class="star">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -121,52 +129,14 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <h5 class="product-name">River Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
+          <h5 class="product-name"><?php echo $result['product_name']; ?></h5>
+          <h4 class="product-price"><?php echo "$".$result['price']; ?></h4>
+          <a href="product-details.php?product_id=<?php echo $result['product_id']; ?>" class="buy-btn btn">Buy Now</a>
         </div>
-
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/best-seller2.jpg" alt="">
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h5 class="product-name">Moutain Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
-        </div>
-
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/best-seller3.jfif" alt="">
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h5 class="product-name">Picky Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
-        </div>
-
-        <div class="product text-center col-lg-3 col-md-4 col-12">
-          <img class="img-fluid mb-3" src="./Resource/img/best-seller4.jfif" alt="">
-          <div class="star">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-          <h5 class="product-name">Tinder Shirt</h5>
-          <h4 class="product-price">$20.00</h4>
-          <button class="buy-btn btn">Buy Now</button>
-        </div>
+        <?php
+            }
+          }
+        ?>
       </div>
     </section>
 

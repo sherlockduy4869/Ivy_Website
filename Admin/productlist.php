@@ -47,7 +47,10 @@
                         <td><?php echo $result['cateName']; ?></td>
                         <td><?php echo $result['price']; ?></td>
                         <td><?php 
-                            if($result['type'] == 1){
+                            if($result['type'] == 2){
+                                echo 'Best-Seller';
+                            } 
+                            else if($result['type'] == 1){
                                 echo 'Featured';
                             } 
                             else{

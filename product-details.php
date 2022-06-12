@@ -15,8 +15,8 @@
         $product_id = $_GET['product_id'];
     }
     
-    $featured_product = $product->show_featured_product_list_by_id($product_id);
-    $featured_product_desc = $product->show_featured_product_desc_by_id($product_id);
+    $featured_product = $product->show_product_list_by_id($product_id);
+    $featured_product_desc = $product->show_product_desc_by_id($product_id);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
