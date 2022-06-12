@@ -2,6 +2,14 @@
     include "Include_main/header.php";
 ?>
 
+<?php
+    $product = new product();
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+
+        $productAdd = $product->insert_product($_POST, $_FILES);
+    }
+?>
 <!--DELIVERY AREA-->
 <section class="featured-product-area delivery-area">
         <div class="container">

@@ -43,7 +43,6 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
               </a>
-
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <?php
                   if(isset($cate_dropdown))
@@ -58,7 +57,9 @@
                   }
                 ?>
               </ul>
-              
+            <li class="nav-item">
+              <a class="nav-link" href="cart.php"><span>Cart</span></a>
+            </li> 
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.php"><span>Contact</span></a>
