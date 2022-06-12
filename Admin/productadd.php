@@ -48,6 +48,7 @@
                     <label for="">Choose type<span style="color: red;">*</span></label>
                     <select name="type" id="">
                         <option value="">--Type--</option>
+                        <option value="2">Best-Seller</option>
                         <option value="1">Featured</option>
                         <option value="0">Non-Featured</option>
                     </select>

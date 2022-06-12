@@ -104,7 +104,10 @@
                         <h6>Total</h6>
                         <p><?php
                             $total = $subTotal + $shippingCost;
-                             echo '$'.$total ?></p>
+                             echo '$'.$total;
+                             Session::set('total',$total);
+                             ?>
+                        </p>
                     </div>
                     <button class="btn ml-auto"><a href="delivery.php">CHECK OUT</a></button>
                 </div>

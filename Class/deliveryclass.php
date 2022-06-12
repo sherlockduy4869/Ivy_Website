@@ -16,7 +16,7 @@
             $this->fm = new Format();
         }
 
-        //Insert product
+        //Insert customer information
         public function insert_customer_information($data){
 
             $customer_name = mysqli_real_escape_string($this->db->link, $data['customer_name']);
@@ -32,5 +32,12 @@
             header('Location:order-sucessful.php');
         }
         
+        //Get customer information
+        public function get_customer_information(){
+            $session_id = session_id();
+            $query = "SELECT * FROM tbl_customer_information WHERE session_id = '$session_id'";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
 ?>
