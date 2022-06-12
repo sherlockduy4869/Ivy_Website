@@ -2,6 +2,7 @@
     include $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/session.php';
     Session::checkSession();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

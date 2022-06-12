@@ -23,7 +23,7 @@
 
 <!--TABLE CART AREA-->
 <section class="cart-container-area container my-1" >
-        <table width = "100%">
+        <table id="table_cart">
             <tr>
                 <th>Remove</th>
                 <th>Image</th>

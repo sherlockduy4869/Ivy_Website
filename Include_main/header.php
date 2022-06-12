@@ -6,7 +6,7 @@
     $cate = new category();
     $cate_dropdown = $cate->show_category_list();
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -64,6 +64,7 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.php"><span>Contact</span></a>
             </li>
+          </ul>
         </div>
       </div>
     </nav>

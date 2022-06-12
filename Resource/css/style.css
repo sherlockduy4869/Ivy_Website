@@ -426,6 +426,9 @@ footer p{
     display: block;
     margin-top: 15px;
 }
+#table_cart{
+    width: 100%;
+}
 /*CONTACT AREA*/
 .contact-section{
     width: 100%;
