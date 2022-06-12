@@ -647,15 +647,24 @@ footer p{
 
 
 /*ORDER SUCESSFULL AREA*/
-.order-sucessfull-area img{
-    width: 60%;
-    height: 75vh;
-}
 
 .order-sucessfull-area{
     margin-top: 200px;
+    height: 400px;
 }
 
+.order-sucessfull-area ul{
+    list-style-type: none;
+}
+
+.order-sucessfull-area p{
+    display: inline;
+}
+
+.order-sucessfull-area h1{
+    text-align: center;
+    color: #242d60;
+}
 /*SHOW MESSAGE AREA*/
 .addSuccess{
     color: rgb(2, 230, 2);
