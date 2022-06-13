@@ -50,7 +50,7 @@
                     while($result = $cate_dropdown->fetch_assoc())
                     { 
                 ?>
-                <li><a class="dropdown-item" href="#"><?php echo $result['cateName'] ?></a></li>
+                <li><a class="dropdown-item" href="shop.php?cateID=<?php echo $result['cateID'] ?>"><?php echo $result['cateName'] ?></a></li>
                 <li><hr class="dropdown-divider w-100"></li>
                 <?php
                     }

@@ -291,5 +291,11 @@
             return $result;
         }
 
+        //Show product by category
+        public function get_product_by_cate($cateID){
+            $query = "SELECT * FROM tbl_product WHERE category_id = '$cateID'";
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
 ?>
