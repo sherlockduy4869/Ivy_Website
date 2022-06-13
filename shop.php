@@ -1,20 +1,23 @@
 <?php
-    include "Include_main/header.php";
-    include "Class/product.php";
+    include_once "Include_main/header.php";
+    include_once "Class/product.php";
+    include_once "Class/category.php";
 ?>
 <?php
     $product = new product();
+    $cate = new category();
 
     if(isset($_GET['cateID'])){
         $cateID = $_GET['cateID'];
         $product_by_cate = $product->get_product_by_cate($cateID);
+        $cate_result = $cate->get_cate_name_by_id($cateID)->fetch_assoc();
     }
 ?>
 <!--FEATURED PRODUCT AREA-->
 <section class="featured-product-area shop-product my-5 py-5">
 
       <div class="container mt-5 py-5">
-        <h2 class="font-weight-bold">OUR PRODUCTS</h2>
+        <h2 class="text-uppercase"><?php echo 'Our '.$cate_result['cateName'].' Collections' ?></h2>
         <hr>
         <p>Here you can see our noticable products with competitive price</p>
       </div>
