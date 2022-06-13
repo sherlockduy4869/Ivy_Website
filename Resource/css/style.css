@@ -145,7 +145,7 @@ hr{
     background-color: rgba(245, 178, 178, 0.7);
 }
 
-.new-area .one .details button{
+.new-area .one .details a{
     display: inline-block;
     font-size: 14px;
     font-weight: 500;
@@ -155,9 +155,10 @@ hr{
     border-bottom: 1px solid #2a2a2a;
     padding: 2.5px;
     transform: translateY(70px);
+    text-decoration: none;
 }
 
-.new-area .one .details button:hover{
+.new-area .one .details a:hover{
     color: #fff ;
     border-bottom: 1px solid #fff;
 }
