@@ -39,21 +39,21 @@
         <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
           <img src="./Resource/img/new1.jfif" alt="" class="img-fluid">
           <div class="details">
-            <h2>Clothes for Women</h2>
+            <h2>Clothes For Women</h2>
             <a href="shop.php?cateID=45" class="text-uppercase">Shop now</a>
           </div>
         </div>
         <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
           <img src="./Resource/img/new2.jfif" alt="" class="img-fluid">
           <div class="details">
-            <h2>Clothes for Men</h2>
+            <h2>Clothes For Men</h2>
             <a href="shop.php?cateID=44" class="text-uppercase">Shop now</a>
           </div>
         </div>
         <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
           <img src="./Resource/img/new3.jfif" alt="" class="img-fluid">
           <div class="details">
-            <h2>Clothes for Children</h2>
+            <h2>Clothes For Children</h2>
             <a href="shop.php?cateID=46" class="text-uppercase">Shop now</a>
           </div>
         </div>
@@ -65,7 +65,7 @@
       <div class="container text-center mt-5 py-5">
         <h3>OUR FEATURED PRODUCT</h3>
         <hr class="mx-auto">
-        <p>Here you can see our noticable products with competitive price</p>
+        <p>Here you can see our noticable products with competitive price.</p>
       </div>
       <div class="row mx-auto container-fluid">
         <?php
