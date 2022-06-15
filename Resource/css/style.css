@@ -655,6 +655,12 @@ footer p{
 .order-sucessfull-area{
     margin-top: 200px;
     height: 400px;
+    margin-bottom: 150px;
+}
+
+.order-sucessfull-area .bill-confirm{
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    padding: 20px;
 }
 
 .order-sucessfull-area ul{

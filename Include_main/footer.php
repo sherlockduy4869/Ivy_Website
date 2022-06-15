@@ -1,5 +1,5 @@
     <!--FOOTER AREA-->
-    <footer class="mt-5 py-5">
+    <footer class="mt-5 py-5 text-center">
       <div class="row container mx-auto pt-5">
         <div class="footer-one col-lg-4 col-md-4 col-12 mb-3">
           <img src="./Resource/img/logo.png" alt="">
