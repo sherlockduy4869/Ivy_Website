@@ -26,10 +26,6 @@
             $size = $_POST['size'];
             $addToCart = $cart->add_to_cart($product_id,$quantity,$size);
         }
-        else{
-          
-        }
-
     }
 ?>
 
@@ -85,7 +81,18 @@
                       echo $addToCart;
                     }
                   ?>
+                <br>
+                <span class="addError">
+                <?php 
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
+                    {
+                      if($_POST['size'] == ''){echo "Please select size/color !";} 
+                    }
+                    
+                ?>
+                </span>
                 <h4 class="my-5">Products Description</h4>
+                
                 <span><?php echo $result['product_desc']; ?></span>
             </div>
         </div>
