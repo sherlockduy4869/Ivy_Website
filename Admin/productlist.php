@@ -27,6 +27,7 @@
                         <th>Category name</th>
                         <th>Price</th>
                         <th>Type</th>
+                        <th>Attributes</th>
                         <th>Customization</th>
                     </tr>
                     <?php
@@ -57,6 +58,7 @@
                                 echo 'Non-Featured';
                             }
                         ?></td>
+                        <td><a href="#">Size</a>|<a href="#">Color</a></td>
                         <td><a href="productedit.php?product_id=<?php echo $result['product_id'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['product_id']; ?>">Delete</a></td>
                         
                     </tr>

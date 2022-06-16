@@ -40,21 +40,21 @@
           <img src="./Resource/img/new1.jfif" alt="" class="img-fluid">
           <div class="details">
             <h2>Clothes For Women</h2>
-            <a href="shop.php?cateID=45" class="text-uppercase">Shop now</a>
+            <a href="shop.php?cateID=51" class="text-uppercase">Shop now</a>
           </div>
         </div>
         <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
           <img src="./Resource/img/new2.jfif" alt="" class="img-fluid">
           <div class="details">
             <h2>Clothes For Men</h2>
-            <a href="shop.php?cateID=44" class="text-uppercase">Shop now</a>
+            <a href="shop.php?cateID=50" class="text-uppercase">Shop now</a>
           </div>
         </div>
         <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
           <img src="./Resource/img/new3.jfif" alt="" class="img-fluid">
           <div class="details">
             <h2>Clothes For Children</h2>
-            <a href="shop.php?cateID=46" class="text-uppercase">Shop now</a>
+            <a href="shop.php?cateID=49" class="text-uppercase">Shop now</a>
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@
       <div class="container">
         <h4>SUMMER SEASON SALE</h4>
         <h1>SUMMER COLLECTION SALE <br> UP TO 15% OFF</h1>
-        <button class="text-uppercase btn"><a href="shop.php?cateID=45">Shop Now</a></button>
+        <button class="text-uppercase btn"><a href="shop.php?cateID=49">Shop Now</a></button>
       </div>
     </section>
 
