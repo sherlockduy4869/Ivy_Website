@@ -39,6 +39,7 @@ h5{
 h6{
     color: #D8D8D8;
 }
+
 /*REUSE AREA*/
 hr{
     width: 30px;
@@ -251,6 +252,10 @@ hr{
     color: #fff;
 }
 
+.banner-area button a{
+    color: #fff;
+    text-decoration: none;
+}
 /*FOOTER AREA*/
 footer{
     background-color: #222222;
@@ -639,7 +644,7 @@ footer p{
 .delivery-content-right table tr td{
     padding: 6px 0;
 }
-.delivery-content-right table tr:nth-child(4){
+.delivery-content-right table .boundary-items{
     border-top: 2px solid #dddddd;
 }
 .delivery-content-right table tr td:last-child{

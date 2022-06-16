@@ -1,15 +1,19 @@
 <?php
     include "Include_main/header.php";
     include "Class/deliveryclass.php";
+    include "Class/cartclass.php";
 ?>
 
 <?php
     $deliver = new delivery();
+    $cart = new cart();
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
         $customerInfo = $deliver->insert_customer_information($_POST);
     }
+
+    $get_product_cart = $cart->get_product_cart();
 ?>
 
 <!--DELIVERY AREA-->
@@ -21,24 +25,24 @@
                         <div class="delivery-content-left-input-top row">
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">Your Name<span style="color:red">*</span></label>
-                                <input type="text" name="customer_name">
+                                <input type="text" name="customer_name" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">Phone Number<span style="color:red">*</span></label>
-                                <input type="text" name="phone_number">
+                                <input type="text" name="phone_number" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">City/Province<span style="color:red">*</span></label>
-                                <input type="text" name="city">
+                                <input type="text" name="city" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
                                 <label for="">District<span style="color:red">*</span></label>
-                                <input type="text" name="district">
+                                <input type="text" name="district" required>
                             </div>
                         </div>
                         <div class="delivery-content-left-input-bottom row">
                             <label for="">Address<span style="color:red">*</span></label>
-                            <input type="text" name="address">
+                            <input type="text" name="address" required>
                         </div>
                         <div class="delivery-content-left-button row">
                             <a href="cart.php"><span>&#10094;</span><p>Back to cart page</p> </a>
@@ -55,29 +59,50 @@
                             <th>Price</th>
                             <th></th>
                         </tr>
+                        <?php
+                        $subTotal = 0;
+                        if($get_product_cart)
+                        {
+                            while($result = $get_product_cart->fetch_assoc())
+                            {
+                        
+                        ?>
                         <tr>
-                            <td>Áo polo kẻ ngang MS</td>
-                            <td>X</td>
-                            <td>1</td>
-                            <td>$30</td>
+                            <td><?php echo $result['product_name'] ?></td>
+                            <td><?php echo $result['size'] ?></td>
+                            <td><?php echo $result['quantity'] ?></td>
+                            <td><?php echo '$'.$result['price'] ?></td>
                         </tr>
-                        <tr>
-                            <td>Áo polo kẻ ngang MS PEO</td>
-                            <td>XL</td>
-                            <td>2</td>
-                            <td>$50</td>
-                        </tr>
-                        <tr>
+                        <?php
+                            }
+                        }
+                        ?>
+                        <tr class="boundary-items">
                             <td style="font-weight: bold;" colspan="3">Price</td>
-                            <td style="font-weight: bold;">$50</td>
+                            <td style="font-weight: bold;">
+                            <?php 
+                            $subTotal = Session::get('subTotal'); 
+                            echo '$'.$subTotal;
+                            ?>
+                            </td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold;" colspan="3">Shipping fee</td>
-                            <td style="font-weight: bold;">$50</td>
+                            <td style="font-weight: bold;">
+                            <?php 
+                            $shippingCost = Session::get('shippingCost'); 
+                            echo '$'.$shippingCost;
+                            ?>
+                            </td>
                         </tr>
                         <tr>
                             <td style="font-weight: bold;" colspan="3">Total price</td>
-                            <td style="font-weight: bold;">$100</td>
+                            <td style="font-weight: bold;">
+                            <?php 
+                            $total = Session::get('total'); 
+                            echo '$'.$total;
+                            ?>
+                            </td>
                         </tr>
                     </table>
                 </div>

@@ -11,6 +11,8 @@
         $cart_id = $_GET['cart_id'];
         $delCartProduct = $cart->delete_product_cart($cart_id);
     }
+
+    $get_product_cart = $cart->get_product_cart();
     
 ?>
 <!--SHOPPING CART AREA-->
@@ -34,8 +36,6 @@
                 <th>Total</th>
             </tr>
             <?php
-                $cart = new cart();
-                $get_product_cart = $cart->get_product_cart();
                 $subTotal = 0;
                 if($get_product_cart)
                 {
@@ -56,6 +56,7 @@
                     $subTotal = $subTotal + $result['price']*$result['quantity'];
                     }
                 }
+                Session::set('subTotal',$subTotal);
             ?>
         </table>
 </section>
@@ -85,18 +86,22 @@
                         if ($subTotal == 0){
                             $shippingCost = 0;
                             echo '$'.$shippingCost;
+                            Session::set('shippingCost',$shippingCost);
                         }
                         else if ($subTotal <= 20000){
                             $shippingCost = 50;
                             echo '$'.$shippingCost;
+                            Session::set('shippingCost',$shippingCost);
                         }
                         else if ($subTotal <= 50000){
                             $shippingCost = 30;
                             echo '$'.$shippingCost;
+                            Session::set('shippingCost',$shippingCost);
                         }
                         else{
                             $shippingCost = 0;
                             echo '$'.$shippingCost;
+                            Session::set('shippingCost',$shippingCost);
                         } ?></p>
                     </div>
                     <hr class="second-hr">
