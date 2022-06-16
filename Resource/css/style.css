@@ -333,15 +333,16 @@ footer p{
 }
 
 /*CART AREA*/
+.cart-container-area{
+    overflow-x: auto;
+}
+
+
 .cart-container-area table{
     border-collapse: collapse;
     width: 100%;
-    table-layout: fixed;
+    table-layout: auto;
     white-space: nowrap;
-}
-
-.cart-container-area{
-    overflow-x: auto;
 }
 
 .cart-container-area table th{

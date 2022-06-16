@@ -47,7 +47,7 @@
                 <td><a onclick="return confirm('Do you want to delete ?')" href="?cart_id=<?php echo $result['cart_id']; ?>"><i class="fas fa-trash"></i></a></td>
                 <td><img src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt=""></td>
                 <td><h5><?php echo $result['product_name'] ?></h5></td>
-                <td><?php echo $result['size'] ?></td>
+                <td><h5><?php echo $result['size']?></h5></td>
                 <td><h5><?php echo '$'.$result['price'] ?></h5></td>
                 <td><?php echo $result['quantity'] ?></td>
                 <td><h5 id="totalPrice"><?php echo '$'.$result['price']*$result['quantity'] ?></h5></td>
