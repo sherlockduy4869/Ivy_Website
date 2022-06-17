@@ -33,16 +33,16 @@
             }
             else 
             {
-                $query = "SELECT * FROM tbl_admin WHERE adminUser = '$adminUser' AND adminPass = '$adminPassword' LIMIT 1";
+                $query = "SELECT * FROM tbl_admin WHERE ADMIN_USER = '$adminUser' AND ADMIN_PASS = '$adminPassword' LIMIT 1";
                 $result = $this->db->select($query);
 
                 if($result != false)
                 {
                     $value = $result->fetch_assoc();
                     Session::set('adminLogin',true);
-                    Session::set('adminID',$value['adminID']);
-                    Session::set('adminUser',$value['adminUser']);
-                    Session::set('adminName',$value['adminName']);
+                    Session::set('adminID',$value['ADMIN_ID']);
+                    Session::set('adminUser',$value['ADMIN_USER']);
+                    Session::set('adminName',$value['ADMIN_NAME']);
                     header('Location:index.php');
                 } 
                 else
