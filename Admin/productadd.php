@@ -35,7 +35,7 @@
                                 
                         ?>
                         <option value="<?php echo $result['cateID'] ?>"><?php echo $result['cateName']; ?></option>
-                        
+                                    
                         <?php
                                 }
                             }
@@ -71,7 +71,7 @@
         CKEDITOR.replace( 'product_desc', {
 	    filebrowserBrowseUrl: 'ckfinder/ckfinder.html',
 	    filebrowserUploadUrl: 'ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
-} );
+        } );
     </script>
 </body>
 </html>
