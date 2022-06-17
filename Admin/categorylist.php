@@ -23,36 +23,43 @@
                         echo $delCategoryID;
                     }
                 ?>
-                <table>
-                    <tr>
-                        <th>STT</th>
-                        <th>ID</th>
-                        <th>Category name</th>
-                        <th>Customization</th>
-                    </tr>
-                    <?php
-                        $STT = 0;
-                        if($cateList)
-                        {
-                            while($result = $cateList->fetch_assoc())
+                <table id="category_list" class="dt[-head|-body]-center">
+                    <thead>
+                        <th id="th_DataTable">STT</th>
+                        <th id="th_DataTable">ID</th>
+                        <th id="th_DataTable">Category name</th>
+                        <th id="th_DataTable">Customization</th>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $STT = 0;
+                            if($cateList)
                             {
-                                $STT ++;
-                            
-                    ?>
-                        <tr>
-                            <td><?php echo $STT ?></td>
-                            <td><?php echo $result['cateID'];  ?></td>
-                            <td><?php echo $result['cateName']; ?></td>
-                            <td><a href="categoryedit.php?cateID=<?php echo $result['cateID']; ?>">Edit</a>
-                            |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['cateID']; ?>">Delete</a></td>
-                        </tr>
-                    <?php
+                                while($result = $cateList->fetch_assoc())
+                                {
+                                    $STT ++;
+                                
+                        ?>
+                            <tr>
+                                <td><?php echo $STT ?></td>
+                                <td><?php echo $result['cateID'];  ?></td>
+                                <td><?php echo $result['cateName']; ?></td>
+                                <td><a href="categoryedit.php?cateID=<?php echo $result['cateID']; ?>">Edit</a>
+                                |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['cateID']; ?>">Delete</a></td>
+                            </tr>
+                        <?php
+                                }
                             }
-                        }
-                    ?>
+                        ?>
+                    </tbody>
                 </table>
             </div>
     </div>
 </section>
+<script>
+    $(document).ready(function () {
+        $('#category_list').DataTable();
+    });        
+</script>
 </body>
 </html>

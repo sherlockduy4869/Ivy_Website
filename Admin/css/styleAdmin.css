@@ -89,6 +89,10 @@ header{
     margin-top: 20px;
 }
 
+#th_DataTable{
+    text-align: center;
+}
+
 .admin-content-right-category_list table tr th,td{
     border: 1px solid #dddddd;
 }
@@ -98,17 +102,20 @@ table{
 }
 
 /* BRAND AREA */
-select{
-    height: 30px;
-    width: 200px;
-}
 
 /* PRODUCT_ADD AREA */
 .admin-content-right-product_add h1{
     margin-bottom: 20px;
 }
 
-.admin-content-right-product_add input, select{
+.admin-content-right-product_add input{
+    height: 30px;
+    width: 200px;
+    display: block;
+    margin: 6px 0 12px;
+    padding-left: 12px;
+}
+#select_category{
     height: 30px;
     width: 200px;
     display: block;

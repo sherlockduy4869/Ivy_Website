@@ -38,7 +38,7 @@
                     <input type="text" name="product_name" value="<?php echo $get_product['product_name'] ?>" required>
 
                     <label for="">Choose category<span style="color: red;">*</span></label>
-                    <select name="category_id" id="">
+                    <select name="category_id" id="select_category">
                         <option value="">--Category--</option>
                         <?php
                             if(isset($cateList))
