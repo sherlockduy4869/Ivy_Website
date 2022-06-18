@@ -77,7 +77,7 @@
         ?>
 
         <div class="product text-center col-lg-3 col-md-4 col-12 clickable">
-          <img class="img-fluid mb-3" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
+          <img class="img-fluid mb-3" src="<?php echo "./Admin//Uploads/".$result['IMAGE']; ?>" alt="">
           <div class="star">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -85,9 +85,9 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <h5 class="product-name"><?php echo $result['product_name']; ?></h5>
-          <h4 class="product-price"><?php echo "$".$result['price']; ?></h4>
-          <a href="product-details.php?product_id=<?php echo $result['product_id']; ?>" class="buy-btn btn">Buy Now</a>
+          <h5 class="product-name"><?php echo $result['PRODUCT_NAME']; ?></h5>
+          <h4 class="product-price"><?php echo "$".$result['PRICE']; ?></h4>
+          <a href="product-details.php?product_id=<?php echo $result['PRODUCT_ID']; ?>" class="buy-btn btn">Buy Now</a>
         </div>
 
         <?php
@@ -121,7 +121,7 @@
             {
         ?>
         <div class="product text-center col-lg-3 col-md-4 col-12 clickable">
-          <img class="img-fluid mb-3" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
+          <img class="img-fluid mb-3" src="<?php echo "./Admin//Uploads/".$result['IMAGE']; ?>" alt="">
           <div class="star">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -129,9 +129,9 @@
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
           </div>
-          <h5 class="product-name"><?php echo $result['product_name']; ?></h5>
-          <h4 class="product-price"><?php echo "$".$result['price']; ?></h4>
-          <a href="product-details.php?product_id=<?php echo $result['product_id']; ?>" class="buy-btn btn">Buy Now</a>
+          <h5 class="product-name"><?php echo $result['PRODUCT_NAME']; ?></h5>
+          <h4 class="product-price"><?php echo "$".$result['PRICE']; ?></h4>
+          <a href="product-details.php?product_id=<?php echo $result['PRODUCT_ID']; ?>" class="buy-btn btn">Buy Now</a>
         </div>
         <?php
             }

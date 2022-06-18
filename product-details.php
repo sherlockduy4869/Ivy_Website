@@ -38,10 +38,10 @@
                 {
                   $result = $featured_product->fetch_assoc();
                 ?>
-                <img class="image-fluid w-100 big-image mb-1" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
+                <img class="image-fluid w-100 big-image mb-1" src="<?php echo "./Admin//Uploads/".$result['IMAGE']; ?>" alt="">
                 <div class="small-image-group">
                     <div class="small-image-col">
-                        <img class="small-image w-100" src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt="">
+                        <img class="small-image w-100" src="<?php echo "./Admin//Uploads/".$result['IMAGE']; ?>" alt="">
                     </div>
                     <?php
                       if(isset($featured_product_desc))
@@ -50,7 +50,7 @@
                       {
                     ?>
                     <div class="small-image-col">
-                        <img class="small-image w-100" src="<?php echo "./Admin//Uploads_desc/".$result_desc['product_img_desc']; ?>" alt="">
+                        <img class="small-image w-100" src="<?php echo "./Admin//Uploads_desc/".$result_desc['PRO_IMG_DES']; ?>" alt="">
                     </div>
                     <?php
                       }
@@ -63,8 +63,8 @@
             </div>
             <div class="product-details-right col-lg-6 col-md-12 col-12">
                 <h6><?php echo "Home / ".$result['CATEGORY_NAME']; ?></h6>
-                <h3 class="py-4"><?php echo $result['product_name']; ?></h3>
-                <h2><?php echo "$".$result['price']; ?></h2>
+                <h3 class="py-4"><?php echo $result['PRODUCT_NAME']; ?></h3>
+                <h2><?php echo "$".$result['PRICE']; ?></h2>
                 <form action="" method="POST" class="addToCartForm">
                   <select class="my-3" name="size">
                       <option value="">--Select Size--</option>
@@ -93,7 +93,7 @@
                 </span>
                 <h4 class="my-5">Products Description</h4>
                 
-                <span><?php echo $result['product_desc']; ?></span>
+                <span><?php echo $result['PRODUCT_DESCRIPTION']; ?></span>
             </div>
         </div>
 </section>
