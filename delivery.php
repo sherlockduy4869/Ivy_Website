@@ -32,12 +32,12 @@
                                 <input type="text" name="phone_number" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
-                                <label for="">City/Province<span style="color:red">*</span></label>
-                                <input type="text" name="city" required>
+                                <label for="">Email<span style="color:red">*</span></label>
+                                <input type="email" name="email" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
-                                <label for="">District<span style="color:red">*</span></label>
-                                <input type="text" name="district" required>
+                                <label for="">City/Province<span style="color:red">*</span></label>
+                                <input type="text" name="city" required>
                             </div>
                         </div>
                         <div class="delivery-content-left-input-bottom row">
