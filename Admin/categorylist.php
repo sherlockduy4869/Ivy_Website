@@ -17,13 +17,7 @@
     <div class="admin-content-right">
             <div class="admin-content-right-category_list">
                 <h1>Category List</h1>
-                <?php 
-                    if(isset($delCategoryID))
-                    {
-                        echo $delCategoryID;
-                    }
-                ?>
-                <table id="category_list" class="dt[-head|-body]-center">
+                <table id="category_list">
                     <thead>
                         <th id="th_DataTable">STT</th>
                         <th id="th_DataTable">ID</th>
@@ -38,12 +32,11 @@
                                 while($result = $cateList->fetch_assoc())
                                 {
                                     $STT ++;
-                                
                         ?>
                             <tr>
                                 <td><?php echo $STT ?></td>
-                                <td><?php echo $result['CATEGORY_ID'];  ?></td>
-                                <td><?php echo $result['CATEGORY_NAME']; ?></td>
+                                <td><?php echo $result['CATEGORY_ID'];?></td>
+                                <td><?php echo $result['CATEGORY_NAME'];?></td>
                                 <td><a href="categoryedit.php?cateID=<?php echo $result['CATEGORY_ID']; ?>">Edit</a>
                                 |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['CATEGORY_ID']; ?>">Delete</a></td>
                             </tr>

@@ -60,7 +60,7 @@
                                     echo 'Non-Featured';
                                 }
                             ?></td>
-                            <td><a href="sizelist.php">Size</a>|<a href="colorlist.php">Color</a></td>
+                            <td><a href="sizelist.php?product_id_size=<?php echo $result['PRODUCT_ID'];?>">Size</a>|<a href="colorlist.php?product_id_color=<?php echo $result['PRODUCT_ID'];?>">Color</a></td>
                             <td><a href="productedit.php?product_id=<?php echo $result['PRODUCT_ID'];?>">Edit</a>
                             |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['PRODUCT_ID']; ?>">Delete</a></td>
                             
