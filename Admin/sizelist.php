@@ -59,8 +59,7 @@
                                 <td><?php echo $result['SIZE_ID'] ?></td>
                                 <td><?php echo $result['PRODUCT_NAME'] ?></td>
                                 <td><?php echo $result['SIZE_VALUE'] ?></td>
-                                <td><a href="sizeedit.php?size_id=<?php echo $result['SIZE_ID'] ?>">Edit</a>
-                                |<a onclick="return confirm('Do you want to delete ?')" href="sizelist.php?product_id_size=
+                                <td><a onclick="return confirm('Do you want to delete ?')" href="sizelist.php?product_id_size=
                                 <?php echo $product_id_size ?>&size_del_id=<?php echo $result['SIZE_ID'] ?>">Delete</a></td>
                             </tr>
                         <?php

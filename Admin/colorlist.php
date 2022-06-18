@@ -59,8 +59,7 @@
                                 <td><?php echo $result['COLOR_ID'] ?></td>
                                 <td><?php echo $result['PRODUCT_NAME'] ?></td>
                                 <td><?php echo $result['COLOR_VALUE'] ?></td>
-                                <td><a href="coloredit.php?size_id=<?php echo $result['COLOR_ID'] ?>">Edit</a>
-                                |<a onclick="return confirm('Do you want to delete ?')" href="colorlist.php?product_id_color=
+                                <td><a onclick="return confirm('Do you want to delete ?')" href="colorlist.php?product_id_color=
                                 <?php echo $product_id_color ?>&color_del_id=<?php echo $result['COLOR_ID'] ?>">Delete</a></td>
                             </tr>
                         <?php
