@@ -42,7 +42,7 @@
                         
                 ?>
                 <form action="" method="POST">
-                    <input required value="<?php echo $result['cateName']; ?>" type="text" placeholder="Enter category name" name="cateName">
+                    <input required value="<?php echo $result['CATEGORY_NAME']; ?>" type="text" placeholder="Enter category name" name="cateName">
                     <button type="submit" name="submit">Edit</button>
                 </form>
 

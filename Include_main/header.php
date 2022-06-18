@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="home.php"><span>Home</span></a>
+              <a class="nav-link" href="index.php"><span>Home</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.php"><span>About</span></a>
@@ -50,7 +50,7 @@
                     while($result = $cate_dropdown->fetch_assoc())
                     { 
                 ?>
-                <li><a class="dropdown-item" href="shop.php?cateID=<?php echo $result['cateID'] ?>"><?php echo $result['cateName'] ?></a></li>
+                <li><a class="dropdown-item" href="shop.php?cateID=<?php echo $result['CATEGORY_ID'] ?>"><?php echo $result['CATEGORY_NAME'] ?></a></li>
                 <li><hr class="dropdown-divider w-100"></li>
                 <?php
                     }

@@ -62,7 +62,7 @@
                 ?>
             </div>
             <div class="product-details-right col-lg-6 col-md-12 col-12">
-                <h6><?php echo "Home / ".$result['cateName']; ?></h6>
+                <h6><?php echo "Home / ".$result['CATEGORY_NAME']; ?></h6>
                 <h3 class="py-4"><?php echo $result['product_name']; ?></h3>
                 <h2><?php echo "$".$result['price']; ?></h2>
                 <form action="" method="POST" class="addToCartForm">

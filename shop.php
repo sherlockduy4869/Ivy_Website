@@ -17,7 +17,7 @@
 <section class="featured-product-area shop-product my-5 py-5">
 
       <div class="container mt-5 py-5">
-        <h2 class="text-uppercase"><?php echo 'Our '.$cate_result['cateName'].' Collections' ?></h2>
+        <h2 class="text-uppercase"><?php echo 'Our '.$cate_result['CATEGORY_NAME'].' Collections' ?></h2>
         <hr>
         <p>Here you can see our noticable products with competitive price</p>
       </div>
