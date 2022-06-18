@@ -68,10 +68,10 @@
                         
                         ?>
                         <tr>
-                            <td><?php echo $result['product_name'] ?></td>
-                            <td><?php echo $result['size'] ?></td>
-                            <td><?php echo $result['quantity'] ?></td>
-                            <td><?php echo '$'.$result['price'] ?></td>
+                            <td><?php echo $result['PRODUCT_NAME']; ?></td>
+                            <td><?php echo $result['SIZE']; ?></td>
+                            <td><?php echo $result['QUANTITY']; ?></td>
+                            <td><?php echo '$'.$result['PRICE']*$result['QUANTITY']; ?></td>
                         </tr>
                         <?php
                             }

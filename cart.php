@@ -44,16 +44,16 @@
                         
             ?>
             <tr>
-                <td><a onclick="return confirm('Do you want to delete ?')" href="?cart_id=<?php echo $result['cart_id']; ?>"><i class="fas fa-trash"></i></a></td>
-                <td><img src="<?php echo "./Admin//Uploads/".$result['image']; ?>" alt=""></td>
-                <td><h5><?php echo $result['product_name'] ?></h5></td>
-                <td><h5><?php echo $result['size']?></h5></td>
-                <td><h5><?php echo '$'.$result['price'] ?></h5></td>
-                <td><?php echo $result['quantity'] ?></td>
-                <td><h5 id="totalPrice"><?php echo '$'.$result['price']*$result['quantity'] ?></h5></td>
+                <td><a onclick="return confirm('Do you want to delete ?')" href="?cart_id=<?php echo $result['CART_ID']; ?>"><i class="fas fa-trash"></i></a></td>
+                <td><img src="<?php echo "./Admin//Uploads/".$result['IMAGE']; ?>" alt=""></td>
+                <td><h5><?php echo $result['PRODUCT_NAME'] ?></h5></td>
+                <td><h5><?php echo $result['SIZE']?></h5></td>
+                <td><h5><?php echo '$'.$result['PRICE'] ?></h5></td>
+                <td><?php echo $result['QUANTITY'] ?></td>
+                <td><h5 id="totalPrice"><?php echo '$'.$result['PRICE']*$result['QUANTITY'] ?></h5></td>
             </tr>
             <?php
-                    $subTotal = $subTotal + $result['price']*$result['quantity'];
+                    $subTotal = $subTotal + $result['PRICE']*$result['QUANTITY'];
                     }
                 }
                 Session::set('subTotal',$subTotal);

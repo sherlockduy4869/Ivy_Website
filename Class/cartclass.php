@@ -17,21 +17,21 @@
         }
 
         //Save information about cart items in contemporary session
-        public function add_to_cart($product_id,$quantity,$size){
+        public function add_to_cart($product_id,$quantity,$size,$color){
 
             $quantity = $this->fm->validation($quantity);
             $quantity = mysqli_real_escape_string($this->db->link, $quantity);
             $product_id = mysqli_real_escape_string($this->db->link, $product_id);
             $session_id = session_id();
 
-            $query = "SELECT * FROM tbl_product WHERE product_id = '$product_id'";
+            $query = "SELECT * FROM tbl_product WHERE PRODUCT_ID = '$product_id'";
             $result = $this->db->select($query)->fetch_assoc();
 
-            $product_name = $result['product_name'];
-            $price = $result['price'];
-            $image = $result['image'];
+            $product_name = $result['PRODUCT_NAME'];
+            $price = $result['PRICE'];
+            $image = $result['IMAGE'];
 
-            $check_cart = "SELECT * FROM tbl_cart WHERE session_id = '$session_id' AND product_id = '$product_id' AND size = '$size'";
+            $check_cart = "SELECT * FROM tbl_cart WHERE SESSION_ID = '$session_id' AND PRODUCT_ID = '$product_id' AND SIZE = '$size' AND COLOR = '$color'";
             $result_check_cart = $this->db->select($check_cart);
             if($result_check_cart)
             {
@@ -40,8 +40,8 @@
             }
             else
             {
-                $query_insert_cart = "INSERT INTO tbl_cart(producT_id,session_id,product_name,price,size,quantity,image) 
-                VALUES('$product_id','$session_id','$product_name','$price','$size','$quantity','$image')";
+                $query_insert_cart = "INSERT INTO tbl_cart(PRODUCT_ID,SESSION_ID,PRODUCT_NAME,PRICE,SIZE,COLOR,QUANTITY,IMAGE) 
+                VALUES('$product_id','$session_id','$product_name','$price','$size','$color','$quantity','$image')";
                 $insert_cart = $this->db->insert($query_insert_cart);
 
                 if($insert_cart)
@@ -57,7 +57,7 @@
         //Get product cart
         public function get_product_cart(){
             $session_id = session_id();
-            $query = "SELECT * FROM tbl_cart WHERE session_id = '$session_id' ORDER BY cart_id DESC";
+            $query = "SELECT * FROM tbl_cart WHERE SESSION_ID = '$session_id' ORDER BY CART_ID DESC";
             $result = $this->db->select($query);
             return $result;
         }
@@ -65,7 +65,7 @@
         //Delete product cart
         public function delete_product_cart($cart_id){
             $cart_id = mysqli_real_escape_string($this->db->link, $cart_id);
-            $query = "DELETE FROM tbl_cart WHERE cart_id = '$cart_id'";
+            $query = "DELETE FROM tbl_cart WHERE CART_ID = '$cart_id'";
             $result = $this->db->delete($query);
             header('Location:cart.php');
         }

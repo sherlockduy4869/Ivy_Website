@@ -1,30 +1,36 @@
 <?php
-    include "Include_main/header.php";
-    include "Class/product.php";
-    include "Class/cartclass.php";
+    include_once "Include_main/header.php";
+    include_once "Class/product.php";
+    include_once "Class/cartclass.php";
+    include_once "Class/attribute.php";
 ?>
 <?php
     $product = new product();
     $cart = new cart();
+    $attr = new attribu();
 
     if(!isset($_GET['product_id']) || $_GET['product_id'] == NULL)
     {
-        echo "<script>window.location = 'home.php'</script>";
+        echo "<script>window.location = 'index.php'</script>";
     }
     else{
         $product_id = $_GET['product_id'];
     }
     
+    $sizeList = $attr->show_size_list($product_id);
+    $colorList = $attr->show_color_list($product_id);
+
     $featured_product = $product->show_product_list_by_id($product_id);
     $featured_product_desc = $product->show_product_desc_by_id($product_id);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
-        if($_POST['size'] != '')
+        if($_POST['size'] != '' and $_POST['color'] != '')
         {
             $quantity = $_POST['quantity'];
             $size = $_POST['size'];
-            $addToCart = $cart->add_to_cart($product_id,$quantity,$size);
+            $color = $_POST['color'];
+            $addToCart = $cart->add_to_cart($product_id,$quantity,$size,$color);
         }
     }
 ?>
@@ -67,10 +73,34 @@
                 <h2><?php echo "$".$result['PRICE']; ?></h2>
                 <form action="" method="POST" class="addToCartForm">
                   <select class="my-3" name="size">
-                      <option value="">--Select Size--</option>
-                      <option value="S">S</option>
-                      <option value="XL">XL</option>
-                      <option value="XXL">XXL</option>
+                      <option value="">--Size--</option>
+                      <?php
+                        if($sizeList)
+                        {
+                            while($result_size = $sizeList->fetch_assoc())
+                            {
+
+                      ?>
+                      <option value="<?php echo $result_size['SIZE_VALUE'] ?>"><?php echo $result_size['SIZE_VALUE'] ?></option>
+                      <?php
+                            }
+                        }
+                      ?>
+                  </select>
+                  <select class="my-3" name="color">
+                      <option value="">--Color--</option>
+                      <?php
+                        if($colorList)
+                        {
+                            while($result_color = $colorList->fetch_assoc())
+                            {
+
+                      ?>
+                      <option value="<?php echo $result_color['COLOR_VALUE'] ?>"><?php echo $result_color['COLOR_VALUE'] ?></option>
+                      <?php
+                            }
+                        }
+                      ?>
                   </select>
                   <input type="number" value="1" name="quantity" min = "1"> 
                   <button class="btn buy-btn" name="submit">Add to cart</button>
@@ -86,13 +116,12 @@
                 <?php 
                     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit']))
                     {
-                      if($_POST['size'] == ''){echo "Please select size/color !";} 
+                      if($_POST['size'] == '' or $_POST['color'] == ''){echo "Please select size/color !";} 
                     }
                     
                 ?>
                 </span>
                 <h4 class="my-5">Products Description</h4>
-                
                 <span><?php echo $result['PRODUCT_DESCRIPTION']; ?></span>
             </div>
         </div>

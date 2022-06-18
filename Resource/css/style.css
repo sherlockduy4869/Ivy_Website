@@ -311,6 +311,7 @@ footer p{
 .product-details-right select{
     display: block;
     padding: 5px 10px;
+    width: 22%;
 }
 
 .product-details-right input{
