@@ -16,10 +16,10 @@
                     $result = $customerConfirm->fetch_assoc();
             ?>
             <ul>
-                <li>Name: <span><?php echo $result['customer_name'] ?></span></span></li>
-                <li>Phone: <span><?php echo $result['phone_number'] ?></span></li>
-                <li>Address: <span><?php echo $result['address'].', '.$result['district'].', '.$result['city'] ?></span></li>
-                <li style="color: red">Customer Number: <span><?php echo $result['session_id'] ?></span></li>
+                <li>Name: <span><?php echo $result['CUSTOMER_NAME'] ?></span></span></li>
+                <li>Phone: <span><?php echo $result['CUSTOMER_PHONE'] ?></span></li>
+                <li>Address: <span><?php echo $result['CUSTOMER_ADDRESS'] ?></span></li>
+                <li style="color: red">Unique Order Reference Number: <span><?php echo $result['ORDER_ID'] ?></span></li>
             </ul>
             <ul>
                 <li style="color: red">Order Total: <span>
@@ -36,7 +36,7 @@
             <p>We appriciate your business ! <br>
                 If you have any question, please email <a href="mailto:duy.tran190201@vnuk.edu.vn">duy.tran190201@vnuk.edu.vn</a>
             </p> <br>
-            <button class="btn mt-3"><a href="home.php">CONTINUE SHOPPING</a></button>
+            <button class="btn mt-3"><a href="index.php">CONTINUE SHOPPING</a></button>
         </div>
 </section>
 
