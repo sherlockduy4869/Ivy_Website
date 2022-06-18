@@ -45,23 +45,23 @@
             }
 
             move_uploaded_file($file_temp,$upload_image);
-            $query = "INSERT INTO tbl_product(product_name,category_id,price,product_desc,type,image) 
+            $query = "INSERT INTO tbl_product(PRODUCT_NAME,CATEGORY_ID,PRICE,PRODUCT_DESCRIPTION,TYPE,IMAGE) 
                   VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
             $result = $this->db->insert($query);
 
         
             if($result)
             {
-                $query = "SELECT * FROM tbl_product ORDER BY product_id DESC LIMIT 1";
+                $query = "SELECT * FROM tbl_product ORDER BY PRODUCT_ID DESC LIMIT 1";
                 $result_product = $this->db->select($query)->fetch_assoc();
 
-                $product_id = $result_product['product_id'];
+                $product_id = $result_product['PRODUCT_ID'];
                 $file_name_desc = $_FILES['product_img_desc']['name'];
                 $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
                 foreach($file_name_desc as $key => $value)
                 {
                     move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
-                    $query = "INSERT INTO tbl_product_img_desc(product_id,product_img_desc) VALUES ('$product_id','$value')";
+                    $query = "INSERT INTO tbl_product_image_description(PRODUCT_ID,PRO_IMG_DES) VALUES ('$product_id','$value')";
                     $result_product_img_desc = $this->db->insert($query);
                 }
 
@@ -77,27 +77,27 @@
         //Delete product
         public function delete_product($delID,$product_image){
 
-            $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$delID'";
+            $query_select_image_desc = "SELECT * FROM tbl_product_image_description WHERE PRODUCT_ID = '$delID'";
             $select_image_desc = $this->db->select($query_select_image_desc);
 
             while($image_desc = $select_image_desc->fetch_assoc())
                 {
-                    unlink("Uploads_desc/".$image_desc['product_img_desc']);
+                    unlink("Uploads_desc/".$image_desc['PRO_IMG_DES']);
                 }
                 
             unlink("Uploads/".$product_image);
-
-            $query = "DELETE FROM tbl_product WHERE product_id = '$delID'";
-            $query_img_desc = "DELETE FROM tbl_product_img_desc WHERE product_id = '$delID'";
-            $result = $this->db->delete($query);
+            $query_img_desc = "DELETE FROM tbl_product_image_description WHERE PRODUCT_ID = '$delID'";
+            $query = "DELETE FROM tbl_product WHERE PRODUCT_ID = '$delID'";
             $result_img_desc = $this->db->delete($query_img_desc);
+            $result = $this->db->delete($query);
+            
 
             header('Location:productlist.php');
         }
 
         //Get product information 
         public function get_product_by_id($product_id){
-            $query = "SELECT * FROM tbl_product WHERE product_id = '$product_id'";
+            $query = "SELECT * FROM tbl_product WHERE PRODUCT_ID = '$product_id'";
             $result = $this->db->select($query)->fetch_assoc();
             return $result;
         }
@@ -120,7 +120,7 @@
             $file_ext = strtolower(end($div));  
             $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
             $upload_image = "Uploads/".$unique_image;
-
+            
             //If enter new image
             if(!empty($file_name)){
 
@@ -136,105 +136,95 @@
 
                 move_uploaded_file($file_temp,$upload_image);
                 $query = "UPDATE tbl_product SET
-                        product_name = '$product_name'
-                        ,category_id = '$category_id'
-                        ,price = '$price'
-                        ,product_desc = '$product_desc'
-                        ,type = '$type'
-                        ,image = '$unique_image'
-                        WHERE product_id ='$product_id_edit'";
+                        PRODUCT_NAME = '$product_name'
+                        ,CATEGORY_ID = '$category_id'
+                        ,PRICE = '$price'
+                        ,PRODUCT_DESCRIPTION = '$product_desc'
+                        ,TYPE = '$type'
+                        ,IMAGE = '$unique_image'
+                        WHERE PRODUCT_ID ='$product_id_edit'";
 
                 $result = $this->db->update($query);
 
                 if($result)
                 {
-                    $query = "SELECT * FROM tbl_product where product_id = '$product_id_edit'";
+                    $query = "SELECT * FROM tbl_product where PRODUCT_ID = '$product_id_edit'";
                     $result_product = $this->db->select($query)->fetch_assoc();
 
-                    $product_id = $result_product['product_id'];
+                    $product_id = $result_product['PRODUCT_ID'];
                     $file_name_desc = $_FILES['product_img_desc']['name'];
                     $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
 
-                if($file_name_desc[0] != null)
-                {   
-                    $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$product_id_edit'";
-                    $select_image_desc = $this->db->select($query_select_image_desc);
-    
-                    while($image_desc = $select_image_desc->fetch_assoc())
-                    {
-                        unlink("Uploads_desc/".$image_desc['product_img_desc']);
+                    if($file_name_desc[0] != null)
+                    {   
+                        $query_select_image_desc = "SELECT * FROM tbl_product_image_description WHERE PRODUCT_ID = '$product_id_edit'";
+                        $select_image_desc = $this->db->select($query_select_image_desc);
+        
+                        while($image_desc = $select_image_desc->fetch_assoc())
+                        {
+                            unlink("Uploads_desc/".$image_desc['PRO_IMG_DES']);
+                        }
+
+                        foreach($file_name_desc as $key => $value)
+                        {
+                            move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
+                            $query = "UPDATE tbl_product_image_description SET
+                                    PRO_IMG_DES = '$value'
+                                    where PRODUCT_ID = '$product_id'";
+                            $result_product_img_desc = $this->db->update($query);
+                        }
                     }
-
-                    foreach($file_name_desc as $key => $value)
-                    {
-                        move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
-                        $query = "UPDATE tbl_product_img_desc SET
-                                product_img_desc = '$value'
-                                where product_id = '$product_id'";
-                        $result_product_img_desc = $this->db->update($query);
-                    }
-
-                        $alert = "<span class = 'addSuccess'>Edit product successfully</span> <br>";
-                        return $alert;
                 }
-                }
-                else{
-                    $alert = "<span class = 'addError'>Can not edit product</span> <br>";
-                    return $alert;
-                }
-
+                $alert = "<span class = 'addSuccess'>Edit product successfully</span> <br>";
+                return $alert;
             }
             //If not enter new image
             else{
                 move_uploaded_file($file_temp,$upload_image);
                 $query = "UPDATE tbl_product SET
-                          product_name = '$product_name'
-                          ,category_id = '$category_id'
-                          ,price = '$price'
-                          ,product_desc = '$product_desc'
-                          ,type = '$type'
-                          WHERE product_id ='$product_id_edit'";
+                          PRODUCT_NAME = '$product_name'
+                          ,CATEGORY_ID = '$category_id'
+                          ,PRICE = '$price'
+                          ,PRODUCT_DESCRIPTION = '$product_desc'
+                          ,TYPE = '$type'
+                          WHERE PRODUCT_ID ='$product_id_edit'";
 
                 $result = $this->db->update($query);
 
                 if($result)
                 {
-                    $query = "SELECT * FROM tbl_product where product_id = '$product_id_edit'";
+                    $query = "SELECT * FROM tbl_product where PRODUCT_ID = '$product_id_edit'";
                     $result_product = $this->db->select($query)->fetch_assoc();
 
-                    $product_id = $result_product['product_id'];
+                    $product_id = $result_product['PRODUCT_ID'];
                     $file_name_desc = $_FILES['product_img_desc']['name'];
                     $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
 
-                if($file_name_desc[0] != null)
-                {   
-                    $query_select_image_desc = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$product_id_edit'";
-                    $select_image_desc = $this->db->select($query_select_image_desc);
-    
-                    while($image_desc = $select_image_desc->fetch_assoc())
-                    {
-                        unlink("Uploads_desc/".$image_desc['product_img_desc']);
-                    }
+                    if($file_name_desc[0] != null)
+                    {   
+                        $query_select_image_desc = "SELECT * FROM tbl_product_image_description WHERE PRODUCT_ID = '$product_id_edit'";
+                        $select_image_desc = $this->db->select($query_select_image_desc);
+        
+                        while($image_desc = $select_image_desc->fetch_assoc())
+                        {
+                            unlink("Uploads_desc/".$image_desc['PRO_IMG_DES']);
+                        }
 
-                    foreach($file_name_desc as $key => $value)
-                    {
-                        move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
-                        $query = "UPDATE tbl_product_img_desc SET
-                                product_img_desc = '$value'
-                                where product_id = '$product_id'";
-                        $result_product_img_desc = $this->db->update($query);
+                        foreach($file_name_desc as $key => $value)
+                        {
+                            move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
+                            $query = "UPDATE tbl_product_image_description SET
+                                    PRO_IMG_DES = '$value'
+                                    where PRODUCT_ID = '$product_id'";
+                            $result_product_img_desc = $this->db->update($query);
+                        }
                     }
-
-                        $alert = "<span class = 'addSuccess'>Edit product successfully</span> <br>";
-                        return $alert;
                 }
-                }
-                else{
-                    $alert = "<span class = 'addError'>Can not edit product</span> <br>";
-                    return $alert;
-                }
+                $alert = "<span class = 'addSuccess'>Edit product successfully</span> <br>";
+                return $alert;
             }
-
+            $alert = "<span class = 'addError'>Can not edit product</span> <br>";
+            return $alert;
         }
 
         // Show product information
@@ -242,8 +232,8 @@
             $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.CATEGORY_ID
-            ORDER BY tbl_product.product_id DESC";
+            ON tbl_product.CATEGORY_ID = tbl_category.CATEGORY_ID
+            ORDER BY tbl_product.PRODUCT_ID DESC";
             $result = $this->db->select($query);
             return $result;
         }
@@ -253,9 +243,9 @@
             $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.CATEGORY_ID
+            ON tbl_product.CATEGORY_ID = tbl_category.CATEGORY_ID
             WHERE type = 1
-            ORDER BY tbl_product.product_id DESC";
+            ORDER BY tbl_product.PRODUCT_ID DESC";
             $result = $this->db->select($query);
             return $result;
         }
@@ -265,9 +255,9 @@
             $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.CATEGORY_ID
+            ON tbl_product.CATEGORY_ID = tbl_category.CATEGORY_ID
             WHERE type = 2
-            ORDER BY tbl_product.product_id DESC";
+            ORDER BY tbl_product.PRODUCT_ID DESC";
             $result = $this->db->select($query);
             return $result;
         }
@@ -277,23 +267,23 @@
             $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.CATEGORY_ID
+            ON tbl_product.CATEGORY_ID = tbl_category.CATEGORY_ID
             WHERE product_id = '$product_id'
-            ORDER BY tbl_product.product_id DESC LIMIT 1";
+            ORDER BY tbl_product.PRODUCT_ID DESC LIMIT 1";
             $result = $this->db->select($query);
             return $result;
         }
 
         // Show featured product information by id
         public function show_product_desc_by_id($product_id){
-            $query = "SELECT * FROM tbl_product_img_desc WHERE product_id = '$product_id' LIMIT 3";
+            $query = "SELECT * FROM tbl_product_image_description WHERE PRODUCT_ID = '$product_id' LIMIT 3";
             $result = $this->db->select($query);
             return $result;
         }
 
         //Show product by category
         public function get_product_by_cate($cateID){
-            $query = "SELECT * FROM tbl_product WHERE category_id = '$cateID'";
+            $query = "SELECT * FROM tbl_product WHERE CATEGORY_ID = '$cateID'";
             $result = $this->db->select($query);
             return $result;
         }

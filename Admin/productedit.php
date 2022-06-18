@@ -17,7 +17,7 @@
     {
         $product_id = $_GET['product_id'];
         $product_by_id = $product->get_product_by_id($product_id);
-        $product_image = $product_by_id['image'];
+        $product_image = $product_by_id['IMAGE'];
         
     }
         $get_product = $product->get_product_by_id($product_id);
@@ -35,7 +35,7 @@
                 <form action="" method="POST" enctype="multipart/form-data">
 
                     <label for="">Enter product name<span style="color: red;">*</span></label>
-                    <input type="text" name="product_name" value="<?php echo $get_product['product_name'] ?>" required>
+                    <input type="text" name="product_name" value="<?php echo $get_product['PRODUCT_NAME'] ?>" required>
 
                     <label for="">Choose category<span style="color: red;">*</span></label>
                     <select name="category_id" id="select_category">
@@ -47,7 +47,7 @@
                                 {            
                                 
                         ?>
-                        <option <?php if($get_product['category_id'] == $result['CATEGORY_ID']) {echo "SELECTED";} ?> 
+                        <option <?php if($get_product['CATEGORY_ID'] == $result['CATEGORY_ID']) {echo "SELECTED";} ?> 
                         value="<?php echo $result['CATEGORY_ID'] ?>"><?php echo $result['CATEGORY_NAME']; ?></option>
 
                         <?php
@@ -56,26 +56,31 @@
                         ?>
                     </select>
                     <label for="">Product price<span style="color: red;">*</span></label>
-                    <input type="text" required name="price" value="<?php echo $get_product['price'] ?>">
+                    <input type="text" required name="price" value="<?php echo $get_product['PRICE'] ?>">
 
                     <label for="">Product description<span style="color: red;">*</span></label>
-                    <textarea name="product_desc" id="" cols="30" rows="10" required><?php echo $get_product['product_desc'] ?></textarea>
+                    <textarea name="product_desc" id="" cols="30" rows="10" required><?php echo $get_product['PRODUCT_DESCRIPTION'] ?></textarea>
 
                     <label for="">Choose type<span style="color: red;">*</span></label>
                     <select name="type" id="select_category">
                         <option value="">--Type--</option>
-                        <option <?php if($get_product['type'] == 2) {echo "SELECTED";} ?> value="2">Best-Seller</option>
-                        <option <?php if($get_product['type'] == 1) {echo "SELECTED";} ?> value="1">Featured</option>
-                        <option <?php if($get_product['type'] == 0) {echo "SELECTED";} ?> value="0">Non-Featured</option>
+                        <option <?php if($get_product['TYPE'] == 2) {echo "SELECTED";} ?> value="2">Best-Seller</option>
+                        <option <?php if($get_product['TYPE'] == 1) {echo "SELECTED";} ?> value="1">Featured</option>
+                        <option <?php if($get_product['TYPE'] == 0) {echo "SELECTED";} ?> value="0">Non-Featured</option>
                     </select>
 
                     <label for="">Product picture<span style="color: red;">*</span></label> <br>
-                    <img src="Uploads/<?php echo $get_product['image']; ?>" width="55px" alt="">
+                    <img src="Uploads/<?php echo $get_product['IMAGE']; ?>" width="55px" alt="">
                     <input type="file" name="image">
 
                     <label for="">Product picture description<span style="color: red;">*</span></label>
                     <input type="file" name="product_img_desc[]" multiple>
-
+                    <?php 
+                    if(isset($product_edit))
+                    {
+                        echo $product_edit;
+                    }
+                    ?>
                     <button type="submit" name="submit">Edit</button> 
                 </form>
             </div>

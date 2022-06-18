@@ -11,7 +11,7 @@
     {
         $delID = $_GET['delID'];
         $product_by_id = $product->get_product_by_id($delID);
-        $product_image = $product_by_id['image'];
+        $product_image = $product_by_id['IMAGE'];
         $delCategoryID = $product->delete_product($delID,$product_image);
         
     }  
@@ -45,15 +45,15 @@
                         <tr>
                             
                             <td><?php echo $ID; ?></td>
-                            <td><img src="Uploads/<?php echo $result['image']; ?>" width="55px" alt=""></td>
-                            <td><?php echo $result['product_name']; ?></td>
+                            <td><img src="Uploads/<?php echo $result['IMAGE']; ?>" width="55px" alt=""></td>
+                            <td><?php echo $result['PRODUCT_NAME']; ?></td>
                             <td><?php echo $result['CATEGORY_NAME']; ?></td>
-                            <td><?php echo $result['price']; ?></td>
+                            <td><?php echo $result['PRICE']; ?></td>
                             <td><?php 
-                                if($result['type'] == 2){
+                                if($result['TYPE'] == 2){
                                     echo 'Best-Seller';
                                 } 
-                                else if($result['type'] == 1){
+                                else if($result['TYPE'] == 1){
                                     echo 'Featured';
                                 } 
                                 else{
@@ -61,7 +61,7 @@
                                 }
                             ?></td>
                             <td><a href="#">Size</a>|<a href="#">Color</a></td>
-                            <td><a href="productedit.php?product_id=<?php echo $result['product_id'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['product_id']; ?>">Delete</a></td>
+                            <td><a href="productedit.php?product_id=<?php echo $result['PRODUCT_ID'];?>">Edit</a>|<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['PRODUCT_ID']; ?>">Delete</a></td>
                             
                         </tr>
                         <?php
