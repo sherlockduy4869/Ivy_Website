@@ -28,10 +28,23 @@
             return $result;
         }
 
-        //Delete category information
+        //Delete size information
         public function delete_size($size_del_id){
             $query = "DELETE FROM tbl_size WHERE SIZE_ID = '$size_del_id'";
             $result = $this->db->delete($query);
+        }
+
+        //Insert size information
+        public function insert_size($size_value,$product_id_size){
+            $size_value = $this->fm->validation($size_value);
+            $product_id_size = $this->fm->validation($product_id_size);
+            $size_value = mysqli_real_escape_string($this->db->link, $size_value);
+            $product_id_size = mysqli_real_escape_string($this->db->link, $product_id_size);
+
+            $query = "INSERT INTO tbl_size(PRODUCT_ID,SIZE_VALUE) VALUES('$product_id_size','$size_value')";
+            $result = $this->db->insert($query);
+
+            header('Location:sizelist.php?product_id_size='.$product_id_size);
         }
 
         /*COLOR AREA*/
@@ -50,6 +63,19 @@
         public function delete_color($color_del_id){
             $query = "DELETE FROM tbl_color WHERE COLOR_ID = '$color_del_id'";
             $result = $this->db->delete($query);
+        }
+
+        //Insert color information
+        public function insert_color($color_value,$product_id_color){
+            $color_value = $this->fm->validation($color_value);
+            $product_id_color = $this->fm->validation($product_id_color);
+            $color_value = mysqli_real_escape_string($this->db->link, $color_value);
+            $product_id_color = mysqli_real_escape_string($this->db->link, $product_id_color);
+
+            $query = "INSERT INTO tbl_color(PRODUCT_ID,COLOR_VALUE) VALUES('$product_id_color','$color_value')";
+            $result = $this->db->insert($query);
+
+            header('Location:colorlist.php?product_id_color='.$product_id_color);
         }
     }
 ?>

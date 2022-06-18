@@ -293,3 +293,28 @@ input[type="submit"]:hover{
     color: red;
     position: absolute;
 }
+
+/*ATTRIBUTE AREA*/
+.admin-attribute-add input{
+    height: 30px;
+    width: 200px;
+    padding-left: 12px;
+    margin-top: 20px;
+}
+
+.admin-attribute-add button{
+    margin: 10px 0px 15px 0px;
+    height: 30px;
+    width: 100px;
+    cursor: pointer;
+    background-color: brown;
+    border: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.admin-attribute-add button:hover{
+    background-color: transparent;
+    border: 1px solid brown;
+    color: brown;
+}

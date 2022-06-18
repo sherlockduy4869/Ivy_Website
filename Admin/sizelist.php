@@ -20,11 +20,22 @@
         $product_id_size = $_GET['product_id_size'];
         $sizeList = $attr->show_size_list($product_id_size);
         $product_name = $product->get_product_by_id($product_id_size);
-    }  
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $size_value = $_POST['size_value'];
+            
+            $size_add = $attr->insert_size($size_value,$product_id_size);
+        }
+    }    
 ?>
     <div class="admin-content-right">
-            <div class="admin-content-right-category_list">
+            <div class="admin-content-right-category_list admin-attribute-add">
                 <h1>SIZE OF: <?php echo $product_name['PRODUCT_NAME'] ?> </h1>
+                <form action="sizelist.php?product_id_size=<?php echo $product_id_size;?>" method="POST">
+                    <input required type="text" placeholder="Enter size value" name="size_value">
+                    <button type="submit" name="submit">Add</button>
+                </form>
                 <table id="size_list">
                     <thead>
                         <th id="th_DataTable">STT</th>
@@ -58,6 +69,7 @@
                         ?>
                     </tbody>
                 </table>
+                
             </div>
     </div>
 </section>

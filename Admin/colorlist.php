@@ -20,11 +20,22 @@
         $product_id_color = $_GET['product_id_color'];
         $colorList = $attr->show_color_list($product_id_color);
         $product_name = $product->get_product_by_id($product_id_color);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            $color_value = $_POST['color_value'];
+            
+            $color_add = $attr->insert_color($color_value,$product_id_color);
+        }
     }  
 ?>
     <div class="admin-content-right">
-            <div class="admin-content-right-category_list">
+            <div class="admin-content-right-category_list admin-attribute-add">
                 <h1>COLOR OF: <?php echo $product_name['PRODUCT_NAME'] ?> </h1>
+                <form action="colorlist.php?product_id_color=<?php echo $product_id_color;?>" method="POST">
+                    <input required type="text" placeholder="Enter color value" name="color_value">
+                    <button type="submit" name="submit">Add</button>
+                </form>
                 <table id="color_list">
                     <thead>
                         <th id="th_DataTable">STT</th>
