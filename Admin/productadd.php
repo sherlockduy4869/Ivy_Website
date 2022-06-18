@@ -34,7 +34,7 @@
                                 {            
                                 
                         ?>
-                        <option value="<?php echo $result['cateID'] ?>"><?php echo $result['cateName']; ?></option>
+                        <option value="<?php echo $result['CATEGORY_ID'] ?>"><?php echo $result['CATEGORY_NAME']; ?></option>
                                     
                         <?php
                                 }
@@ -46,7 +46,7 @@
                     <label for="">Product description<span style="color: red;">*</span></label>
                     <textarea name="product_desc" id="" cols="30" rows="10" required></textarea>
                     <label for="">Choose type<span style="color: red;">*</span></label>
-                    <select name="type" id="">
+                    <select name="type" id="select_category">
                         <option value="">--Type--</option>
                         <option value="2">Best-Seller</option>
                         <option value="1">Featured</option>

@@ -47,8 +47,8 @@
                                 {            
                                 
                         ?>
-                        <option <?php if($get_product['category_id'] == $result['cateID']) {echo "SELECTED";} ?> 
-                        value="<?php echo $result['cateID'] ?>"><?php echo $result['cateName']; ?></option>
+                        <option <?php if($get_product['category_id'] == $result['CATEGORY_ID']) {echo "SELECTED";} ?> 
+                        value="<?php echo $result['CATEGORY_ID'] ?>"><?php echo $result['CATEGORY_NAME']; ?></option>
 
                         <?php
                                 }
@@ -62,7 +62,7 @@
                     <textarea name="product_desc" id="" cols="30" rows="10" required><?php echo $get_product['product_desc'] ?></textarea>
 
                     <label for="">Choose type<span style="color: red;">*</span></label>
-                    <select name="type" id="">
+                    <select name="type" id="select_category">
                         <option value="">--Type--</option>
                         <option <?php if($get_product['type'] == 2) {echo "SELECTED";} ?> value="2">Best-Seller</option>
                         <option <?php if($get_product['type'] == 1) {echo "SELECTED";} ?> value="1">Featured</option>

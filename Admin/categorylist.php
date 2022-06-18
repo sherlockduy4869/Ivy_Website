@@ -42,10 +42,10 @@
                         ?>
                             <tr>
                                 <td><?php echo $STT ?></td>
-                                <td><?php echo $result['cateID'];  ?></td>
-                                <td><?php echo $result['cateName']; ?></td>
-                                <td><a href="categoryedit.php?cateID=<?php echo $result['cateID']; ?>">Edit</a>
-                                |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['cateID']; ?>">Delete</a></td>
+                                <td><?php echo $result['CATEGORY_ID'];  ?></td>
+                                <td><?php echo $result['CATEGORY_NAME']; ?></td>
+                                <td><a href="categoryedit.php?cateID=<?php echo $result['CATEGORY_ID']; ?>">Edit</a>
+                                |<a onclick="return confirm('Do you want to delete ?')" href="?delID=<?php echo $result['CATEGORY_ID']; ?>">Delete</a></td>
                             </tr>
                         <?php
                                 }

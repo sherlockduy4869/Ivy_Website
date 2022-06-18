@@ -239,10 +239,10 @@
 
         // Show product information
         public function show_product_list(){
-            $query = "SELECT tbl_product.*, tbl_category.cateName 
+            $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.cateID
+            ON tbl_product.category_id = tbl_category.CATEGORY_ID
             ORDER BY tbl_product.product_id DESC";
             $result = $this->db->select($query);
             return $result;
@@ -250,10 +250,10 @@
 
         // Show featured product information
         public function show_featured_product_list(){
-            $query = "SELECT tbl_product.*, tbl_category.cateName 
+            $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.cateID
+            ON tbl_product.category_id = tbl_category.CATEGORY_ID
             WHERE type = 1
             ORDER BY tbl_product.product_id DESC";
             $result = $this->db->select($query);
@@ -262,10 +262,10 @@
 
         // Show featured product information
         public function show_best_seller_product_list(){
-            $query = "SELECT tbl_product.*, tbl_category.cateName 
+            $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.cateID
+            ON tbl_product.category_id = tbl_category.CATEGORY_ID
             WHERE type = 2
             ORDER BY tbl_product.product_id DESC";
             $result = $this->db->select($query);
@@ -274,10 +274,10 @@
 
         // Show featured product information by id
         public function show_product_list_by_id($product_id){
-            $query = "SELECT tbl_product.*, tbl_category.cateName 
+            $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
             FROM tbl_product
             INNER JOIN tbl_category
-            ON tbl_product.category_id = tbl_category.cateID
+            ON tbl_product.category_id = tbl_category.CATEGORY_ID
             WHERE product_id = '$product_id'
             ORDER BY tbl_product.product_id DESC LIMIT 1";
             $result = $this->db->select($query);
