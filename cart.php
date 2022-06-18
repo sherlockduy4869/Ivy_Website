@@ -2,6 +2,11 @@
     include "Include_main/header.php";
     include "Class/cartclass.php";
 ?>
+<script>
+    $(document).ready(function () {
+        $('#table_cart').DataTable();
+    });        
+</script>
 <?php
 
     $cart = new cart();
@@ -26,7 +31,7 @@
 <!--TABLE CART AREA-->
 <section class="cart-container-area container my-1" >
         <table id="table_cart">
-            <tr>
+            <thead>
                 <th>Remove</th>
                 <th>Image</th>
                 <th>Product</th>
@@ -34,30 +39,33 @@
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
-            </tr>
-            <?php
-                $subTotal = 0;
-                if($get_product_cart)
-                {
-                    while($result = $get_product_cart->fetch_assoc())
+            </thead>
+
+            <tbody>
+                <?php
+                    $subTotal = 0;
+                    if($get_product_cart)
                     {
-                        
-            ?>
-            <tr>
-                <td><a onclick="return confirm('Do you want to delete ?')" href="?cart_id=<?php echo $result['CART_ID']; ?>"><i class="fas fa-trash"></i></a></td>
-                <td><img src="<?php echo "./Admin//Uploads/".$result['IMAGE']; ?>" alt=""></td>
-                <td><h5><?php echo $result['PRODUCT_NAME'] ?></h5></td>
-                <td><h5><?php echo $result['SIZE']?></h5></td>
-                <td><h5><?php echo '$'.$result['PRICE'] ?></h5></td>
-                <td><?php echo $result['QUANTITY'] ?></td>
-                <td><h5 id="totalPrice"><?php echo '$'.$result['PRICE']*$result['QUANTITY'] ?></h5></td>
-            </tr>
-            <?php
-                    $subTotal = $subTotal + $result['PRICE']*$result['QUANTITY'];
+                        while($result = $get_product_cart->fetch_assoc())
+                        {
+                            
+                ?>
+                <tr>
+                    <td><a onclick="return confirm('Do you want to delete ?')" href="?cart_id=<?php echo $result['CART_ID']; ?>"><i class="fas fa-trash"></i></a></td>
+                    <td><img src="<?php echo "./Admin//Uploads/".$result['IMAGE']; ?>" alt=""></td>
+                    <td><h5><?php echo $result['PRODUCT_NAME'] ?></h5></td>
+                    <td><h5><?php echo $result['SIZE']?></h5></td>
+                    <td><h5><?php echo '$'.$result['PRICE'] ?></h5></td>
+                    <td><?php echo $result['QUANTITY'] ?></td>
+                    <td><h5 id="totalPrice"><?php echo '$'.$result['PRICE']*$result['QUANTITY'] ?></h5></td>
+                </tr>
+                <?php
+                        $subTotal = $subTotal + $result['PRICE']*$result['QUANTITY'];
+                        }
                     }
-                }
-                Session::set('subTotal',$subTotal);
-            ?>
+                    Session::set('subTotal',$subTotal);
+                ?>
+            </tbody>
         </table>
 </section>
 
