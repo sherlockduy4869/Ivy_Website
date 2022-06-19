@@ -38,7 +38,7 @@
                                 <td><?php echo $result['PRODUCT_NAME'];?></td>
                                 <td><?php echo $result['SIZE'].'-'.$result['COLOR'];?></td>
                                 <td><?php echo $result['QUANTITY'];?></td>
-                                <td><?php echo $result['QUANTITY']*$result['PRICE'];?></td>
+                                <td><?php echo '$'.$result['QUANTITY']*$result['PRICE'];?></td>
                                 <td><?php echo $result['CUSTOMER_NAME'];?></td>
                                 <td><?php echo $result['CUSTOMER_PHONE'];?></td>
                                 <td><?php echo $result['CUSTOMER_EMAIL'];?></td>

@@ -131,33 +131,30 @@ BEGIN
 END
 GO
 
-
-
-CREATE TRIGGER ADDING_ORDER_NUMBER
-AFTER INSERT
-ON tbl_order FOR EACH ROW
-BEGIN
-
-	DECLARE ct CURSOR FOR SELECT TBL_CART.PRODUCT_ID, TBL_CART.QUANTITY
-								FROM TBL_ORDER INNER JOIN TBL_CART
-								ON TBL_ORDER.SESSION_ID = TBL_CART.SESSION_ID
-								WHERE TBL_ORDER.SESSION_ID = NEW.SESSION_ID
-    
-	OPEN tro
-	DECLARE @product_id INT
-	DECLARE @quantity_order INT
-
-	FETCH tro INTO @product_id, @quantity_order
-	WHILE @@FETCH_STATUS = 0
-	BEGIN
-
-		UPDATE tbl_product
+UPDATE TBL_PRODUCT
 		SET NUMBER_ORDERS = NUMBER_ORDERS + @quantity_order
 		WHERE PRODUCT_ID = @product_id
-		FETCH tro INTO @product_id, @quantity_order
+		FETCH NEXT FROM ct INTO @product_id, @quantity_order
 
-	END
-	CLOSE tro
-	DEALLOCATE tro
-
+--TRIGGER MYSQL
+BEGIN
+  DECLARE product_id INT;
+  DECLARE quantity_order INT;
+  DECLARE done INT DEFAULT FALSE;
+  DECLARE tro CURSOR FOR SELECT tbl_cart.PRODUCT_ID, tbl_cart.QUANTITY
+								FROM tbl_order INNER JOIN tbl_cart
+								ON tbl_order.SESSION_ID = tbl_cart.SESSION_ID
+								WHERE tbl_order.SESSION_ID = NEW.SESSION_ID;
+  DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+  OPEN tro;
+  myloop: LOOP
+    FETCH tro INTO product_id, quantity_order;
+    IF done THEN
+      LEAVE myloop;
+    END IF;
+    UPDATE tbl_product
+		SET NUMBER_ORDERS = NUMBER_ORDERS + quantity_order
+		WHERE PRODUCT_ID = product_id;
+  END LOOP;
+  CLOSE tro;
 END

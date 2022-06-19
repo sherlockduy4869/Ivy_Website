@@ -51,7 +51,7 @@
                             <td><?php echo $result['PRODUCT_NAME']; ?></td>
                             <td><?php echo $result['CATEGORY_NAME']; ?></td>
                             <td><?php echo $result['PRICE']; ?></td>
-                            <td><?php echo $ID; ?></td>
+                            <td><?php echo $result['NUMBER_ORDERS']; ?></td>
                             <td><?php 
                                 if($result['TYPE'] == 2){
                                     echo 'Best-Seller';
