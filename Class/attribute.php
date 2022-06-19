@@ -23,7 +23,7 @@
             FROM tbl_size INNER JOIN tbl_product
             ON tbl_size.PRODUCT_ID = tbl_product.PRODUCT_ID
             WHERE tbl_size.PRODUCT_ID = '$product_id_size'
-            ORDER BY tbl_size.SIZE_ID DESC";
+            ORDER BY tbl_size.SIZE_ID";
             $result = $this->db->select($query);
             return $result;
         }
@@ -54,7 +54,7 @@
             FROM tbl_color INNER JOIN tbl_product
             ON tbl_color.PRODUCT_ID = tbl_product.PRODUCT_ID
             WHERE tbl_color.PRODUCT_ID = '$product_id_color'
-            ORDER BY tbl_color.COLOR_ID DESC";
+            ORDER BY tbl_color.COLOR_ID";
             $result = $this->db->select($query);
             return $result;
         }

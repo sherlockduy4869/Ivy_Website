@@ -15,7 +15,7 @@
                 </li>
                 <li><h3>Orders</h3>
                     <ul>
-                        <li><a href="productadd.php">Order list</a></li>
+                        <li><a href="orderlist.php">Order list</a></li>
                     </ul>
                 </li>
             </ul>

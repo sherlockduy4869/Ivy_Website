@@ -40,5 +40,15 @@
             $result = $this->db->select($query);
             return $result;
         }
+
+        //Get order information
+        public function get_order_information(){
+            $query = "SELECT tbl_order.*,tbl_cart.* 
+                      FROM tbl_order INNER JOIN tbl_cart
+                      ON tbl_order.SESSION_ID = tbl_cart.SESSION_ID";
+            
+            $result = $this->db->select($query);
+            return $result;
+        }
     }
 ?>
