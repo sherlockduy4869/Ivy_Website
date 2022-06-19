@@ -26,9 +26,11 @@
                         <th id="th_DataTable">Product name</th>
                         <th id="th_DataTable">Category name</th>
                         <th id="th_DataTable">Price</th>
+                        <th id="th_DataTable">Sold</th>
                         <th id="th_DataTable">Type</th>
                         <th id="th_DataTable">Attributes</th>
                         <th id="th_DataTable">Customization</th>
+                        
                     </thead>
                     <tbody>
                         <?php
@@ -49,6 +51,7 @@
                             <td><?php echo $result['PRODUCT_NAME']; ?></td>
                             <td><?php echo $result['CATEGORY_NAME']; ?></td>
                             <td><?php echo $result['PRICE']; ?></td>
+                            <td><?php echo $ID; ?></td>
                             <td><?php 
                                 if($result['TYPE'] == 2){
                                     echo 'Best-Seller';
