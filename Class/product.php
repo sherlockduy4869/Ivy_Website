@@ -229,7 +229,7 @@
 
         // Show product information
         public function show_product_list(){
-            $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME 
+            $query = "SELECT tbl_product.*, tbl_category.CATEGORY_NAME
             FROM tbl_product
             INNER JOIN tbl_category
             ON tbl_product.CATEGORY_ID = tbl_category.CATEGORY_ID
@@ -284,6 +284,18 @@
         //Show product by category
         public function get_product_by_cate($cateID){
             $query = "SELECT * FROM tbl_product WHERE CATEGORY_ID = '$cateID'";
+            $result = $this->db->select($query);
+            return $result;
+        }
+
+        //Get product number order
+        public function get_product_number_order($product_id){
+            $query = "SELECT tbl_product.PRODUCT_ID, SUM(tbl_cart.QUANTITY) AS NUM
+            FROM tbl_product
+            INNER JOIN tbl_cart
+            ON tbl_product.PRODUCT_ID = tbl_cart.PRODUCT_ID
+			WHERE tbl_cart.STATUS = 1 AND tbl_product.PRODUCT_ID = '$product_id'
+			GROUP BY tbl_product.PRODUCT_ID";
             $result = $this->db->select($query);
             return $result;
         }

@@ -30,6 +30,10 @@
             $query = "INSERT INTO tbl_order(SESSION_ID,CUSTOMER_NAME,CUSTOMER_PHONE,CUSTOMER_EMAIL,CUSTOMER_ADDRESS) 
                   VALUES('$session_id','$customer_name','$phone_number','$email','$full_address')";
             $result = $this->db->insert($query);
+            if($result){
+                $query = "UPDATE tbl_cart SET STATUS = 1 WHERE SESSION_ID = '$session_id'";
+                $result = $this->db->update($query);
+            }
             header('Location:order-sucessful.php');
         }
         

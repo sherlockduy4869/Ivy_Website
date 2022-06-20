@@ -76,7 +76,8 @@ CREATE TABLE TBL_CART
 	SIZE VARCHAR(255),
 	COLOR VARCHAR(255),
 	QUANTITY INT,
-	IMAGE VARCHAR(255)
+	IMAGE VARCHAR(255),
+	STATUS INT DEFAULT 0
 )
 GO
 
@@ -131,10 +132,6 @@ BEGIN
 END
 GO
 
-UPDATE TBL_PRODUCT
-		SET NUMBER_ORDERS = NUMBER_ORDERS + @quantity_order
-		WHERE PRODUCT_ID = @product_id
-		FETCH NEXT FROM ct INTO @product_id, @quantity_order
 
 --TRIGGER MYSQL
 BEGIN
@@ -147,14 +144,23 @@ BEGIN
 								WHERE tbl_order.SESSION_ID = NEW.SESSION_ID;
   DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
   OPEN tro;
+  FETCH tro INTO product_id, quantity_order;
   myloop: LOOP
-    FETCH tro INTO product_id, quantity_order;
     IF done THEN
       LEAVE myloop;
     END IF;
+	FETCH tro INTO product_id, quantity_order;
     UPDATE tbl_product
-		SET NUMBER_ORDERS = NUMBER_ORDERS + quantity_order
-		WHERE PRODUCT_ID = product_id;
+	SET NUMBER_ORDERS = NUMBER_ORDERS + quantity_order
+	WHERE PRODUCT_ID = product_id;
   END LOOP;
   CLOSE tro;
 END
+
+SELECT TBL_PRODUCT.PRODUCT_ID, SUM(TBL_CART.QUANTITY) AS NUM 
+            FROM TBL_PRODUCT
+            INNER JOIN TBL_CART
+            ON TBL_PRODUCT.PRODUCT_ID = TBL_CART.PRODUCT_ID
+			WHERE TBL_CART.STATUS = 1
+			GROUP BY tbl_product.PRODUCT_ID
+GO

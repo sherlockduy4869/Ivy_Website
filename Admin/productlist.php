@@ -35,7 +35,6 @@
                     <tbody>
                         <?php
                             $productList = $product->show_product_list();
-                            $myArray = array();
                             
                             if($productList)
                             {   
@@ -43,6 +42,12 @@
                                 while($result = $productList->fetch_assoc())
                                 {
                                     $ID++;
+                                    if($product->get_product_number_order($result['PRODUCT_ID'])){
+                                        $getNum = $product->get_product_number_order($result['PRODUCT_ID'])->fetch_assoc()['NUM'];
+                                    }
+                                    else{
+                                        $getNum = 0;
+                                    }
                         ?>
                         <tr>
                             
@@ -51,7 +56,7 @@
                             <td><?php echo $result['PRODUCT_NAME']; ?></td>
                             <td><?php echo $result['CATEGORY_NAME']; ?></td>
                             <td><?php echo $result['PRICE']; ?></td>
-                            <td><?php echo $result['NUMBER_ORDERS']; ?></td>
+                            <td><?php echo $getNum ?></td>
                             <td><?php 
                                 if($result['TYPE'] == 2){
                                     echo 'Best-Seller';
