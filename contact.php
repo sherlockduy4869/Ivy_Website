@@ -1,42 +1,47 @@
 <?php
-    include "Include_main/header.php";
+    include_once "Include_main/header.php";
 ?>
-    
     <!--CONTACT AREA-->
-    <section class="featured-product-area contact-area w-100">
-
-        <div class="alert-success">
-            <span>Message Sent! Thank you for contacting us.</span>
-        </div>
-
-        <div class="alert-error">
-            <span></span>
-        </div>
-
-        <div class="contact-section">
-            <div class="contact-info">
-                <div><i class="fa-solid fa-location-dot"></i>154 Le Loi St, Da Nang city, Viet Nam</div>
-                <div><i class="fa-solid fa-location-dot"></i>duy.tran190201@vnuk.edu.vn</div>
-                <div><i class="fa-solid fa-location-dot"></i>+84 905988777</div>
-                <div><i class="fa-solid fa-location-dot"></i>Mon-Fri 08:00 AM to 05:00 PM</div>
+    <section class="featured-product-area py-5 ">
+            <div class="container justify-content-center">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="section-title">
+                            <h2 class="pt-5">Our Contact</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 col-12 w-50 mt-3">
+                        <div class="map-area">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3834.
+                            613424461478!2d108.21076231448666!3d16.03362694465075!2m3!1f0!2f0!3f0!3
+                            m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219be7b228ff5%3A0xaf09bd245a438009
+                            !2zVuG6rXQgdMawIGluIGzhu6VhIMSQw6AgTuG6tW5n!5e0!3m2!1svi!2s!4v1655132868
+                            057!5m2!1svi!2s" allowfullscreen="" referrerpolicy="no-referrer-when-
+                            downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12 w-50 mt-3">
+                        <div class="contact-form w-100">
+                            <form>
+                                <div class="mb-3 form-floating">
+                                <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Your Name Here">
+                                </div>
+                                <div class="mb-3 form-floating">
+                                    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Your Email Here">
+                                </div>
+                                <div class="mb-3 form-floating">
+                                    <textarea class="form-control" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-form">
-                <h2>Contact Us</h2>
-                <form class="contact" method="post">
-                    <input type="text" name="name" class="text-box name" placeholder="Your Name" required/>
-                    <input type="email" name="email" class="text-box email" placeholder="Your Email" required/>
-                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    <button class="send-btn">Send</button>
-                </form>
-            </div>
-        </div>
-
     </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-      <script src="./Vendors/js/jquery.waypoints.min.js">
-    </script>
-  
-</body>
-</html>
+    
+<?php
+    include "Include_main/footer.php";
+?>
