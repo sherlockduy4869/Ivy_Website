@@ -743,3 +743,87 @@ footer p{
     position: absolute;
 }
 
+/*ABOUT PAGE*/
+.page-header{
+    text-align: center;
+    color: #995437;
+    font-size: 40px;
+    margin-top: 30px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+
+    border-bottom: 3px solid #d6967d;
+    padding-bottom: 10px;
+
+        
+}
+
+.sub-text{
+    text-align: center;
+    color: #995437;
+    font-size: 40px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+} 
+.header{
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+    width: 50%;
+}
+page-header.h1{
+    display: block;
+    margin-block-start: 1.5em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} 
+
+.image{
+    float: left;
+    width: 33%;
+}
+
+.card-title{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.card-text{
+    font-size: 16px;
+    margin-top: 10px;
+
+}
+
+.core-value {
+    background-color: #995437;
+    color: white;
+    font-size: 18px;
+    width: 381px;
+    height: 125px;
+    text-align: center;
+    float: right;
+    padding: 37px 10px;
+    margin-right: 100px;
+}
+
+.core-value-body p {
+    position: absolute;
+    bottom: 0px;
+    width: 470px;
+}
+
+.core-value-header {
+    color: white;
+    font-size: 50px;
+    margin: 85px;
+    color: white;
+}
+.core-value-body {
+    color: white;
+    font-size: 16px;
+    height: 125px;
+    width: 470px;
+    border-bottom: white 1px solid;
+}
