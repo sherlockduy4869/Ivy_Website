@@ -13,7 +13,7 @@ $(document).ready(function(){
             offset: '1800px'
         }
     )
-
+    
     //Slider
     const imgPosition = document.querySelectorAll(".aspect-ratio-169 img");
     const imgContainer = document.querySelector(".aspect-ratio-169");
