@@ -7,5 +7,5 @@
 define("DB_HOST", "sql6.freesqldatabase.com");
 define("DB_USER", "sql6501250");
 define("DB_PASS", "ydtu3hg2qh");
-define("DB_NAME", "sql6501233");
+define("DB_NAME", "sql6501250");
 ?>

@@ -27,8 +27,10 @@
             $session_id = session_id();
             $full_address = $address.', '.$city;
 
-            $query = "INSERT INTO tbl_order(SESSION_ID,CUSTOMER_NAME,CUSTOMER_PHONE,CUSTOMER_EMAIL,CUSTOMER_ADDRESS) 
-                  VALUES('$session_id','$customer_name','$phone_number','$email','$full_address')";
+            $date = date('d-m-y h:i:s');
+
+            $query = "INSERT INTO tbl_order(SESSION_ID,CUSTOMER_NAME,CUSTOMER_PHONE,CUSTOMER_EMAIL,CUSTOMER_ADDRESS,DATE_ORDER) 
+                  VALUES('$session_id','$customer_name','$phone_number','$email','$full_address','$date' )";
             $result = $this->db->insert($query);
             if($result){
                 $query = "UPDATE tbl_cart SET STATUS = 1 WHERE SESSION_ID = '$session_id'";
