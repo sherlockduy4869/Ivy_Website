@@ -13,7 +13,7 @@
         <div class="bill-confirm">
             <h1>Thank you for your order</h1>
             <?php
-                if(isset($customerConfirm)){
+                if($customerConfirm){
                     $result = $customerConfirm->fetch_assoc();
             ?>
             <ul>
