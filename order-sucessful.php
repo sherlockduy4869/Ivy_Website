@@ -1,14 +1,14 @@
 <?php
-    // include "Include_main/header.php";
-    // include "Class/deliveryclass.php";
+    include "Include_main/header.php";
+    include "Class/deliveryclass.php";
 ?>
 <?php
-    // $deliver = new delivery();
+    $deliver = new delivery();
 
     // $customerConfirm = $deliver->get_customer_information();
 ?>
 <!--ORDER SUCESSFULL AREA-->
-<!-- <section class="featured-product-area order-sucessfull-area container text-center">
+<section class="featured-product-area order-sucessfull-area container text-center">
         <div class="bill-confirm">
             <h1>Thank you for your order</h1>
             <?php
@@ -38,8 +38,8 @@
             </p> <br>
             <button class="btn mt-3"><a href="index.php">CONTINUE SHOPPING</a></button>
         </div>
-</section> -->
+</section>
 
 <?php
-    // include "Include_main/footer.php";
+    include "Include_main/footer.php";
 ?>
