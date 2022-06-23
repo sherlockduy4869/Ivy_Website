@@ -1,9 +1,11 @@
 <?php
     include_once "Include_main/header.php";
+    include_once "Class/contactclass.php";
 ?>
 <?php
+    $contact = new contact();
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-        $customerInfo = $deliver->insert_customer_information($_POST);
+        $customer_contact = $contact->insert_customer_contact_information($_POST);
     }
 ?>
     <!--CONTACT AREA-->

@@ -1,12 +1,11 @@
 <?php
     include_once $_SERVER['DOCUMENT_ROOT'].'/Lib/database.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/Helpers/format.php';
-    include_once "Class/contactclass.php";
 ?>
 
 <?php
 
-    class delivery
+    class contact
     {
         private $db ;
         private $fm ;
@@ -17,8 +16,8 @@
             $this->fm = new Format();
         }
 
-        //Insert customer information
-        public function insert_customer_information($data){
+        //Insert customer contact information
+        public function insert_customer_contact_information($data){
 
             $customer_name = mysqli_real_escape_string($this->db->link, $data['customer_name']);
             $customer_email = mysqli_real_escape_string($this->db->link, $data['customer_email']);
