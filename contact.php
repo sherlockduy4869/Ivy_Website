@@ -1,7 +1,13 @@
 <?php
     include_once "Include_main/header.php";
+    include_once "Class/contactclass.php";
 ?>
-
+<?php
+    $contact = new contact();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+        $customer_contact = $contact->insert_customer_contact_information($_POST);
+    }
+?>
     <!--CONTACT AREA-->
     <section class="featured-product-area py-5 ">
             <div class="container justify-content-center">
@@ -25,7 +31,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-12 w-50 mt-3">
                         <div class="contact-form w-100">
-                            <form action="contactcheck.php" method="POST">
+                            <form action="contact.php" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3 form-floating">
                                 <input type="text" class="form-control" aria-describedby="emailHelp" name="customer_name" placeholder="Your Name Here">
                                 </div>
@@ -33,12 +39,9 @@
                                     <input type="email" class="form-control" aria-describedby="emailHelp" name="customer_email" placeholder="Your Email Here">
                                 </div>
                                 <div class="mb-3 form-floating">
-                                <input type="text" class="form-control" aria-describedby="emailHelp" name="subject" placeholder="Type Subject Here">
-                                </div>
-                                <div class="mb-3 form-floating">
                                     <textarea class="form-control" cols="30" rows="10" name="customer_message" placeholder="Your Message"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
                             </form>
                         </div>
                     </div>

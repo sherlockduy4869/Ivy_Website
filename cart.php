@@ -1,6 +1,6 @@
 <?php
     include "Include_main/header.php";
-    //include "Class/cartclass.php";
+    include "Class/cartclass.php";
 ?>
 <script>
     $(document).ready(function () {
