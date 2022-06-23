@@ -102,7 +102,7 @@
       <div class="container">
         <h4>SUMMER SEASON SALE</h4>
         <h1>SUMMER COLLECTION SALE <br> UP TO 15% OFF</h1>
-        <button class="text-uppercase btn"><a href="shop.php?cateID=49">Shop Now</a></button>
+        <a href="shop.php?cateID=49" class="text-uppercase btn">Shop Now</a>
       </div>
     </section>
 

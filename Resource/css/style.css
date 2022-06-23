@@ -247,15 +247,12 @@ hr{
     color: #fff;
 }
 
-.banner-area button{
+.banner-area a{
     background-color: #fb774b;
-    color: #fff;
-}
-
-.banner-area button a{
     color: #fff;
     text-decoration: none;
 }
+
 /*FOOTER AREA*/
 footer{
     background-color: #222222;
@@ -743,7 +740,7 @@ footer p{
     position: absolute;
 }
 
-/*ABOUT PAGE*/
+/*ABOUT AREA*/
 .page-header{
     text-align: center;
     color: #995437;
