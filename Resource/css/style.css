@@ -837,7 +837,7 @@ footer p{
     border-bottom: white 2px solid;
     text-align: center!important;
     padding: auto;
-    word-spacing: 3px;
+    word-spacing: 2px;
 
 }
 
@@ -848,7 +848,6 @@ footer p{
     margin-top: 30px;
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
-    padding-bottom: 10px;
     text-transform: uppercase;
     
 }
@@ -856,11 +855,11 @@ footer p{
     text-align: center!important;
     margin: auto;
     width: 40%;
-    padding: 10px;
-    font-size: 15px;
+    font-size: 18px;
     word-spacing: 3px;
-    height: 125px;
+    /* height: 200px; */
     
 }
-
-
+.spacer{
+    height: 15vh;
+}
