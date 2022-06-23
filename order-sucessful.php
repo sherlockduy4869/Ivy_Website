@@ -5,7 +5,7 @@
 <?php
     $deliver = new delivery();
 
-    // $customerConfirm = $deliver->get_customer_information();
+    $customerConfirm = $deliver->get_customer_information();
 ?>
 <!--ORDER SUCESSFULL AREA-->
 <section class="featured-product-area order-sucessfull-area container text-center">
@@ -36,7 +36,7 @@
             <p>We appriciate your business ! <br>
                 If you have any question, please email <a href="mailto:duy.tran190201@vnuk.edu.vn">duy.tran190201@vnuk.edu.vn</a>
             </p> <br>
-            <button class="btn mt-3"><a href="index.php">CONTINUE SHOPPING</a></button>
+            <a class="btn mt-3" href="index.php">CONTINUE SHOPPING</a>
         </div>
 </section>
 

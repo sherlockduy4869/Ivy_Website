@@ -36,7 +36,6 @@
                 $query = "UPDATE tbl_cart SET STATUS = 1 WHERE SESSION_ID = '$session_id'";
                 $result = $this->db->update($query);
             }
-            header('Location:order-sucessful.php');
         }
         
         //Get customer information
