@@ -52,6 +52,7 @@ $(document).ready(function(){
     })
 
     //Product details
+    
     // const bigImg = document.querySelector(".big-image");
     // const smallImg = document.querySelectorAll(".small-image");
     // smallImg.forEach(function(imgItem){

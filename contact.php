@@ -1,7 +1,11 @@
 <?php
     include_once "Include_main/header.php";
 ?>
-
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+        $customerInfo = $deliver->insert_customer_information($_POST);
+    }
+?>
     <!--CONTACT AREA-->
     <section class="featured-product-area py-5 ">
             <div class="container justify-content-center">
@@ -25,7 +29,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-12 w-50 mt-3">
                         <div class="contact-form w-100">
-                            <form action="contactcheck.php" method="POST">
+                            <form action="contact.php" method="POST">
                                 <div class="mb-3 form-floating">
                                 <input type="text" class="form-control" aria-describedby="emailHelp" name="customer_name" placeholder="Your Name Here">
                                 </div>
