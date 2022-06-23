@@ -5,8 +5,7 @@
 <?php
     $contact = new contact();
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-        // $customer_contact = $contact->insert_customer_contact_information($_POST);
-        echo $_POST['customer_name'];
+        $customer_contact = $contact->insert_customer_contact_information($_POST);
     }
 ?>
     <!--CONTACT AREA-->
@@ -42,7 +41,7 @@
                                 <div class="mb-3 form-floating">
                                     <textarea class="form-control" cols="30" rows="10" name="customer_message" placeholder="Your Message"></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
                             </form>
                         </div>
                     </div>
