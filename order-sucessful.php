@@ -5,7 +5,8 @@
 <?php
     $deliver = new delivery();
 
-    $customerConfirm = $deliver->get_customer_information();
+    $session_id = session_id();
+    $customerConfirm = $deliver->get_customer_information($session_id);
 ?>
 <!--ORDER SUCESSFULL AREA-->
 <section class="featured-product-area order-sucessfull-area container text-center">

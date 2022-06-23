@@ -36,11 +36,11 @@
                 $query = "UPDATE tbl_cart SET STATUS = 1 WHERE SESSION_ID = '$session_id'";
                 $result = $this->db->update($query);
             }
+            header('Location:order-sucessful.php');
         }
         
         //Get customer information
-        public function get_customer_information(){
-            $session_id = session_id();
+        public function get_customer_information($session_id){
             $query = "SELECT * FROM tbl_order WHERE SESSION_ID = '$session_id'";
             $result = $this->db->select($query);
             return $result;
