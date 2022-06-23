@@ -27,13 +27,8 @@
             $query = "INSERT INTO tbl_contact(CUSTOMER_NAME,CUSTOMER_EMAIL,CUSTOMER_MESSAGE,DATE_CONACT) 
                   VALUES('$customer_name','$customer_email','$customer_message','$date')";
             $result = $this->db->insert($query);
-
-            if($result){
-                header('Location:delivery.php');
-            }
-            else{
-                header('Location:404.php');
-            }
+            
+            header('Location:404.php');
         }
 
     }
