@@ -754,46 +754,54 @@ footer p{
 
     border-bottom: 3px solid #d6967d;
     padding-bottom: 10px;
-
+    text-transform: uppercase;
         
 }
 
 .sub-text{
     text-align: center;
-    color: #995437;
-    font-size: 40px;
-    margin-top: 10px;
-    font-weight: bold;
+    color: #474341;
+    font-size: 30px;
+    margin-top: 20px;
+    padding-bottom: 50px;
     font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
 } 
 .header{
     margin: auto;
-    width: 300px;
     padding: 10px;
-    width: 50%;
+    width: 30%;
 }
-page-header.h1{
-    display: block;
-    margin-block-start: 1.5em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-} 
 
 .image{
     float: left;
     width: 33%;
 }
 
+.card-img-top {
+    overflow: hidden;
+  }
+
+  .card-img-top {
+    transition: transform .7s ease;
+  }
+  
+  .card-img-top:hover {
+    transform: scale(1.03);
+  }
+
 .card-title{
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
 .card-text{
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 10px;
-
+    color: #474341;
+    text-align: center;
+    margin-bottom: 2.5em;
 }
 
 .core-value {
@@ -810,8 +818,9 @@ page-header.h1{
 
 .core-value-body p {
     position: absolute;
-    bottom: 5px;
+    bottom: 1px;
     width: 470px;
+    padding-bottom: 1.5rem;
 }
 
 .core-value-header {
@@ -823,9 +832,34 @@ page-header.h1{
 .core-value-body {
     color: white;
     font-size: 16px;
-    height: 125px;
-    width: 470px;
+    height: 100px;
+    width: 470px;   
     border-bottom: white 2px solid;
-    text-align: left;
-    padding: 37px 10px;
+    text-align: center!important;
+    padding: auto;
+    word-spacing: 2px;
+
+}
+
+.main-text h3 {
+    text-align: center;
+    color: #995437;
+    font-size: 40px;
+    margin-top: 30px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    
+}
+.main-text p {
+    text-align: center!important;
+    margin: auto;
+    width: 40%;
+    font-size: 18px;
+    word-spacing: 3px;
+    /* height: 200px; */
+    
+}
+.spacer{
+    height: 15vh;
 }
