@@ -12,7 +12,7 @@
         $loginCheck = $adminLogin -> login_check($adminUser,$adminPassword);
     }
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
