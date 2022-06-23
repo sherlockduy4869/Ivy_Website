@@ -1,8 +1,8 @@
 <?php
     include_once 'Include/header.php';
     include_once 'Include/slider.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Class/attribute.php';
-    include_once $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Class/product.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/attribute.php';
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Class/product.php';
 ?>
 
 <?php
