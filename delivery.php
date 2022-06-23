@@ -24,29 +24,29 @@
                     <form action="delivery.php" method="POST" enctype="multipart/form-data">
                         <div class="delivery-content-left-input-top row">
                             <div class="delivery-content-left-input-top-item">
-                                <label for="">Your Name<span style="color:red">*</span></label>
+                                <label>Your Name<span style="color:red">*</span></label>
                                 <input type="text" name="customer_name" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
-                                <label for="">Phone Number<span style="color:red">*</span></label>
+                                <label>Phone Number<span style="color:red">*</span></label>
                                 <input type="text" name="phone_number" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
-                                <label for="">Email<span style="color:red">*</span></label>
+                                <label>Email<span style="color:red">*</span></label>
                                 <input type="email" name="email" required>
                             </div>
                             <div class="delivery-content-left-input-top-item">
-                                <label for="">City/Province<span style="color:red">*</span></label>
+                                <label>City/Province<span style="color:red">*</span></label>
                                 <input type="text" name="city" required>
                             </div>
                         </div>
                         <div class="delivery-content-left-input-bottom row">
-                            <label for="">Address<span style="color:red">*</span></label>
+                            <label>Address<span style="color:red">*</span></label>
                             <input type="text" name="address" required>
                         </div>
                         <div class="delivery-content-left-button row">
                             <a href="cart.php"><span>&#10094;</span><p>Back to cart page</p> </a>
-                            <button type="submit" name="submit"><p style="font-weight: bold;">Submit order</p></button>
+                            <button style="font-weight: bold;" type="submit" name="submit">Submit order</button>
                         </div>
                     </form>
                 </div>

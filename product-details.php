@@ -71,7 +71,7 @@
                 <h6><?php echo "Home / ".$result['CATEGORY_NAME']; ?></h6>
                 <h3 class="py-4"><?php echo $result['PRODUCT_NAME']; ?></h3>
                 <h2><?php echo "$".$result['PRICE']; ?></h2>
-                <form action="" method="POST" class="addToCartForm">
+                <form action="product-details.php" method="POST" class="addToCartForm">
                   <select class="my-3" name="size">
                       <option value="">--Size--</option>
                       <?php
@@ -122,7 +122,7 @@
                 ?>
                 </span>
                 <h4 class="my-5">Products Description</h4>
-                <span><?php echo $result['PRODUCT_DESCRIPTION']; ?></span>
+                <div><?php echo $result['PRODUCT_DESCRIPTION']; ?></div>
             </div>
         </div>
 </section>

@@ -32,13 +32,15 @@
 <section class="cart-container-area container my-1" >
         <table id="table_cart">
             <thead>
-                <th>Remove</th>
-                <th>Image</th>
-                <th>Product</th>
-                <th>Size</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <tr>
+                    <th>Remove</th>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                </tr>
             </thead>
 
             <tbody>

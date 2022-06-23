@@ -66,7 +66,6 @@
             <li class="nav-item">
               <a class="nav-link" href="cart.php"><span>Cart</span></a>
             </li> 
-            </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.php"><span>Contact</span></a>
             </li>
