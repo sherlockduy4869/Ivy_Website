@@ -1,6 +1,7 @@
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/Web_Final_Project/Include_main/header.php";
-    include $_SERVER['DOCUMENT_ROOT']."/Web_Final_Project/Class/cartclass.php";
+    echo "Here";
+    include "Include_main/header.php";
+    //include "Class/cartclass.php";
 ?>
 <script>
     $(document).ready(function () {
@@ -9,15 +10,15 @@
 </script>
 <?php
 
-    $cart = new cart();
+    // $cart = new cart();
 
-    if(isset($_GET['cart_id']))
-    {
-        $cart_id = $_GET['cart_id'];
-        $delCartProduct = $cart->delete_product_cart($cart_id);
-    }
+    // if(isset($_GET['cart_id']))
+    // {
+    //     $cart_id = $_GET['cart_id'];
+    //     $delCartProduct = $cart->delete_product_cart($cart_id);
+    // }
 
-    $get_product_cart = $cart->get_product_cart();
+    // $get_product_cart = $cart->get_product_cart();
     
 ?>
 <!--SHOPPING CART AREA-->
