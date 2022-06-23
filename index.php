@@ -1,7 +1,6 @@
 <?php
     include_once "Include_main/header.php";
     include_once "Class/product.php";
-    echo "123123123";
 ?>
 <?php
     $product = new product();
