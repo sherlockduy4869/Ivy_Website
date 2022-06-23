@@ -5,7 +5,8 @@
 <?php
     $contact = new contact();
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-        $customer_contact = $contact->insert_customer_contact_information($_POST);
+        // $customer_contact = $contact->insert_customer_contact_information($_POST);
+        echo $_POST['customer_name'];
     }
 ?>
     <!--CONTACT AREA-->
