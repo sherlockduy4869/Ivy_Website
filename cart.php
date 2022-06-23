@@ -1,6 +1,6 @@
 <?php
-    include "Include_main/header.php";
-    include "Class/cartclass.php";
+    include $_SERVER['DOCUMENT_ROOT']."/Web_Final_Project/Include_main/header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/Web_Final_Project/Class/cartclass.php";
 ?>
 <script>
     $(document).ready(function () {
