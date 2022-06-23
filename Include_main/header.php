@@ -1,6 +1,6 @@
 <?php
-    //include $_SERVER['DOCUMENT_ROOT']."/Web_Final_Project/Class/category.php";
-    //include_once $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/session.php';
+    include $_SERVER['DOCUMENT_ROOT']."/Web_Final_Project/Class/category.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Web_Final_Project/Lib/session.php';
     Session::init();
 
     $cate = new category();
