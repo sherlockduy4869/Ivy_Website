@@ -8,7 +8,7 @@
     $best_seller_product = $product->show_best_seller_product_list();
 ?>
     <!--SLIDER AREA-->
-    <section class="slider">
+    <div class="slider">
         <div class="aspect-ratio-169">
             <img src="./Resource/img/slider1.jpg" alt="">
             <img src="./Resource/img/slider2.jpg" alt="">
@@ -19,19 +19,19 @@
             <div class="dot"></div>
         <div class="dot"></div>
         </div>
-    </section>
+    </div>
 
     <!--BRAND AREA-->
-    <section class="brand-area container">
-      <div class="row m-0 py-5">
-          <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand1.png" alt="">
-          <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand2.png" alt="">
-          <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand3.jpg" alt="">
-          <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand4.png" alt="">
-          <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand2.png" alt="">
-          <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand3.jpg" alt="">
-      </div>
-    </section>
+    <div class="brand-area container">
+        <div class="row m-0 py-5">
+            <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand1.png" alt="">
+            <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand2.png" alt="">
+            <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand3.jpg" alt="">
+            <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand4.png" alt="">
+            <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand2.png" alt="">
+            <img class="image-fluid col-lg-2 col-md-3 col-6" src="./Resource/img/brand3.jpg" alt="">
+        </div>
+    </div>
 
     <!--NEW AREA-->
     <section class="new-area w-100">

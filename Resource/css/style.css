@@ -420,8 +420,8 @@ footer p{
     height: 1px;
 }
 
-.cart-bottom-area .total-price div>button{
-    margin: 0 12px 20px 0;
+.cart-bottom-area .total-price div>a{
+    margin: 0 -5px 20px 0;
     display: flex;
     justify-content: flex-end;
 }

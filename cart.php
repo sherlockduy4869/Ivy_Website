@@ -29,7 +29,7 @@
 </section>
 
 <!--TABLE CART AREA-->
-<section class="cart-container-area container my-1" >
+<div class="cart-container-area container my-1">
         <table id="table_cart">
             <thead>
                 <tr>
@@ -69,7 +69,7 @@
                 ?>
             </tbody>
         </table>
-</section>
+</div>
 
 <!--CART BOTTOM AREA-->
 <section class="cart-bottom-area container">
@@ -124,7 +124,7 @@
                              ?>
                         </p>
                     </div>
-                    <button class="btn ml-auto"><a href="delivery.php">CHECK OUT</a></button>
+                    <a class="btn ml-auto" href="delivery.php">CHECK OUT</a>
                 </div>
             </div>
         </div>

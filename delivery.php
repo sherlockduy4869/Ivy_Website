@@ -17,7 +17,7 @@
 ?>
 
 <!--DELIVERY AREA-->
-<section class="featured-product-area delivery-area">
+<div class="featured-product-area delivery-area">
         <div class="container">
             <div class="delivery-content row">
                 <div class="delivery-content-left col-lg-8 col-md-7 col-7">
@@ -57,7 +57,6 @@
                             <th>Size</th>
                             <th>Quantity</th>
                             <th>Price</th>
-                            <th></th>
                         </tr>
                         <?php
                         $subTotal = 0;
@@ -108,7 +107,7 @@
                 </div>
             </div>
         </div>
-</section>
+</div>
 
 <?php
     include "Include_main/footer.php";
