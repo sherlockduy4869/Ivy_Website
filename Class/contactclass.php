@@ -29,7 +29,7 @@
             $result = $this->db->insert($query);
 
             if($result){
-                header('Location:contact.php');
+                header('Location:delivery.php');
             }
             else{
                 header('Location:404.php');

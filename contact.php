@@ -39,9 +39,6 @@
                                     <input type="email" class="form-control" aria-describedby="emailHelp" name="customer_email" placeholder="Your Email Here">
                                 </div>
                                 <div class="mb-3 form-floating">
-                                <input type="text" class="form-control" aria-describedby="emailHelp" name="subject" placeholder="Type Subject Here">
-                                </div>
-                                <div class="mb-3 form-floating">
                                     <textarea class="form-control" cols="30" rows="10" name="customer_message" placeholder="Your Message"></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
