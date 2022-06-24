@@ -1,16 +1,16 @@
 <?php
-    include "Include_main/header.php";
-    include "Class/cartclass.php";
+    include_once "Include_main/header.php";
+    include_once "Class/cartclass.php";
 ?>
 <?php
 
     $cart = new cart();
 
-    // if(isset($_GET['cart_id']))
-    // {
-    //     $cart_id = $_GET['cart_id'];
-    //     $delCartProduct = $cart->delete_product_cart($cart_id);
-    // }
+    if(isset($_GET['cart_id']))
+    {
+        $cart_id = $_GET['cart_id'];
+        $delCartProduct = $cart->delete_product_cart($cart_id);
+    }
 
     $get_product_cart = $cart->get_product_cart();
     
