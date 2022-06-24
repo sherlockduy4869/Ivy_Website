@@ -34,7 +34,9 @@
             $div = explode('.',$file_name);
             $file_ext = strtolower(end($div));
             $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
-            $upload_image = "Uploads/".$unique_image;
+
+            $destination_path = getcwd().DIRECTORY_SEPARATOR;
+            $upload_image = $destination_path."Uploads/".$unique_image;
 
             if($file_size > 1000000){
                 echo "<span class = 'addError'>Image size should be less than 1MB</span> <br>";
