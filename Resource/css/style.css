@@ -820,7 +820,6 @@ footer p{
 .middle{
     width: 100%;
     margin-bottom: 50px;
-    overflow-x: hidden;
 }
 
 .counting-sec{
@@ -830,16 +829,7 @@ footer p{
 }
 
 .inner-width{
-    margin: auto;
     display: flex;
-}
-
-.col{
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    color: #333;
-    text-transform: uppercase;
 }
 
 .col i{

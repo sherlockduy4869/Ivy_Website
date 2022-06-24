@@ -22,32 +22,34 @@
 </section>
 
 <!--COUNTING ANIMATE AREA-->
-<div class="middle col-lg-12 col-md-12 col-12">
-  <div class="counting-sec">
-    <div class="inner-width">
-      <div class="col">
+<div class="row middle w-100">
+  <div class="counting-sec text-center">
+    <div class="inner-width text-uppercase">
+
+      <div class="col col-lg-3 col-md-3 col-3">
         <i class="fas fa-smile-wink"></i>
         <div class="num">6350</div>
         Happy Customer
       </div>
 
-      <div class="col">
+      <div class="col col-lg-3 col-md-3 col-3">
         <i class="fas fa-briefcase"></i>
         <div class="num">34</div>
         Styles
       </div>
 
-      <div class="col">
+      <div class="col col-lg-3 col-md-3 col-3">
         <i class="fas fa-money-bill"></i>
         <div class="num">3000</div>
         Products
       </div>
 
-      <div class="col">
+      <div class="col col-lg-3 col-md-3 col-3">
         <i class="fas fa-object-group"></i>
         <div class="num">14</div>
         Branches
       </div>
+      
     </div>
   </div>
 </div>
