@@ -3,6 +3,9 @@ $(document).ready(function(){
     //DataTable for cart table
     $('#table_cart').DataTable();
 
+    //Jquery animate counting
+    $(".num").counterUp();
+
     // sticky nav
     $('.featured-product-area').waypoint(
         function(direction){

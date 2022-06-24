@@ -125,6 +125,3 @@
         </div>
 </section>
 
-<?php
-    include "Include_main/footer.php";
-?>
