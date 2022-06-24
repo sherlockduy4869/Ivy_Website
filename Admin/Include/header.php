@@ -35,7 +35,7 @@
          ?>
         <div class="header-admin">
             <div class="header-admin-left">
-                <a href="index.php" class="vw-btn">Visit Website</a>
+                <a href="/index.php" class="vw-btn">Visit Website</a>
             </div>
             <div class="header-admin-right">
                 <h3>Hello <?php echo Session::get('adminName'); ?></h3>
