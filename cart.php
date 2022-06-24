@@ -6,11 +6,11 @@
 
     $cart = new cart();
 
-    if(isset($_GET['cart_id']))
-    {
-        $cart_id = $_GET['cart_id'];
-        $delCartProduct = $cart->delete_product_cart($cart_id);
-    }
+    // if(isset($_GET['cart_id']))
+    // {
+    //     $cart_id = $_GET['cart_id'];
+    //     $delCartProduct = $cart->delete_product_cart($cart_id);
+    // }
 
     $get_product_cart = $cart->get_product_cart();
     
