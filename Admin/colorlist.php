@@ -71,10 +71,5 @@
             </div>
     </div>
 </section>
-<script>
-    $(document).ready(function () {
-        $('#color_list').DataTable();
-    });        
-</script>
 </body>
 </html>

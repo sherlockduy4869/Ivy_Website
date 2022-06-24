@@ -2,11 +2,6 @@
     include "Include_main/header.php";
     include "Class/cartclass.php";
 ?>
-<script>
-    $(document).ready(function () {
-        $('#table_cart').DataTable();
-    });        
-</script>
 <?php
 
     $cart = new cart();

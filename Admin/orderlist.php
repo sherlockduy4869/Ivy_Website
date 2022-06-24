@@ -13,7 +13,7 @@
     <div class="admin-content-right">
             <div class="admin-content-right-category_list">
                 <h1>Order List</h1>
-                <table id="category_list">
+                <table id="order_list">
                     <thead>
                         <th id="th_DataTable">Uni-num</th>
                         <th id="th_DataTable">Product</th>
@@ -54,10 +54,5 @@
             </div>
     </div>
 </section>
-<script>
-    $(document).ready(function () {
-        $('#category_list').DataTable();
-    });        
-</script>
 </body>
 </html>

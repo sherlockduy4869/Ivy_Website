@@ -82,10 +82,5 @@
             </div>
     </div>
 </section>
-        <script>
-            $(document).ready(function () {
-                $('#product_list').DataTable();
-            });
-        </script>
 </body>
 </html>

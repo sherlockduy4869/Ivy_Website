@@ -49,10 +49,5 @@
             </div>
     </div>
 </section>
-<script>
-    $(document).ready(function () {
-        $('#category_list').DataTable();
-    });        
-</script>
 </body>
 </html>

@@ -72,10 +72,5 @@
             </div>
     </div>
 </section>
-<script>
-    $(document).ready(function () {
-        $('#size_list').DataTable();
-    });        
-</script>
 </body>
 </html>

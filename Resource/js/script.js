@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+    //DataTable for cart table
+    $('#table_cart').DataTable();
+
     // sticky nav
     $('.featured-product-area').waypoint(
         function(direction){

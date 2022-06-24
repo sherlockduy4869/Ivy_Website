@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./Resource/js/script.js"></script>
- 
+
+    <!--DataTables-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
 </head>
 <body>
     <!--NAVIGATION AREA-->
@@ -60,42 +65,46 @@
     <!--TABLE CART AREA-->
     <section class="cart-container-area container my-1" >
         <table id="table_cart">
-            <tr>
-                <th>Remove</th>
-                <th>Image</th>
-                <th>Product</th>
-                <th>Size</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-            </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-trash"></i></a></td>
-                <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
-                <td><h5>River T-Shirt</h5></td>
-                <td></td>
-                <td><h5>$30</h5></td>
-                <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
-                <td><h5>$30</h5></td>
-            </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-trash"></i></a></td>
-                <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
-                <td><h5>River T-Shirt</h5></td>
-                <td></td>
-                <td><h5>$30</h5></td>
-                <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
-                <td><h5>$30</h5></td>
-            </tr>
-            <tr>
-                <td><a href=""><i class="fas fa-trash"></i></a></td>
-                <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
-                <td><h5>River T-Shirt</h5></td>
-                <td></td>
-                <td><h5>$30</h5></td>
-                <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
-                <td><h5>$30</h5></td>
-            </tr>
+            <thead>
+                <tr>
+                  <th>Remove</th>
+                  <th>Image</th>
+                  <th>Product</th>
+                  <th>Size</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href=""><i class="fas fa-trash"></i></a></td>
+                    <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
+                    <td><h5>River T-Shirt</h5></td>
+                    <td></td>
+                    <td><h5>$30</h5></td>
+                    <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
+                    <td><h5>$30</h5></td>
+                </tr>
+                <tr>
+                    <td><a href=""><i class="fas fa-trash"></i></a></td>
+                    <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
+                    <td><h5>River T-Shirt</h5></td>
+                    <td></td>
+                    <td><h5>$30</h5></td>
+                    <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
+                    <td><h5>$30</h5></td>
+                </tr>
+                <tr>
+                    <td><a href=""><i class="fas fa-trash"></i></a></td>
+                    <td><img src="./Resource/img/best-seller1.jpg" alt=""></td>
+                    <td><h5>River T-Shirt</h5></td>
+                    <td></td>
+                    <td><h5>$30</h5></td>
+                    <td><input class="w-25 pl-1" value="1" min="1" type="number"></td>
+                    <td><h5>$30</h5></td>
+                </tr>
+            </tbody>
         </table>
     </section>
 
