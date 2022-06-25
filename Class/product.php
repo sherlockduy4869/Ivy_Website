@@ -35,7 +35,7 @@
             $file_ext = strtolower(end($div));
             $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 
-            $upload_image ="https://web-ivy.herokuapp.com/Admin/"."Uploads/".$unique_image;
+            $upload_image = dirname(__FILE__) ."/Uploads/".$unique_image;
 
             if($file_size > 1000000){
                 echo "<span class = 'addError'>Image size should be less than 1MB</span> <br>";
@@ -61,13 +61,14 @@
                 $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
                 foreach($file_name_desc as $key => $value)
                 {
-                    move_uploaded_file($file_tmp_desc[$key], "https://web-ivy.herokuapp.com/Admin/"."Uploads_desc/".$value);
+                    move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
                     $query = "INSERT INTO tbl_product_image_description(PRODUCT_ID,PRO_IMG_DES) VALUES ('$product_id','$value')";
                     $result_product_img_desc = $this->db->insert($query);
                 }
 
-                $alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
-                return $alert;
+                //$alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
+                //return $alert;
+                return $upload_image;
             }
                 else{
                 $alert = "<span class = 'addError'>Can not add product</span> <br>";
