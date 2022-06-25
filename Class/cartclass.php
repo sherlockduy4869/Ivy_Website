@@ -57,7 +57,7 @@
         //Get product cart
         public function get_product_cart(){
             $session_id = session_id();
-            $query = "SELECT * FROM tbl_cart WHERE SESSION_ID = '$session_id' AND STATUS = 0 ORDER BY CART_ID DESC";
+            $query = "SELECT * FROM tbl_cart WHERE SESSION_ID = '$session_id' ORDER BY CART_ID DESC";
             $result = $this->db->select($query);
             return $result;
         }
