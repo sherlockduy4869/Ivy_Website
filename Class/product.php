@@ -49,7 +49,7 @@
                   VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
             $result = $this->db->insert($query);
 
-            if (file_exists($_SERVER['DOCUMENT_ROOT'] ."/Admin/Uploads/".$file_temp)) {
+            if (file_exists($_SERVER['DOCUMENT_ROOT'] ."/Admin/Uploads/".$unique_image)) {
                 return "The file exists";
             } else {
                 return "The file does not exist";
