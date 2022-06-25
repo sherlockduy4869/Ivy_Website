@@ -43,7 +43,7 @@
                 $alert = "<span class = 'addError'>You can up load only:-".implode(',',$permited)."</span> <br>" ;
                 return $alert;
             }
-
+            //a
             move_uploaded_file($file_temp,$upload_image);
             
             $query = "INSERT INTO tbl_product(PRODUCT_NAME,CATEGORY_ID,PRICE,PRODUCT_DESCRIPTION,TYPE,IMAGE) 
