@@ -98,11 +98,15 @@
                 
             unlink("Uploads/".$product_image);
             $query_img_desc = "DELETE FROM tbl_product_image_description WHERE PRODUCT_ID = '$delID'";
+            $query_product_size = "DELETE FROM tbl_size WHERE PRODUCT_ID = '$delID'";
+            $query_product_color = "DELETE FROM tbl_color WHERE PRODUCT_ID = '$delID'";
             $query = "DELETE FROM tbl_product WHERE PRODUCT_ID = '$delID'";
-            $result_img_desc = $this->db->delete($query_img_desc);
-            $result = $this->db->delete($query);
-            
 
+            $result_img_desc = $this->db->delete($query_img_desc);
+            $result_product_size = $this->db->delete($query_product_size);
+            $result_product_color = $this->db->delete($query_product_color);
+            $result = $this->db->delete($query);
+    
             header('Location:productlist.php');
         }
 
