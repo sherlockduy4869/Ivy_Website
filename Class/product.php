@@ -34,7 +34,7 @@
             $file_ext = strtolower(end($div));
             $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 
-            $upload_image = $_SERVER['DOCUMENT_ROOT'] ."/Admin/Uploads/".$unique_image;
+            $upload_image = $_SERVER['DOCUMENT_ROOT']."/Admin/Uploads/".$unique_image;
 
             if($file_size > 1000000){
                 echo "<span class = 'addError'>Image size should be less than 1MB</span> <br>";
@@ -51,7 +51,7 @@
                 return "failed";
             }
             // $query = "INSERT INTO tbl_product(PRODUCT_NAME,CATEGORY_ID,PRICE,PRODUCT_DESCRIPTION,TYPE,IMAGE) 
-            //       VALUES('$product_name','$category_id','$price','$product_desc','$type','$file_name')";
+            //       VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
             // $result = $this->db->insert($query);
 
             // if($result)
