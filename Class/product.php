@@ -34,7 +34,8 @@
             $file_ext = strtolower(end($div));
             $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 
-            $upload_image = $_SERVER['DOCUMENT_ROOT']."/Admin/Uploads/".$unique_image;
+            //$upload_image = $_SERVER['DOCUMENT_ROOT']."/Admin/Uploads/".$unique_image;
+            $upload_image ="Uploads/".$unique_image;
 
             if($file_size > 1000000){
                 echo "<span class = 'addError'>Image size should be less than 1MB</span> <br>";
