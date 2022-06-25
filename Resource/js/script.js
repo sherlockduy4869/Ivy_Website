@@ -58,14 +58,21 @@ $(document).ready(function(){
     })
 
     //Product details
-    
-    const bigImg = $(".big-image");
-    const smallImg = $(".small-image");
-    $.each(smallImg, function (imgItem) {
-        imgItem.click( function () {
+    const bigImg = document.querySelector(".big-image");
+    const smallImg = document.querySelectorAll(".small-image");
+    smallImg.forEach(function(imgItem){
+        imgItem.addEventListener("click",function(){
             bigImg.src = imgItem.src;
         })
     })
+
+    // const bigImg = $(".big-image");
+    // const smallImg = $(".small-image");
+    // $.each(smallImg, function (imgItem) {
+    //     imgItem.click( function () {
+    //         bigImg.src = imgItem.src;
+    //     })
+    // })
 
     //Div clickable
 
