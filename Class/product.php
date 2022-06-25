@@ -66,9 +66,8 @@
                     $result_product_img_desc = $this->db->insert($query);
                 }
 
-                //$alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
-                //return $alert;
-                return $upload_image;
+                $alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
+                return $alert;
             }
                 else{
                 $alert = "<span class = 'addError'>Can not add product</span> <br>";
