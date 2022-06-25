@@ -49,35 +49,30 @@
                   VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
             $result = $this->db->insert($query);
 
-            if (file_exists($_SERVER['DOCUMENT_ROOT'] ."/Admin/Uploads/".$unique_image)) {
-                return "The file exists";
-            } else {
-                return "The file does not exist";
+
+            if($result)
+            {
+                $query = "SELECT * FROM tbl_product ORDER BY PRODUCT_ID DESC LIMIT 1";
+                $result_product = $this->db->select($query)->fetch_assoc();
+
+                $product_id = $result_product['PRODUCT_ID'];
+                $file_name_desc = $_FILES['product_img_desc']['name'];
+                $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
+                foreach($file_name_desc as $key => $value)
+                {
+                    move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
+                    $query = "INSERT INTO tbl_product_image_description(PRODUCT_ID,PRO_IMG_DES) VALUES ('$product_id','$value')";
+                    $result_product_img_desc = $this->db->insert($query);
+                }
+
+                $alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
+                return $alert;
             }
-        
-            // if($result)
-            // {
-            //     $query = "SELECT * FROM tbl_product ORDER BY PRODUCT_ID DESC LIMIT 1";
-            //     $result_product = $this->db->select($query)->fetch_assoc();
-
-            //     $product_id = $result_product['PRODUCT_ID'];
-            //     $file_name_desc = $_FILES['product_img_desc']['name'];
-            //     $file_tmp_desc = $_FILES['product_img_desc']['tmp_name'];
-            //     foreach($file_name_desc as $key => $value)
-            //     {
-            //         move_uploaded_file($file_tmp_desc[$key], "Uploads_desc/".$value);
-            //         $query = "INSERT INTO tbl_product_image_description(PRODUCT_ID,PRO_IMG_DES) VALUES ('$product_id','$value')";
-            //         $result_product_img_desc = $this->db->insert($query);
-            //     }
-
-                //$alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
-                //return $alert;
-            // }
             
-            // else{
-            //$alert = "<span class = 'addError'>Can not add product</span> <br>";
-            //return $alert;
-            //}
+            else{
+            $alert = "<span class = 'addError'>Can not add product</span> <br>";
+            return $alert;
+            }
         }
 
         //Delete product
