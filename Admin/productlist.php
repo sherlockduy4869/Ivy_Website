@@ -52,7 +52,7 @@
                         <tr>
                             
                             <td><?php echo $ID; ?></td>
-                            <td><img src="app/Admin/Uploads/<?php echo $result['IMAGE']; ?>" width="55px" alt=""></td>
+                            <td><img src="/app/Admin/Uploads/<?php echo $result['IMAGE']; ?>" width="55px" alt=""></td>
                             <td><?php echo $result['PRODUCT_NAME']; ?></td>
                             <td><?php echo $result['CATEGORY_NAME']; ?></td>
                             <td><?php echo $result['PRICE']; ?></td>
