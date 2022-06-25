@@ -46,14 +46,14 @@
             
             //move_uploaded_file($file_temp,$upload_image);
 
-            // if(move_uploaded_file($file_temp,$upload_image)){
-            //     return "added";
-            // }
-            // else{
-            //     return "failed";
-            // }
+            if(move_uploaded_file($file_temp,$upload_image)){
+                return "added";
+            }
+            else{
+                return "failed";
+            }
             
-            return $upload_image;
+            //return $upload_image;
 
             // $query = "INSERT INTO tbl_product(PRODUCT_NAME,CATEGORY_ID,PRICE,PRODUCT_DESCRIPTION,TYPE,IMAGE) 
             //       VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
