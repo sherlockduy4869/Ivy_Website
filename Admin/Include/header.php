@@ -11,8 +11,6 @@
     <title>Administrator</title>
     <!-- CSS -->
     <link rel="stylesheet" href="./css/styleAdmin.css">
-    <!-- Jquery/Javascript -->
-    <script src="/Admin/js/scriptAdmin.js"></script>
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CkFinder -->
@@ -20,6 +18,8 @@
     <script src="../ckfinder/ckfinder.js"></script>
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Jquery/Javascript -->
+    <script src="/Admin/js/scriptAdmin.js"></script>
     <!-- DataTables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
