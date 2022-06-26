@@ -9,15 +9,10 @@
 ?>
     <!--SLIDER AREA-->
     <div class="slider">
-        <div class="aspect-ratio-169">
+        <div class="aspect-ratio-169 slick-slider">
             <img src="./Resource/img/slider1.jpg" alt="">
             <img src="./Resource/img/slider2.jpg" alt="">
             <img src="./Resource/img/slider3.png" alt="">
-        </div>
-        <div class="dot-container">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-        <div class="dot"></div>
         </div>
     </div>
 
