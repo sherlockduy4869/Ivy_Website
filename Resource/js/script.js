@@ -58,14 +58,13 @@ $(document).ready(function(){
     // })
 
     //Slick Slider
-
     $('.slick-slider').slick({
         autoplay: true,
-        speed: 800,
+        autoplaySpeed:1500,
         arrows: false,
         dots: true,
         fade: true
-      });
+    });
 
     //Product details
     const bigImg = document.querySelector(".big-image");

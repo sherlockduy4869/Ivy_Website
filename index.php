@@ -10,13 +10,13 @@
     <!--SLIDER AREA-->
     <div class="slick-slider">
         <div class="banner-img col-lg-12 col-md-12 col-12">
-            <img src="./Resource/img/slider1.jpg" alt="">
+            <img src="./Resource/img/slider1.jpg" class="img-responsive" alt="">
         </div>
         <div class="banner-img col-lg-12 col-md-12 col-12">
-            <img src="./Resource/img/slider2.jpg" alt="">
+            <img src="./Resource/img/slider2.jpg" class="img-responsive" alt="">
         </div>
         <div class="banner-img col-lg-12 col-md-12 col-12">
-            <img src="./Resource/img/slider3.png" alt="">
+            <img src="./Resource/img/slider3.png" class="img-responsive" alt="">
         </div>
     </div>
 
