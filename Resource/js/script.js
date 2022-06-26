@@ -19,7 +19,6 @@ $(document).ready(function(){
             offset: '1800px'
         }
     )
-    
 
     //Slick Slider
     $('.slick-slider').slick({
@@ -38,15 +37,7 @@ $(document).ready(function(){
             bigImg.src = imgItem.src;
         })
     })
-
-    // const bigImg = $(".big-image");
-    // const smallImg = $(".small-image");
-    // $.each(smallImg, function (imgItem) {
-    //     imgItem.click( function () {
-    //         bigImg.src = imgItem.src;
-    //     })
-    // })
-
+    
     //Div clickable
 
     $('.clickable').click(function(){
