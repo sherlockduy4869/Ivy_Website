@@ -39,7 +39,6 @@ $(document).ready(function(){
     })
     
     //Div clickable
-
     $('.clickable').click(function(){
         window.location = $(this).find("a").attr("href");
         //console.log(123);

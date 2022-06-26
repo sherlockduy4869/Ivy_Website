@@ -54,33 +54,6 @@
   </div>
 </div>
 
-<!--NEW AREA-->
-<section class="new-area w-100">
-  <div class="row p-0 m-0">
-    <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
-      <img src="./Resource/img/new1.jfif" alt="" class="img-fluid">
-      <div class="details">
-        <h2>Clothes for Women</h2>
-        <a href="#" class="text-uppercase">Shop now</a>
-      </div>
-    </div>
-    <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
-      <img src="./Resource/img/new2.jfif" alt="" class="img-fluid">
-      <div class="details">
-        <h2>Clothes for Men</h2>
-        <a href="#" class="text-uppercase">Shop now</a>
-      </div>
-    </div>
-    <div class="one col-lg-4 col-md-12 col-12 p-0 clickable">
-      <img src="./Resource/img/new3.jfif" alt="" class="img-fluid">
-      <div class="details">
-        <h2>Clothes for Children</h2>
-        <a href="#" class="text-uppercase">Shop now</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <?php
     include "Include_main/footer.php";
 ?>
