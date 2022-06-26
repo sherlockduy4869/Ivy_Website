@@ -8,29 +8,15 @@
     $best_seller_product = $product->show_best_seller_product_list();
 ?>
     <!--SLIDER AREA-->
-    <div class="slider">
-        <div class="aspect-ratio-169 slick-slider">
-
-            <div class="col-md-12">
-                <img src="./Resource/img/slider1.jpg" alt="">
-            </div>
-
-            <div class="col-md-12">
-                <img src="./Resource/img/slider2.jpg" alt="">
-            </div>
-
-            <div class="col-md-12">
-                <img src="./Resource/img/slider3.png" alt="">
-            </div>
-            
-            <div class="col-md-12">
-                <img src="./Resource/img/slider1.jpg" alt="">
-            </div>
-
-            <div class="col-md-12">
-                <img src="./Resource/img/slider2.jpg" alt="">
-            </div>
-            
+    <div class="slick-slider">
+        <div class="banner-img">
+            <img src="./Resource/img/slider1.jpg" alt="">
+        </div>
+        <div class="banner-img">
+            <img src="./Resource/img/slider2.jpg" alt="">
+        </div>
+        <div class="banner-img">
+            <img src="./Resource/img/slider3.png" alt="">
         </div>
     </div>
 
