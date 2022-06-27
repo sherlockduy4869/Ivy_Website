@@ -72,7 +72,7 @@
                     $query = "INSERT INTO tbl_product_image_description(PRODUCT_ID,PRO_IMG_DES) VALUES ('$product_id','$value')";
                     $result_product_img_desc = $this->db->insert($query);
                 }
-
+                
                 $alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
                 return $alert;
             }
