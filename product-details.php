@@ -71,7 +71,7 @@
                 <h6><?php echo "Home / ".$result['CATEGORY_NAME']; ?></h6>
                 <h3 class="py-4"><?php echo $result['PRODUCT_NAME']; ?></h3>
                 <h2><?php echo "$".$result['PRICE']; ?></h2>
-                <form action="" method="POST" class="addToCartForm">
+                <form method="POST" class="addToCartForm">
                   <select class="my-3" name="size">
                       <option value="">--Size--</option>
                       <?php
