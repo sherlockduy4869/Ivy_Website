@@ -105,7 +105,7 @@
             $result_product_color = $this->db->delete($query_product_color);
             $result = $this->db->delete($query);
     
-            header('Location:productlist.php');
+            header('Location:Admin/productlist.php');
         }
 
         //Get product information 

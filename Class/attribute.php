@@ -44,7 +44,7 @@
             $query = "INSERT INTO tbl_size(PRODUCT_ID,SIZE_VALUE) VALUES('$product_id_size','$size_value')";
             $result = $this->db->insert($query);
 
-            header('Location:sizelist.php?product_id_size='.$product_id_size);
+            header('Location:Admin/sizelist.php?product_id_size='.$product_id_size);
         }
 
         /*COLOR AREA*/
@@ -75,7 +75,7 @@
             $query = "INSERT INTO tbl_color(PRODUCT_ID,COLOR_VALUE) VALUES('$product_id_color','$color_value')";
             $result = $this->db->insert($query);
 
-            header('Location:colorlist.php?product_id_color='.$product_id_color);
+            header('Location:Admin/colorlist.php?product_id_color='.$product_id_color);
         }
     }
 ?>
