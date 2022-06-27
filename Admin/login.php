@@ -1,4 +1,5 @@
 <?php
+    ob_start();
     include $_SERVER['DOCUMENT_ROOT'].'/Class/adminLogin.php';
 ?>
 
