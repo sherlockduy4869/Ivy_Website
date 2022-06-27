@@ -1,5 +1,4 @@
 <?php
-    ob_start();
     include_once $_SERVER['DOCUMENT_ROOT'].'/Lib/database.php';
     include_once $_SERVER['DOCUMENT_ROOT'].'/Helpers/format.php';
 ?>
@@ -69,8 +68,7 @@
             $query = "DELETE FROM tbl_cart WHERE CART_ID = '$cart_id'";
             $result = $this->db->delete($query);
             
-            header('Location:cart.php');
+            echo "<script>location='https://web-ivy.herokuapp.com/cart.php'</script>";
         }
     }
-    ob_end_flush();
 ?>
