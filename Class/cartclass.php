@@ -46,7 +46,7 @@
 
                 if($insert_cart)
                 {
-                    header('Location:cart.php');
+                    header('Location:about.php');
                 }
                 else{
                     header('Location:404.php');
