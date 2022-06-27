@@ -46,11 +46,10 @@
 
                 if($insert_cart)
                 {
-                    header('Location:'.$_SERVER['DOCUMENT_ROOT'].'/cart.php');
+                    header('Location:orderlist.php');
                     //echo "<script>location='https://web-ivy.herokuapp.com/cart.php'</script>";
                 }
                 else{
-                    header('Location:'.$_SERVER['DOCUMENT_ROOT'].'/404.php');
                     //echo "<script>location='https://web-ivy.herokuapp.com/404.php'</script>";
                 }
             }
@@ -70,7 +69,8 @@
             $query = "DELETE FROM tbl_cart WHERE CART_ID = '$cart_id'";
             $result = $this->db->delete($query);
             //echo "<script>location='https://web-ivy.herokuapp.com/cart.php'</script>";
-            header('Location:'.$_SERVER['DOCUMENT_ROOT'].'/cart.php');
+            //header('Location:'.$_SERVER['DOCUMENT_ROOT'].'/cart.php');
+            header('Location:orderlist.php');
             
         }
     }
