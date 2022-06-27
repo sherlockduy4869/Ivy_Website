@@ -67,7 +67,7 @@
             $cart_id = mysqli_real_escape_string($this->db->link, $cart_id);
             $query = "DELETE FROM tbl_cart WHERE CART_ID = '$cart_id'";
             $result = $this->db->delete($query);
-            header('Location:about.php');
+            header('Location:cart.php');
         }
     }
 ?>
