@@ -1,5 +1,4 @@
 <?php
-    ob_start();
     include $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
     include_once $_SERVER['DOCUMENT_ROOT'].'/Lib/session.php';
     Session::init();
