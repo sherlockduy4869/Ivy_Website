@@ -43,7 +43,7 @@
                     Session::set('adminID',$value['ADMIN_ID']);
                     Session::set('adminUser',$value['ADMIN_USER']);
                     Session::set('adminName',$value['ADMIN_NAME']);
-                    header('Location:index.php');
+                    header('Location:/Admin/index.php');
                 } 
                 else
                 {
