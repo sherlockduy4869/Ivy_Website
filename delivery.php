@@ -21,7 +21,7 @@
         <div class="container">
             <div class="delivery-content row">
                 <div class="delivery-content-left col-lg-8 col-md-7 col-7">
-                    <form action="delivery.php" method="POST" enctype="multipart/form-data">
+                    <form method="POST" enctype="multipart/form-data">
                         <div class="delivery-content-left-input-top row">
                             <div class="delivery-content-left-input-top-item">
                                 <label>Your Name<span style="color:red">*</span></label>

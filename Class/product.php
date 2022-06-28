@@ -25,7 +25,6 @@
             $product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
             $type = mysqli_real_escape_string($this->db->link, $data['type']);
 
-
             $permited = array('jpg','jpeg','png','jfif');
             $file_name = $_FILES['image']['name'];
             $file_size = $_FILES['image']['size'];
@@ -33,8 +32,10 @@
             
             $div = explode('.',$file_name);
             $file_ext = strtolower(end($div));
-            $unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
-            $upload_image = "Uploads/".$unique_image;
+            //$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
+
+            //$upload_image = $_SERVER['DOCUMENT_ROOT']."/Admin/Uploads/".$unique_image;
+            $upload_image ="Uploads/".$file_name;
 
             if($file_size > 1000000){
                 echo "<span class = 'addError'>Image size should be less than 1MB</span> <br>";
@@ -43,13 +44,20 @@
                 $alert = "<span class = 'addError'>You can up load only:-".implode(',',$permited)."</span> <br>" ;
                 return $alert;
             }
-
+            
             move_uploaded_file($file_temp,$upload_image);
+
+            // if(move_uploaded_file($file_temp,$upload_image)){
+            //     return "added";
+            // }
+            // else{
+            //     return "failed";
+            // }
+
             $query = "INSERT INTO tbl_product(PRODUCT_NAME,CATEGORY_ID,PRICE,PRODUCT_DESCRIPTION,TYPE,IMAGE) 
-                  VALUES('$product_name','$category_id','$price','$product_desc','$type','$unique_image')";
+                  VALUES('$product_name','$category_id','$price','$product_desc','$type','$file_name')";
             $result = $this->db->insert($query);
 
-        
             if($result)
             {
                 $query = "SELECT * FROM tbl_product ORDER BY PRODUCT_ID DESC LIMIT 1";
@@ -64,13 +72,14 @@
                     $query = "INSERT INTO tbl_product_image_description(PRODUCT_ID,PRO_IMG_DES) VALUES ('$product_id','$value')";
                     $result_product_img_desc = $this->db->insert($query);
                 }
-
+                
                 $alert = "<span class = 'addSuccess'>Add product successfully</span> <br>";
                 return $alert;
             }
-                else{
-                $alert = "<span class = 'addError'>Can not add product</span> <br>";
-                return $alert;
+            
+            else{
+            $alert = "<span class = 'addError'>Can not add product</span> <br>";
+            return $alert;
             }
         }
 
@@ -87,11 +96,15 @@
                 
             unlink("Uploads/".$product_image);
             $query_img_desc = "DELETE FROM tbl_product_image_description WHERE PRODUCT_ID = '$delID'";
+            $query_product_size = "DELETE FROM tbl_size WHERE PRODUCT_ID = '$delID'";
+            $query_product_color = "DELETE FROM tbl_color WHERE PRODUCT_ID = '$delID'";
             $query = "DELETE FROM tbl_product WHERE PRODUCT_ID = '$delID'";
-            $result_img_desc = $this->db->delete($query_img_desc);
-            $result = $this->db->delete($query);
-            
 
+            $result_img_desc = $this->db->delete($query_img_desc);
+            $result_product_size = $this->db->delete($query_product_size);
+            $result_product_color = $this->db->delete($query_product_color);
+            $result = $this->db->delete($query);
+    
             header('Location:productlist.php');
         }
 

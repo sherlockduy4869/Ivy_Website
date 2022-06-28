@@ -49,7 +49,6 @@
                     header('Location:cart.php');
                 }
                 else{
-                    header('Location:404.php');
                 }
             }
         }
@@ -67,7 +66,7 @@
             $cart_id = mysqli_real_escape_string($this->db->link, $cart_id);
             $query = "DELETE FROM tbl_cart WHERE CART_ID = '$cart_id'";
             $result = $this->db->delete($query);
-            header('Location:cart.php');
+            header('Location:cart.php'); 
         }
     }
 ?>

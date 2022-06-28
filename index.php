@@ -8,18 +8,17 @@
     $best_seller_product = $product->show_best_seller_product_list();
 ?>
     <!--SLIDER AREA-->
-    <div class="slider">
-        <div class="aspect-ratio-169">
-            <img src="./Resource/img/slider1.jpg" alt="">
-            <img src="./Resource/img/slider2.jpg" alt="">
-            <img src="./Resource/img/slider3.png" alt="">
+    <div class="slick-slider">
+        <div class="banner-img">
+            <img src="./Resource/img/slider1.jpg" class="img-fluid" alt="">
         </div>
-        <div class="dot-container">
-            <div class="dot active"></div>
-            <div class="dot"></div>
-        <div class="dot"></div>
+        <div class="banner-img">
+            <img src="./Resource/img/slider2.jpg" class="img-fluid" alt="">
         </div>
-    </div>
+        <div class="banner-img">
+            <img src="./Resource/img/slider3.png" class="img-fluid" alt="">
+        </div>
+    </div> 
 
     <!--BRAND AREA-->
     <div class="brand-area container">
@@ -102,7 +101,7 @@
       <div class="container">
         <h4>SUMMER SEASON SALE</h4>
         <h1>SUMMER COLLECTION SALE <br> UP TO 15% OFF</h1>
-        <a href="shop.php?cateID=49" class="text-uppercase btn">Shop Now</a>
+        <a href="shop.php?cateID=1" class="text-uppercase btn">Shop Now</a>
       </div>
     </section>
 

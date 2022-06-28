@@ -1,5 +1,5 @@
-$(function(){
-    
+$(document).ready(function(){
+
     //Data table for category_list
     $('#category_list').DataTable();
 
@@ -14,4 +14,5 @@ $(function(){
 
     //Data table for size_list
     $('#size_list').DataTable();
-});
+    
+})

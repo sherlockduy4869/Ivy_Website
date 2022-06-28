@@ -1,6 +1,6 @@
 <?php
-    include "Include_main/header.php";
-    include "Class/cartclass.php";
+    include_once "Include_main/header.php";
+    include_once "Class/cartclass.php";
 ?>
 <?php
 
@@ -125,3 +125,6 @@
         </div>
 </section>
 
+<?php
+    include "Include_main/footer.php";
+?>
