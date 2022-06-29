@@ -10,8 +10,8 @@
         <div class="footer-one col-lg-4 col-md-4 col-12 mb-3">
           <h5 class="pb-2">Featured</h5>
           <ul class="text-uppercase list-unstyled">
-            <li><a href="shop.php?cateID=2">Men</a></li>
-            <li><a href="shop.php?cateID=1">Women</a></li>
+            <li><a href="shop.php?cateID=1">Men</a></li>
+            <li><a href="shop.php?cateID=2">Women</a></li>
             <li><a href="shop.php?cateID=3">Children</a></li>
             <li><a href="#">Featured product</a></li>
             <li><a href="#">Best seller product</a></li>

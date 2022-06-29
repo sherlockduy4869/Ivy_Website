@@ -1,12 +1,5 @@
 <?php
     include_once "Include_main/header.php";
-    include_once "Class/contactclass.php";
-?>
-<?php
-    $contact = new contact();
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-        $customer_contact = $contact->insert_customer_contact_information($_POST);
-    }
 ?>
     <!--CONTACT AREA-->
     <section class="featured-product-area py-5 ">
@@ -26,7 +19,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-12 w-50 mt-3">
                         <div class="contact-form w-100">
-                            <form action="contact.php" method="POST" enctype="multipart/form-data">
+                            <form action="email.php" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3 form-floating">
                                 <input type="text" class="form-control" name="customer_name" placeholder="Your Name Here">
                                 </div>
