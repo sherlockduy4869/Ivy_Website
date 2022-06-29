@@ -74,7 +74,7 @@
             $query = "DELETE FROM tbl_category WHERE CATEGORY_ID = '$delID'";
             $result = $this->db->delete($query);
 
-            header('Location:Admin/categorylist.php');
+            header('Location:categorylist.php');
         }
     }
 
