@@ -1,6 +1,7 @@
 <?php
-    // ob_start();
-    //include_once $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
+    ob_start();
+    include_once $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
+    echo $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
     //include_once $_SERVER['DOCUMENT_ROOT'].'/Lib/session.php';
     //Session::init();
     // $cate = new category();
