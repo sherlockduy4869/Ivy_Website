@@ -3,7 +3,7 @@
     include_once "Class/product.php";
 ?>
 <?php
-    // $product = new product();
+    $product = new product();
     // $featured_product = $product->show_featured_product_list();
     // $best_seller_product = $product->show_best_seller_product_list();
 ?>
