@@ -2,7 +2,7 @@
     // ob_start();
     //include_once $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
     //include_once $_SERVER['DOCUMENT_ROOT'].'/Lib/session.php';
-    Session::init();
+    //Session::init();
     // $cate = new category();
     // $cate_dropdown = $cate->show_category_list();
 ?>
