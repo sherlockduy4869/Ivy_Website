@@ -1,11 +1,11 @@
 <?php
     // ob_start();
-    // include $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
-    // include_once $_SERVER['DOCUMENT_ROOT'].'/Lib/session.php';
-    // Session::init();
-    echo $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
-    // $cate = new category();
-    // $cate_dropdown = $cate->show_category_list();
+    include $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
+    include_once $_SERVER['DOCUMENT_ROOT'].'/Lib/session.php';
+    Session::init();
+    //echo $_SERVER['DOCUMENT_ROOT']."/Class/category.php";
+    $cate = new category();
+    $cate_dropdown = $cate->show_category_list();
 ?>
 <!DOCTYPE html>
 <html lang="en">
