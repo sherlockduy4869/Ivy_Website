@@ -1,11 +1,11 @@
 <?php
     include_once "Include_main/header.php";
-    //include_once "Class/product.php";
+    include_once "Class/product.php";
 ?>
 <?php
-    // $product = new product();
-    // $featured_product = $product->show_featured_product_list();
-    // $best_seller_product = $product->show_best_seller_product_list();
+    $product = new product();
+    $featured_product = $product->show_featured_product_list();
+    $best_seller_product = $product->show_best_seller_product_list();
 ?>
     <!--SLIDER AREA-->
     <div class="slick-slider">
