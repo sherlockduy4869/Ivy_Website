@@ -72,20 +72,17 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-12 w-50 mt-3">
                     <div class="contact-form w-100">
-                        <form>
+                        <form action="email.php" method="post" enctype="multipart/form-data">
                             <div class="mb-3 form-floating">
-                              <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Your Name Here">
+                            <input type="text" class="form-control" name="customer_name" placeholder="Your Name Here">
                             </div>
                             <div class="mb-3 form-floating">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Your Email Here">
+                                <input type="email" class="form-control" name="customer_email" placeholder="Your Email Here">
                             </div>
                             <div class="mb-3 form-floating">
-                              <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Type Subject Here">
+                                <textarea class="form-control" cols="30" rows="10" name="customer_message" placeholder="Your Message"></textarea>
                             </div>
-                            <div class="mb-3 form-floating">
-                                <textarea class="form-control" cols="30" rows="10" placeholder="Your Message"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
+                            <button type="submit" name="submit" class="btn btn-primary text-uppercase w-50">Submit</button>
                         </form>
                     </div>
                 </div>

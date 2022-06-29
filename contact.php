@@ -26,7 +26,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12 col-12 w-50 mt-3">
                         <div class="contact-form w-100">
-                            <form method="POST" enctype="multipart/form-data">
+                            <form method="post" enctype="multipart/form-data">
                                 <div class="mb-3 form-floating">
                                 <input type="text" class="form-control" name="customer_name" placeholder="Your Name Here">
                                 </div>

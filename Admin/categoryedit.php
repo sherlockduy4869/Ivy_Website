@@ -2,7 +2,6 @@
     include 'Include/header.php';
     include 'Include/slider.php';
     include $_SERVER['DOCUMENT_ROOT'].'/Class/category.php';
-    //aaaa
 ?>
 
 <?php
