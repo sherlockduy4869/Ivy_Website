@@ -660,7 +660,7 @@ footer p{
     position: absolute;
 }
 
-/*A*/
+/*CONTACT AREA*/
 
 .section-title{
     text-align: center;
@@ -809,4 +809,19 @@ footer p{
 .num{
     font-size: 40px;
     margin: 20px 0;
+}
+
+/*CONTACT SUCCESSFUL AREA*/
+.contact-success-full{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
+.contact-success-full .contact-message{
+    box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+    padding: 20px;
+}
+
+.contact-success-full .contact-message{
+    color: red;
 }

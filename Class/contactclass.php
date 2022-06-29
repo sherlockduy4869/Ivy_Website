@@ -35,7 +35,7 @@
 
             mail($recipient, $subject, $customer_message, $mailheader) or die("Error!");
             
-            header('Location:404.php');
+            header('Location:contact-successful.php');
         }
 
     }
