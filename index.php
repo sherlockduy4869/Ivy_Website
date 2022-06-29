@@ -1,6 +1,6 @@
 <?php
     include_once "Include_main/header.php";
-    include_once "Class/product.php";
+    //include_once "Class/product.php";
 ?>
 <?php
     $product = new product();
