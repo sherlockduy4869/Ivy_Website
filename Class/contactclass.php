@@ -24,16 +24,20 @@
             $customer_message = mysqli_real_escape_string($this->db->link, $data['customer_message']);
             $date = date('d-m-y h:i:s');
 
-            $customer_name = $data['customer_name'];
-            $customer_email = $data['customer_email'];
-            $subject = "Customer From Ivy Website";
-            $customer_message = $data['customer_message'];
+            $query = "INSERT INTO tbl_contact(CUSTOMER_NAME,CUSTOMER_EMAIL,CUSTOMER_MESSAGE,DATE_CONACT)
+            VALUES('$customer_name','$customer_email','$customer_message','$date')";
+            $result = $this->db->insert($query);
 
-            $mailheader = "From:".$customer_name."<".$customer_email.">\r\n";
+            // $customer_name = $data['customer_name'];
+            // $customer_email = $data['customer_email'];
+            // $subject = "Customer From Ivy Website";
+            // $customer_message = $data['customer_message'];
 
-            $recipient = "duy.tran190201@vnuk.edu.vn";
+            // $mailheader = "From:".$customer_name."<".$customer_email.">\r\n";
 
-            mail($recipient, $subject, $customer_message, $mailheader) or die("Error!");
+            // $recipient = "duy.tran190201@vnuk.edu.vn";
+
+            // mail($recipient, $subject, $customer_message, $mailheader) or die("Error!");
             
             header('Location:contact-successful.php');
         }

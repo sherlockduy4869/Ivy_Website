@@ -1,6 +1,6 @@
 # HOW TO USE THE WEBSITE
 - Acccess the client page using link: http://modaivyrichardfinalproject.onlinewebshop.net
-- Access the admin page using link: https://modaivyrichardfinalproject.onlinewebshop.net/Admin/
+- Access the admin page using link: http://modaivyrichardfinalproject.onlinewebshop.net/Admin/login.php
 - Use following account to log in Admin page
 - User_Name: admin1
 - Password: 123456
