@@ -11,9 +11,12 @@
 - Database pass_word: ,xCaB.)Z7k;Jf!*c
 
 # NOTES WHEN USING ADMIN PAGE
-- We can not add image product larger than 1MB
-- We need to add product first, then adding product options for this product
+- We can not add image product larger than 1MB.
+- We need to add product first, then adding product options for this product.
 
 # NOTES WHEN USING CLIENT PAGE
-- When choosing product, we need to select size and color before adding to cart
+- When choosing product, we need to select size and color before adding to cart.
+
+# NOTES WHEN USING DATABASE
+- We do not understand the reason why we can not see the table relationship in phpmyadmin of adward space (our hosting), but there is a SQL Code folder which includes our SQL code, you can run these code in local host to see the relation as well.
   
