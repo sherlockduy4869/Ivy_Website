@@ -1,12 +1,12 @@
 # HOW TO USE THE WEBSITE
-- Acccess the client page using link: http://modaivyrichardfinalproject.onlinewebshop.net
-- Access the admin page using link: http://modaivyrichardfinalproject.onlinewebshop.net/Admin/login.php
+- Acccess the client page using link: modaivyrichardfinalproject.onlinewebshop.net
+- Access the admin page using link: modaivyrichardfinalproject.onlinewebshop.net/Admin/login.php
 - Use following account to log in Admin page
 - User_Name: admin1
 - Password: 123456
 
 # HOW TO LOG IN TO THE DATABASE
-- Access the database using link: https://supportindeed.com/phpMyAdmin4/
+- Access the database using link: supportindeed.com/phpMyAdmin4/
 - Database user_name: 4129391_ivyweb
 - Database pass_word: ,xCaB.)Z7k;Jf!*c
 
